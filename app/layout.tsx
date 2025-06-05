@@ -23,7 +23,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.className}>
       <head>
-        
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#ecfeff" />
       </head>
       <body
         className={`antialiased bg-gradient-to-b from-cyan-50 via-cyan-50 to-white min-h-screen`}
