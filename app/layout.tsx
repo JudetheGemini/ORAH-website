@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
 import "./globals.css";
 import Script from "next/script";
 
@@ -37,6 +38,7 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
       </body>
+      <Footer />
     </html>
   );
 }
