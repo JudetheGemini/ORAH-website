@@ -22,8 +22,9 @@
 }
 
 @theme {
-  --font-display: "Inter", "sans-serif";
+  --font-inter: "Inter", "sans-serif";
   --color-teal: #00C4A7;
   --color-darkBlue: #003366;
+  --color-richBlue : #111827;
 }
 
