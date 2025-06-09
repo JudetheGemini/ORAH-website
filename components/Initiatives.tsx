@@ -62,7 +62,7 @@ function InitiativeCard({ initiative, index }: { initiative: (typeof initiatives
       initial={{ opacity: 0, y: 100 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
       transition={{ duration: 0.8, delay: index * 0.2 }}
-      className={`min-h-screen flex items-center justify-center px-4 ${index % 2 === 0 ? "bg-white" : "bg-gray-50"}`}
+      className={`min-h-screen flex items-center justify-center px-4 py-12 md:py-0 ${index % 2 === 0 ? "bg-white" : "bg-gray-50"}`}
     >
       <div className="max-w-6xl mx-auto">
         <div
@@ -152,7 +152,7 @@ export default function ORAHInitiatives() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="text-5xl lg:text-6xl font-inter font-bold"
+            className="text-4xl lg:text-6xl font-inter font-bold"
           >
             Our Initiatives
           </motion.h1>
@@ -161,7 +161,7 @@ export default function ORAHInitiatives() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="text-xl lg:text-2xl font-inter
+            className="text-lg lg:text-2xl font-inter
              text-gray-200 leading-relaxed max-w-3xl mx-auto"
           >
             At the Ottawa Responsible AI Hub (ORAH), we believe ethical AI should be inclusive, transparent, and
