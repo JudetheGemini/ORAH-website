@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card"
 
 export default function StatsBlock() {
   return (
-    <Card className="w-full max-w-4xl mx-auto bg-white dark:bg-gray-950">
+    <Card className="w-full bg-white dark:bg-gray-950">
       <CardContent className="p-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div className="space-y-2">
