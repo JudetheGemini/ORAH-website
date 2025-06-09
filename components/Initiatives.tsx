@@ -84,7 +84,7 @@ function InitiativeCard({ initiative, index }: { initiative: (typeof initiatives
               </span>
             </div>
 
-            <h2 className="text-4xl lg:text-5xl font-bold text-[#003366] leading-tight">{initiative.title}</h2>
+            <h2 className="text-3xl lg:text-5xl font-bold text-[#003366] leading-tight">{initiative.title}</h2>
 
             <p className="text-lg text-gray-600 leading-relaxed">{initiative.description}</p>
 

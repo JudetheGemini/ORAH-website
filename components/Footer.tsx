@@ -11,52 +11,36 @@ export default function Footer() {
               
             </Link>
           </div>
-          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-8 sm:gap-6">
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-grey uppercase dark:text-white">
+              <h2 className="mb-6 font-semibold text-grey uppercase dark:text-white">
                 Company
               </h2>
-              <ul className="text-grey text-sm">
+              <ul className="text-grey">
                 <li className="mb-4">
                   <a href="/about" className="hover:underline">
-                    About
+                    About Us
                   </a>
                 </li>
                 <li className="mb-4">
                   <a href="/events" className="hover:underline">
-                    Events
+                    Programs
                   </a>
                 </li>
                 <li>
                   <a href="/initiatives" className="hover:underline">
-                    Initiatives
+                    Events
                   </a>
                 </li>
               </ul>
             </div>
 
+        
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-grey uppercase dark:text-white">
-                Resources
-              </h2>
-              <ul className="text-grey text-sm">
-                <li className="mb-4">
-                  <a href="#" className="hover:underline">
-                    Workshops
-                  </a>
-                </li>
-                <li className="mb-4">
-                  <a href="#" className="hover:underline">
-                    Donate
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h2 className="mb-6 text-sm font-semibold text-grey uppercase dark:text-white">
+              <h2 className="mb-6 font-semibold text-grey uppercase dark:text-white">
                 Legal
               </h2>
-              <ul className="text-grey text-sm">
+              <ul className="text-grey">
                 <li className="mb-4">
                   <a href="#" className="hover:underline">
                     Privacy Policy

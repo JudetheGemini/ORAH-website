@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link';
 import { useState } from 'react';
 
 export default function NavBar() {
@@ -28,19 +29,19 @@ export default function NavBar() {
             <div className={`${isMenuOpen ? 'block' : 'hidden'} justify-between items-center w-full lg:flex lg:w-auto lg:order-1`} id="mobile-menu-2">
                 <ul className="flex flex-col font-inter mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
                     <li>
-                        <a href="#" className="block py-2 pr-4 pl-3 text-darkBlue rounded lg:bg-transparent lg:p-0 " aria-current="page">Home</a>
+                        <Link href="/" className="block py-2 pr-4 pl-3 text-darkBlue rounded lg:bg-transparent lg:p-0 " aria-current="page">Home</Link>
                     </li>
                     <li>
-                        <a href="#" className="block py-2 pr-4 pl-3 text-darkBlue rounded lg:bg-transparent lg:p-0">About Us</a>
+                        <Link href="/about" className="block py-2 pr-4 pl-3 text-darkBlue rounded lg:bg-transparent lg:p-0">About Us</Link>
                     </li>
                     <li>
-                        <a href="#" className="block py-2 pr-4 pl-3 text-darkBlue border-b border-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0">Programs</a>
+                        <Link href="/programs" className="block py-2 pr-4 pl-3 text-darkBlue border-b border-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0">Programs</Link>
                     </li>
                     <li>
-                        <a href="#" className="block py-2 pr-4 pl-3 text-darkBlue border-b border-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0">Events</a>
+                        <Link href="/events" className="block py-2 pr-4 pl-3 text-darkBlue border-b border-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0">Events</Link>
                     </li>
                     <li>
-                        <a href="#" className="block py-2 pr-4 pl-3 text-darkBlue border-b border-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0">Careers</a>
+                        <Link href="/careers" className="block py-2 pr-4 pl-3 text-darkBlue border-b border-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0">Careers</Link>
                     </li>
 
                 </ul>

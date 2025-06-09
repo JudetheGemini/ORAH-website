@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import ORAHInitiatives from "@/components/Initiatives";
+import ContactForm from "@/components/contact-form";
 
 export default function Home() {
   return (
@@ -11,11 +12,11 @@ export default function Home() {
           Leading the Future of Ethical and Responsible{" "}
           <span className="text-teal">AI in Ottawa</span>
         </span>
-        <span className="font-inter text-darkBlue text-sm sm:text-base text-center font-semibold">
+        <span className="font-inter text-darkBlue text-center">
           Creating a community dedicated to ethical AI governance, education,
           advocacy, and innovation.
         </span>
-        <button className="p-4 rounded-full text-sm sm:text-base bg-teal text-white hover:bg-darkBlue">
+        <button className="p-4 rounded-lg text-sm sm:text-base bg-teal text-white hover:bg-darkBlue">
           Join our community
         </button>
       </div>
@@ -25,6 +26,7 @@ export default function Home() {
     </div>
 
     <ORAHInitiatives />
+    <ContactForm />
     </>
   );
 }
