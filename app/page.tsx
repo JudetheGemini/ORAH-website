@@ -1,5 +1,5 @@
 import Image from "next/image";
-import StatsBlock from "@/components/stats-block";
+
 import ORAHInitiatives from "@/components/Initiatives";
 
 export default function Home() {
