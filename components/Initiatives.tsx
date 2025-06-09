@@ -62,7 +62,7 @@ function InitiativeCard({ initiative, index }: { initiative: (typeof initiatives
       initial={{ opacity: 0, y: 100 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
       transition={{ duration: 0.8, delay: index * 0.2 }}
-      className={`min-h-screen flex items-center justify-center px-4 py-12 md:py-0 ${index % 2 === 0 ? "bg-white" : "bg-gray-50"}`}
+      className={`min-h-[80vh] overflow-hidden flex items-center justify-center px-4 py-16 md:py-0 ${index % 2 === 0 ? "bg-white" : "bg-gray-50"}`}
     >
       <div className="max-w-6xl mx-auto">
         <div
@@ -186,7 +186,7 @@ export default function ORAHInitiatives() {
       ))}
 
       {/* Navigation Dots */}
-      <div className="fixed right-8 top-1/2 transform -translate-y-1/2 space-y-3 z-40">
+      {/* <div className="fixed right-8 top-1/2 transform -translate-y-1/2 space-y-3 z-40">
         {initiatives.map((_, index) => (
           <button
             key={index}
@@ -201,7 +201,7 @@ export default function ORAHInitiatives() {
             }`}
           />
         ))}
-      </div>
+      </div> */}
     </div>
   )
 }
