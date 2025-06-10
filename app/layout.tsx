@@ -211,7 +211,7 @@ export default function RootLayout({
  <link rel="icon" href="/logo.svg"></link>
       </head>
       <body
-        className={`antialiased bg-gradient-to-b from-cyan-50 via-cyan-50 to-white min-h-screen`}
+        className={`antialiased bg-gradient-to-b from-cyan-50 via-cyan-50 to-white min-h-screen overflow-x-hidden`}
       >
         <NavBar />
         {children}

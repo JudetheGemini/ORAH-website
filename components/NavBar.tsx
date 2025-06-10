@@ -12,7 +12,7 @@ export default function NavBar() {
 
   return (
     <header>
-    <nav className="border-gray-200 px-4 lg:px-6 py-2.5 mt-4">
+    <nav className="border-gray-200 px-4 lg:px-6 py-2.5 mt-4 mb-2">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
             <a href="/https://flowbite.com" className="flex items-center">
                 <img src="logo2.svg" className="mr-3 h-8 sm:h-12" alt="ORAH Logo" />
