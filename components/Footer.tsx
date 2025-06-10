@@ -11,7 +11,7 @@ export default function Footer() {
               
             </Link>
           </div>
-          <div className="grid grid-cols-2 gap-8 sm:gap-6">
+          <div className="grid grid-cols-2 gap-8 sm:gap-6 mt-12 md:mt-0">
             <div>
               <h2 className="mb-6 font-semibold text-grey uppercase dark:text-white">
                 Company
