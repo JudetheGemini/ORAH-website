@@ -124,8 +124,8 @@ export default function ContactForm() {
         </div>
 
         {/* Decorative Elements */}
-        <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#00C4A7]/10 rounded-full -z-10" />
-        <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-[#003366]/5 rounded-full -z-10" />
+        <div className="absolute hidden md:block -top-4 -right-4 w-24 h-24 bg-[#00C4A7]/10 rounded-full -z-10" />
+        <div className="absolute hidden md:block -bottom-6 -left-6 w-32 h-32 bg-[#003366]/5 rounded-full -z-10" />
       </motion.div>
     </div>
   )
