@@ -29,7 +29,7 @@ export default function NavBar() {
             <div className={`${isMenuOpen ? 'block' : 'hidden'} justify-between items-center w-full lg:flex lg:w-auto lg:order-1`} id="mobile-menu-2">
                 <ul className="flex flex-col font-inter mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
                     <li>
-                        <a onClick={toggleMenu} href="/" className="block py-2 pr-4 pl-3 text-darkBlue rounded lg:bg-transparent lg:p-0 " aria-current="page">Home</a>
+                        <Link onClick={toggleMenu} href="/" className="block py-2 pr-4 pl-3 text-darkBlue rounded lg:bg-transparent lg:p-0 " aria-current="page">Home</Link>
                     </li>
                     <li>
                         <a onClick={toggleMenu} href="/about" className="block py-2 pr-4 pl-3 text-darkBlue rounded lg:bg-transparent lg:p-0">About Us</a>
