@@ -186,7 +186,7 @@ export default function ORAHInitiatives() {
       ))}
 
       {/* Navigation Dots */}
-      <div className="fixed right-8 top-1/2 transform -translate-y-1/2 space-y-3 z-40">
+      <div className="fixed hidden right-8 top-1/2 transform -translate-y-1/2 space-y-3 z-40">
         {initiatives.map((_, index) => (
           <button
             key={index}
