@@ -26,22 +26,22 @@ export default function NavBar() {
                     <svg className={`${isMenuOpen ? 'block' : 'hidden'} w-6 h-6`} viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
                 </button>
             </div>
-            <div className={`${isMenuOpen ? 'block px-4 py-2 z-30 absolute top-[80px] bg-gradient-to-b from-cyan-50 via-cyan-50 to-white' : 'hidden'} justify-between items-center w-full lg:flex lg:w-auto lg:order-1`} id="mobile-menu-2">
-                <ul className="flex flex-col font-inter mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+            <div className={`${isMenuOpen ? 'block px-4 py-2 z-30 absolute top-[70px] bg-gradient-to-b from-cyan-50 via-cyan-50 to-white' : 'hidden'} justify-between items-center w-full lg:flex lg:w-auto lg:order-1`} id="mobile-menu-2">
+                <ul className="flex flex-col gap-2 font-inter mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
                     <li>
-                        <Link onClick={toggleMenu} href="/" className="block py-2 pr-4 pl-3 text-darkBlue rounded lg:bg-transparent lg:p-0 " aria-current="page">Home</Link>
+                        <Link onClick={toggleMenu} href="/" className="block py-2 pr-4 pl-3 text-darkBlue border-b-2 border-darkBlue rounded lg:bg-transparent lg:p-0 " aria-current="page">Home</Link>
                     </li>
                     <li>
-                        <a onClick={toggleMenu} href="/about" className="block py-2 pr-4 pl-3 text-darkBlue rounded lg:bg-transparent lg:p-0">About Us</a>
+                        <a onClick={toggleMenu} href="/about" className="block py-2 pr-4 pl-3 text-darkBlue border-b-2 border-darkBlue rounded lg:bg-transparent lg:p-0">About Us</a>
                     </li>
                     <li>
-                        <a onClick={toggleMenu} href="/programs" className="block py-2 pr-4 pl-3 text-darkBlue lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0">Programs</a>
+                        <a onClick={toggleMenu} href="/programs" className="block py-2 pr-4 pl-3 text-darkBlue border-b-2 border-darkBlue rounded lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0">Programs</a>
                     </li>
                     <li>
-                        <a onClick={toggleMenu} href="/events" className="block py-2 pr-4 pl-3 text-darkBlue lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0">Events</a>
+                        <a onClick={toggleMenu} href="/events" className="block py-2 pr-4 pl-3 text-darkBlue border-b-2 border-darkBlue rounded lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0">Events</a>
                     </li>
                     <li>
-                        <a onClick={toggleMenu} href="/blog" className="block py-2 pr-4 pl-3 text-darkBlue lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0">Blog</a>
+                        <a onClick={toggleMenu} href="/blog" className="block py-2 pr-4 pl-3 text-darkBlue border-b-2 border-darkBlue rounded lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0">Blog</a>
                     </li>
 
                 </ul>
