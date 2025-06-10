@@ -23,12 +23,12 @@ export default function Footer() {
                   </a>
                 </li>
                 <li className="mb-4">
-                  <a href="/events" className="hover:underline">
+                  <a href="/programs" className="hover:underline">
                     Programs
                   </a>
                 </li>
                 <li>
-                  <a href="/initiatives" className="hover:underline">
+                  <a href="/events" className="hover:underline">
                     Events
                   </a>
                 </li>
