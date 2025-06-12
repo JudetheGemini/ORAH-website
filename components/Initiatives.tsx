@@ -11,7 +11,7 @@ const initiatives = [
     description:
       "A digital literacy and inclusion program that helps older adults (60+) confidently engage with everyday AI—from smart health apps to voice assistants. Through hands-on workshops, hybrid learning, and trusted community partnerships, we're ensuring no one is left behind in Canada's digital future.",
     icon: Users,
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/ai_for_all_empowering_seniors.jpg",
     status: "Active",
   },
   {
@@ -20,7 +20,7 @@ const initiatives = [
     description:
       "Our annual anchor event convening policymakers, developers, academics, civic leaders, and community voices to explore the future of ethical AI. Held in Ottawa, this conference is a space to share, question, and co-create a more accountable AI ecosystem in Canada and beyond.",
     icon: Calendar,
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/ai_with_intent_conference.jpg",
     status: "Annual Event",
   },
   {
@@ -29,7 +29,7 @@ const initiatives = [
     description:
       "Our quarterly meetups bring together researchers, developers, policymakers, students, and community members to share ideas, present ongoing work, and discuss the latest developments in responsible AI. From algorithmic transparency to inclusive design, ORAT creates a welcoming space for cross-sector dialogue.",
     icon: Lightbulb,
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/orat.jpg",
     status: "Quarterly",
   },
   {
@@ -38,7 +38,7 @@ const initiatives = [
     description:
       "A civic innovation fellowship for students and young adults passionate about using AI for public good. Participants work in teams to explore responsible AI principles, design local solutions, and pitch to real-world mentors.",
     icon: GraduationCap,
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/ai_youth_changer.jpg",
     status: "Launching Spring 2026",
   },
   {
@@ -47,7 +47,7 @@ const initiatives = [
     description:
       "A collaborative platform for researchers, students, and practitioners to publish, co-design, and pilot responsible AI frameworks with real-world impact. This initiative fosters open science, interdisciplinary dialogue, and community-informed governance.",
     icon: BookOpen,
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/research.jpg",
     status: "Coming Soon",
   },
 ]
