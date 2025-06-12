@@ -16,7 +16,7 @@ const initiatives = [
   },
   {
     id: "ai-with-intent",
-    title: "AI With Intent Conference",
+    title: "Ottawa Responsible AI Summit",
     description:
       "Our annual anchor event convening policymakers, developers, academics, civic leaders, and community voices to explore the future of ethical AI. Held in Ottawa, this conference is a space to share, question, and co-create a more accountable AI ecosystem in Canada and beyond.",
     icon: Calendar,
