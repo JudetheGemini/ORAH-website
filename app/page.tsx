@@ -2,8 +2,9 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import ORAHInitiatives from "@/components/Initiatives";
+import MissionVision from "@/components/mission-and_vision";
 import ContactForm from "@/components/contact-form";
+import InitiativesSlider from "@/components/initiatives-slider";
 
 export default function Home() {
   return (
@@ -38,7 +39,8 @@ export default function Home() {
         </div>
       </motion.div>
 
-      <ORAHInitiatives />
+    <MissionVision />
+      <InitiativesSlider />
       <ContactForm />
     </>
   );
