@@ -13,14 +13,14 @@ export default function Home() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="flex flex-col items-center max-h-screen justify-center py-12 gap-6 mt-6"
+        className="flex flex-col items-center max-h-screen justify-center py-12 gap-6 mt-6 sm:mt-12"
       >
         <div className="flex flex-col items-center gap-6 px-4">
           <span className="font-inter text-darkBlue text-2xl md:text-5xl font-black max-w-5xl text-center tracking-wide leading-8 md:leading-16">
             Leading the Future of Ethical and Responsible{" "}
             <span className="text-teal">AI in Ottawa</span>
           </span>
-          <span className="font-inter text-darkBlue text-center">
+          <span className="font-inter text-darkBlue sm:text-xl text-center max-w-2xl">
             Creating a community dedicated to ethical AI governance, education,
             advocacy, and innovation.
           </span>

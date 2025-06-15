@@ -21,7 +21,7 @@ export default function MissionVision() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-[#003366] mb-6">We are Ottawa Responsible AI</h2>
+          <h2 className="text-4xl lg:text-5xl font-black text-[#003366] mb-6">We are Ottawa Responsible AI</h2>
           <div className="w-24 h-1 bg-[#00C4A7] mx-auto" />
         </motion.div>
 
