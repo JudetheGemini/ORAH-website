@@ -112,7 +112,7 @@ export default function InitiativesSlider() {
             Our Programs
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-[#003366] mb-6">Our Initiatives</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="sm:text-xl text-gray-600 max-w-3xl mx-auto">
             Discover our flagship programs driving responsible AI innovation across Ottawa and beyond
           </p>
         </motion.div>
@@ -173,7 +173,7 @@ export default function InitiativesSlider() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.4, duration: 0.5 }}
-                      className="text-lg lg:text-xl text-white/90 mb-8 leading-relaxed max-w-2xl"
+                      className="lg:text-xl text-white/90 mb-8 leading-relaxed max-w-2xl"
                     >
                       {initiatives[currentSlide].description}
                     </motion.p>
