@@ -50,10 +50,7 @@ export default function MissionVision() {
 
               {/* Content */}
               <p className="text-gray-700 leading-relaxed sm:text-lg mb-6">
-                ORAH is committed to fostering responsible AI practices through education, dialogue, advocacy, and
-                recognition of best practices across sectors. The initiative seeks to drive discussions on AI ethics,
-                data governance, and privacy while influencing policy and creating a network of stakeholders dedicated
-                to responsible AI.
+                Our mission is to inspire and support the creation of 500 responsible tech innovations in Ottawa over the next 10 years. Through community-led hackathons, collaborative research, open-source initiatives, ethical design practices, and our flagship yearly conference, we are building a thriving ecosystem where AI serves humanity with transparency, fairness, and integrity.
               </p>
 
           
@@ -89,7 +86,7 @@ export default function MissionVision() {
 
               {/* Content */}
               <p className="text-gray-100 leading-relaxed sm:text-lg mb-6 relative z-10">
-                To make Ottawa a global leader in responsible AI development, governance, and advocacy.
+                We envision Ottawa as a global leader in responsible AI innovation, where technology advances the public good and empowers every community.
               </p>
 
           

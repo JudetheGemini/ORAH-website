@@ -128,7 +128,7 @@ export default function TheoryOfChangePage() {
     "Launch an open innovation platform for responsible AI projects",
     "Provide seed funding, mentorship, and visibility to promising innovators",
     "Advocate for policy frameworks supporting responsible AI development",
-    'Host an annual flagship conference ("AI With Intent: Governing Intelligence for Public Good")',
+    'Host an annual flagship conference ("AI With Intent: Governing Intelligence for Public Good") to showcase innovations, promote dialogue, and strengthen partnerships',
   ]
 
   const outputs = [
