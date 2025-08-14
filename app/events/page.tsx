@@ -1,18 +1,19 @@
+"use client"
 
 import { motion } from "framer-motion"
 import { Calendar, Filter, Search } from "lucide-react"
 import { useState } from "react"
 import EventCard, { type EventData } from "@/components/event-card"
-import { Metadata } from "next"
+// import { Metadata } from "next"
 
-export const metadata: Metadata = {
-  title: "Events - Ottawa Responsible AI Hub",
-  description: "Join ORAH's workshops, conferences, and community gatherings focused on responsible AI practices and education in Ottawa.",
-  openGraph: {
-    title: "Events - Ottawa Responsible AI Hub",
-    description: "Join ORAH's workshops, conferences, and community gatherings focused on responsible AI practices and education in Ottawa.",
-  },
-}
+// export const metadata: Metadata = {
+//   title: "Events - Ottawa Responsible AI Hub",
+//   description: "Join ORAH's workshops, conferences, and community gatherings focused on responsible AI practices and education in Ottawa.",
+//   openGraph: {
+//     title: "Events - Ottawa Responsible AI Hub",
+//     description: "Join ORAH's workshops, conferences, and community gatherings focused on responsible AI practices and education in Ottawa.",
+//   },
+// }
 
 // Sample events data - this would typically come from a CMS or API
 const eventsData: EventData[] = [
