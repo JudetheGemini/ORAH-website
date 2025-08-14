@@ -1,0 +1,16 @@
+{
+  "name": "Ottawa Responsible AI Hub",
+  "short_name": "ORAH",
+  "description": "ORAH is a community-driven initiative to promote responsible AI practices in Ottawa.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ecfeff",
+  "theme_color": "#0891b2",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

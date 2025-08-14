@@ -1,8 +1,16 @@
-"use client"
-
 import { motion } from "framer-motion"
 import { ChevronRight, Globe, Shield, Users, Lightbulb, Code } from "lucide-react"
 import Image from "next/image"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "About ORAH - Ottawa Responsible AI Hub",
+  description: "Learn about ORAH's mission to make Ottawa a global leader in responsible AI development, governance, and advocacy through education and collaboration.",
+  openGraph: {
+    title: "About ORAH - Ottawa Responsible AI Hub",
+    description: "Learn about ORAH's mission to make Ottawa a global leader in responsible AI development, governance, and advocacy through education and collaboration.",
+  },
+}
 
 export default function AboutPage() {
   return (

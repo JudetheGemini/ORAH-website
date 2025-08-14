@@ -1,8 +1,18 @@
 "use client"
 
 import type React from "react"
+import { Metadata } from "next"
 
 import { motion } from "framer-motion"
+
+export const metadata: Metadata = {
+  title: "Theory of Change - Ottawa Responsible AI Hub",
+  description: "Discover ORAH's comprehensive framework for building responsible AI solutions through strategic inputs, activities, and measurable outcomes.",
+  openGraph: {
+    title: "Theory of Change - Ottawa Responsible AI Hub",
+    description: "Discover ORAH's comprehensive framework for building responsible AI solutions through strategic inputs, activities, and measurable outcomes.",
+  },
+}
 import {
   Target,
   Users,

@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Calendar, MapPin, Globe, ArrowRight } from "lucide-react"
+import { Calendar, MapPin, Globe, ArrowRight, Users } from "lucide-react"
 import Link from "next/link"
 
 export interface EventData {
@@ -13,6 +13,7 @@ export interface EventData {
   time?: string
   location: string
   venue?: string
+  host?: string
   website?: string
   registrationUrl?: string
   image?: string
@@ -37,68 +38,76 @@ export default function EventCard({ event, variant = "default" }: EventCardProps
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
       whileHover={{ y: -5 }}
-      className={`group relative overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 ${
+      className={`group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 ${
         isFeatured ? "lg:col-span-2" : ""
       }`}
     >
-      {/* Background Image or Gradient */}
-      <div className="absolute inset-0">
-        {event.image ? (
-          <img src={event.image || "/placeholder.svg"} alt={event.title} className="w-full h-full object-cover" />
-        ) : (
-          <div className="w-full h-full bg-gradient-to-br from-[#003366] via-[#003366]/95 to-[#00C4A7]/80" />
-        )}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-      </div>
+      {/* Image Section */}
+      {event.image && (
+        <div className={`relative overflow-hidden ${isFeatured ? "h-64 lg:h-80" : "h-48"}`}>
+          <img
+            src={event.image || "/placeholder.svg"}
+            alt={event.title}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
 
-      {/* Tech Pattern Overlay */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-0 w-full h-full">
-          {[...Array(15)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute bg-white"
-              style={{
-                width: Math.random() * 50 + 20 + "px",
-                height: "1px",
-                top: Math.random() * 100 + "%",
-                left: Math.random() * 100 + "%",
-                opacity: Math.random() * 0.3 + 0.1,
-                transform: `rotate(${Math.random() * 360}deg)`,
-              }}
-            />
-          ))}
-        </div>
-      </div>
-
-      {/* Content */}
-      <div
-        className={`relative z-10 p-6 lg:p-8 text-white h-full flex flex-col ${isCompact ? "min-h-[300px]" : "min-h-[400px]"}`}
-      >
-        {/* Status Badge */}
-        <div className="flex items-center justify-between mb-4">
-          <span
-            className={`px-3 py-1 rounded-full text-xs font-medium ${
-              event.status === "upcoming"
-                ? "bg-[#00C4A7]/20 text-[#00C4A7] border border-[#00C4A7]/30"
-                : event.status === "ongoing"
-                  ? "bg-green-500/20 text-green-400 border border-green-500/30"
-                  : "bg-gray-500/20 text-gray-300 border border-gray-500/30"
-            }`}
-          >
-            {event.status.charAt(0).toUpperCase() + event.status.slice(1)}
-          </span>
-          {isFeatured && (
-            <span className="px-3 py-1 bg-[#00C4A7]/20 text-[#00C4A7] border border-[#00C4A7]/30 rounded-full text-xs font-medium">
-              Featured Event
+          {/* Status Badge on Image */}
+          <div className="absolute top-4 left-4">
+            <span
+              className={`px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm ${
+                event.status === "upcoming"
+                  ? "bg-[#00C4A7]/90 text-white"
+                  : event.status === "ongoing"
+                    ? "bg-green-500/90 text-white"
+                    : "bg-gray-500/90 text-white"
+              }`}
+            >
+              {event.status.charAt(0).toUpperCase() + event.status.slice(1)}
             </span>
+          </div>
+
+          {/* Featured Badge */}
+          {isFeatured && (
+            <div className="absolute top-4 right-4">
+              <span className="px-3 py-1 bg-[#00C4A7]/90 text-white backdrop-blur-sm rounded-full text-xs font-medium">
+                Featured Event
+              </span>
+            </div>
           )}
         </div>
+      )}
+
+      {/* Content Section */}
+      <div className={`p-6 lg:p-8 ${isCompact ? "min-h-[200px]" : ""}`}>
+        {/* Status Badge (when no image) */}
+        {!event.image && (
+          <div className="flex items-center justify-between mb-4">
+            <span
+              className={`px-3 py-1 rounded-full text-xs font-medium ${
+                event.status === "upcoming"
+                  ? "bg-[#00C4A7]/10 text-[#00C4A7] border border-[#00C4A7]/30"
+                  : event.status === "ongoing"
+                    ? "bg-green-500/10 text-green-600 border border-green-500/30"
+                    : "bg-gray-500/10 text-gray-600 border border-gray-500/30"
+              }`}
+            >
+              {event.status.charAt(0).toUpperCase() + event.status.slice(1)}
+            </span>
+            {isFeatured && (
+              <span className="px-3 py-1 bg-[#00C4A7]/10 text-[#00C4A7] border border-[#00C4A7]/30 rounded-full text-xs font-medium">
+                Featured Event
+              </span>
+            )}
+          </div>
+        )}
 
         {/* Event Title */}
         <div className="mb-4">
           <h3
-            className={`font-bold text-white leading-tight mb-2 ${isFeatured ? "text-3xl lg:text-4xl" : "text-xl lg:text-2xl"}`}
+            className={`font-bold text-[#003366] leading-tight mb-2 ${
+              isFeatured ? "text-2xl lg:text-3xl" : "text-xl lg:text-2xl"
+            }`}
           >
             {event.title}
           </h3>
@@ -108,24 +117,38 @@ export default function EventCard({ event, variant = "default" }: EventCardProps
         </div>
 
         {/* Description */}
-        <p className={`text-gray-200 leading-relaxed mb-6 flex-grow ${isFeatured ? "text-lg" : "text-base"}`}>
+        <p className={`text-gray-700 leading-relaxed mb-6 ${isFeatured ? "text-lg" : "text-base"}`}>
           {event.description}
         </p>
 
         {/* Event Details */}
         <div className="space-y-3 mb-6">
-          <div className="flex items-center text-gray-200">
+          <div className="flex items-center text-gray-700">
             <Calendar className="w-5 h-5 text-[#00C4A7] mr-3 flex-shrink-0" />
             <span className="font-medium">{event.date}</span>
-            {event.time && <span className="ml-2 text-gray-300">• {event.time}</span>}
+            {event.time && <span className="ml-2 text-gray-500">• {event.time}</span>}
           </div>
-          <div className="flex items-center text-gray-200">
-            <MapPin className="w-5 h-5 text-[#00C4A7] mr-3 flex-shrink-0" />
-            <span>{event.location}</span>
-            {event.venue && <span className="ml-2 text-gray-300">• {event.venue}</span>}
+
+          <div className="flex items-start text-gray-700">
+            <MapPin className="w-5 h-5 text-[#00C4A7] mr-3 flex-shrink-0 mt-0.5" />
+            <div>
+              <span>{event.location}</span>
+              {event.venue && <div className="text-gray-500 text-sm mt-1">{event.venue}</div>}
+            </div>
           </div>
+
+          {event.host && (
+            <div className="flex items-start text-gray-700">
+              <Users className="w-5 h-5 text-[#00C4A7] mr-3 flex-shrink-0 mt-0.5" />
+              <div>
+                <span className="font-medium text-[#00C4A7]">Host: </span>
+                <span>{event.host}</span>
+              </div>
+            </div>
+          )}
+
           {event.website && (
-            <div className="flex items-center text-gray-200">
+            <div className="flex items-center text-gray-700">
               <Globe className="w-5 h-5 text-[#00C4A7] mr-3 flex-shrink-0" />
               <a
                 href={event.website}
@@ -145,7 +168,7 @@ export default function EventCard({ event, variant = "default" }: EventCardProps
             {event.tags.map((tag, index) => (
               <span
                 key={index}
-                className="px-2 py-1 bg-white/10 backdrop-blur-sm text-white text-xs rounded-full border border-white/20"
+                className="px-3 py-1 bg-[#00C4A7]/10 text-[#00C4A7] text-xs font-medium rounded-full border border-[#00C4A7]/20"
               >
                 {tag}
               </span>
@@ -154,13 +177,13 @@ export default function EventCard({ event, variant = "default" }: EventCardProps
         )}
 
         {/* Action Buttons */}
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-3 pt-4 border-t border-gray-100">
           {event.registrationUrl && (
             <Link href={event.registrationUrl}>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center px-6 py-3 bg-[#00C4A7] text-white font-semibold rounded-lg hover:bg-[#00C4A7]/90 transition-colors"
+                className="inline-flex items-center px-6 py-3 bg-[#00C4A7] text-white font-semibold rounded-lg hover:bg-[#00C4A7]/90 transition-colors shadow-md"
               >
                 Register Now
                 <ArrowRight className="ml-2 w-4 h-4" />
@@ -170,9 +193,10 @@ export default function EventCard({ event, variant = "default" }: EventCardProps
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-lg hover:bg-white/20 transition-colors border border-white/20"
+            className="inline-flex items-center px-6 py-3 bg-white text-[#003366] font-semibold rounded-lg hover:bg-gray-50 transition-colors border-2 border-gray-200"
           >
-            Learn More
+            <Link href={`${event.website}`}>Learn More</Link>
+  
           </motion.button>
         </div>
       </div>
