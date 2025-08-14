@@ -117,7 +117,7 @@ export default function EventsPage() {
               {["all", "upcoming", "past"].map((filterOption) => (
                 <button
                   key={filterOption}
-                  onClick={() => setFilter(filterOption as any)}
+                  onClick={() => setFilter(filterOption as "all" | "upcoming" | "past")}
                   className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                     filter === filterOption ? "bg-[#00C4A7] text-white" : "bg-white text-gray-600 hover:bg-gray-100"
                   }`}
