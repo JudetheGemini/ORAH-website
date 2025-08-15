@@ -65,5 +65,5 @@ export const defaultMetadata: Metadata = {
     apple: '/logo.svg',
   },
   manifest: '/manifest.json',
-  themeColor: '#E5E7EB',
+  themeColor: '#ecfeff',
 }
