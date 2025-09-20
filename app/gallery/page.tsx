@@ -9,9 +9,9 @@ import { X, ChevronLeft, ChevronRight, Calendar, MapPin, Users, Camera, Download
 const galleryData = [
   {
     eventId: "orat-q3-2024",
-    eventTitle: "Ottawa Responsible AI Talks - Q3 2024",
+    eventTitle: "Ottawa Responsible AI Talks - Q3 2025",
     eventSubtitle: "Responsible AI in Practice: Community Voices, Meaningful Impact",
-    date: "September 4, 2024",
+    date: "September 4, 2025",
     location: "Community Resource Center",
     attendees: '100+',
     photographer: "ORAH Media Team",
