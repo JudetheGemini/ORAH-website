@@ -31,7 +31,7 @@ export default function Home() {
         </div>
         <div className="rounded-md px-4 max-w-4xl ">
           <Image
-            className="rounded-xl  hidden md:block"
+            className="rounded-xl"
             src="/newHero.jpg"
             alt=""
             width={700}
