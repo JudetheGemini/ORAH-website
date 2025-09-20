@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
 import { useState } from "react"
-import { X, ChevronLeft, ChevronRight, Calendar, MapPin, Users, Camera, Download, Share2 } from "lucide-react"
+import { X, ChevronLeft, ChevronRight, Calendar, MapPin, Users, Camera} from "lucide-react"
 
 // Gallery data structure - easily extensible for multiple events
 const galleryData = [
