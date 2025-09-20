@@ -31,7 +31,7 @@ const eventsData: EventData[] = [
     website: "https://talks.responsibleaiottawa.ca",
     registrationUrl: "https://www.eventbrite.com/e/ottawa-responsible-ai-talks-tickets-1519890125279?aff=oddtdtcreator",
     image: "/oratposter.jpg", // Placeholder - replace with actual event image
-    status: "upcoming",
+    status: "past",
     featured: true,
     tags: ["ORAT", "Community", "Practice", "Impact", "Discussion"],
   },

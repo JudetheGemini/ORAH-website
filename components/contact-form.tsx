@@ -10,7 +10,7 @@ export default function ContactForm() {
   const [state, action, isPending] = useActionState(submitContactForm, null)
 
   return (
-    <div className="relative z-10 px-4 my-12">
+    <div className="relative z-10 px-4 my-12" id="contact">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}

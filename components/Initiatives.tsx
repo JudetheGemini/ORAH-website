@@ -11,7 +11,7 @@ const initiatives = [
     description:
       "A digital literacy and inclusion program that helps older adults (60+) confidently engage with everyday AI—from smart health apps to voice assistants. Through hands-on workshops, hybrid learning, and trusted community partnerships, we're ensuring no one is left behind in Canada's digital future.",
     icon: Users,
-    image: "/ai_for_all_empowering_seniors.jpg",
+    image: "/newSeniors.jpg",
     status: "Active",
   },
   {
@@ -29,7 +29,7 @@ const initiatives = [
     description:
       "Our quarterly meetups bring together researchers, developers, policymakers, students, and community members to share ideas, present ongoing work, and discuss the latest developments in responsible AI. From algorithmic transparency to inclusive design, ORAT creates a welcoming space for cross-sector dialogue.",
     icon: Lightbulb,
-    image: "/orat.jpg",
+    image: "/newOrat.jpg",
     status: "Quarterly",
   },
   {
@@ -88,13 +88,13 @@ function InitiativeCard({ initiative, index }: { initiative: (typeof initiatives
 
             <p className="text-lg text-gray-600 leading-relaxed">{initiative.description}</p>
 
-            <motion.button
+            {/* <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center px-6 py-3 bg-[#00C4A7] text-white font-semibold rounded-lg hover:bg-[#00C4A7]/90 transition-colors"
             >
               Learn More
-            </motion.button>
+            </motion.button> */}
           </motion.div>
 
           {/* Image */}

@@ -221,13 +221,13 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="relative"
+              className="relative "
             >
               <div className="aspect-auto max-w-md mx-auto relative">
                 <Image 
-                  src="/aimind.jpg" 
+                  src="/newInitiative.jpg" 
                   alt="Tech visualization"
-                  width={800}
+                  width={1000}
                   height={800}
                   className="w-full h-full object-cover rounded-md"
                 />
