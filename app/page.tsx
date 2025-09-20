@@ -29,7 +29,7 @@ export default function Home() {
             Join our community
           </button>
         </div>
-        <div className="rounded-md max-w-4xl ">
+        <div className="rounded-md px-4 max-w-4xl ">
           <Image
             className="rounded-xl  hidden md:block"
             src="/newHero.jpg"
