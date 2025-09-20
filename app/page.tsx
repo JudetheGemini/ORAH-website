@@ -25,24 +25,17 @@ export default function Home() {
             Creating a community dedicated to ethical AI governance, education,
             advocacy, and innovation.
           </span>
-          <button className="p-4 rounded-lg text-sm sm:text-base bg-teal text-white hover:bg-darkBlue">
+          <button className="p-4 rounded-lg text-sm sm:text-base cursor-pointer bg-teal text-white hover:bg-darkBlue">
             Join our community
           </button>
         </div>
-        <div className="grid grid-cols-1 rounded-md max-w-4xl md:grid-cols-2 gap-6 md:gap-4">
+        <div className="rounded-md max-w-4xl ">
           <Image
             className="rounded-xl  hidden md:block"
-            src="/orat/orat-event-15.jpg"
+            src="/newHero.jpg"
             alt=""
             width={700}
-            height={500}
-          />
-          <Image
-            className="rounded-xl "
-            src="/orat/orat-event-17.jpg"
-            alt=""
-            width={700}
-            height={500}
+            height={400}
           />
         </div>
       </motion.div>
