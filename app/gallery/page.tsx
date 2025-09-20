@@ -448,14 +448,14 @@ export default function GalleryPage() {
                       <p>{currentImageData.event.eventTitle}</p>
                       <p>Photo by {currentImageData.event.photographer}</p>
                     </div>
-                    <div className="flex gap-2">
+                    {/* <div className="flex gap-2">
                       <button className="p-2 bg-white/20 rounded-full hover:bg-white/30 transition-colors">
                         <Download className="w-4 h-4" />
                       </button>
                       <button className="p-2 bg-white/20 rounded-full hover:bg-white/30 transition-colors">
                         <Share2 className="w-4 h-4" />
                       </button>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               )}
