@@ -29,16 +29,16 @@ export default function Home() {
             Join our community
           </button>
         </div>
-        <div className="grid grid-cols-1 rounded-md max-w-4xl md:grid-cols-2 gap-6 md:gap-2">
+        <div className="grid grid-cols-1 rounded-md max-w-4xl md:grid-cols-2 gap-6 md:gap-4">
           <Image
-            className="rounded-xl px-4 hidden md:block"
+            className="rounded-xl  hidden md:block"
             src="/orat/orat-event-15.jpg"
             alt=""
             width={700}
             height={500}
           />
           <Image
-            className="rounded-xl px-4"
+            className="rounded-xl "
             src="/orat/orat-event-17.jpg"
             alt=""
             width={700}
