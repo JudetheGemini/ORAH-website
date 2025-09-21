@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { ChevronRight, Globe, Shield, Users, Lightbulb, Code } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function AboutPage() {
   return (
@@ -310,14 +311,6 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center px-6 py-3 mt-4 bg-[#003366] text-white font-semibold rounded-lg hover:bg-[#003366]/90 transition-colors"
-              >
-                Join Our Community
-                <ChevronRight className="ml-2 w-5 h-5" />
-              </motion.button>
             </motion.div>
           </div>
         </div>
@@ -358,20 +351,16 @@ export default function AboutPage() {
               researchers, and advocates.
             </p>
             <div className="flex flex-wrap justify-center gap-4 pt-4">
+              <Link target="_blank" href="https://join.slack.com/t/ottawarespons-ocm1166/shared_invite/zt-3dq79ru0n-9DVA_wJVCxNT74zC9NgG4g">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-[#00C4A7] text-white font-semibold rounded-lg hover:bg-[#00C4A7]/90 transition-colors"
+                className="inline-flex items-center px-6 py-3 mt-4 bg-white text-darkBlue font-semibold rounded-lg hover:bg-darkBlue/40 transition-colors"
               >
-                Get Involved
+                Join Our Community
+                <ChevronRight className="ml-2 w-5 h-5" />
               </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white text-[#003366] font-semibold rounded-lg hover:bg-gray-100 transition-colors"
-              >
-                Learn More
-              </motion.button>
+              </Link>
             </div>
           </motion.div>
         </div>
