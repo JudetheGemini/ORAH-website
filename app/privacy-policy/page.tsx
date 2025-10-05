@@ -128,7 +128,7 @@ export default function PrivacyPolicyPage() {
           >
             <h2 className="text-2xl font-bold text-[#003366] mb-6">Table of Contents</h2>
             <div className="grid md:grid-cols-2 gap-3">
-              {sections.map((section, index) => (
+              {sections.map((section) => (
                 <a
                   key={section.id}
                   href={`#${section.id}`}
