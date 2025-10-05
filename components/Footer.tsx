@@ -42,13 +42,18 @@ export default function Footer() {
               </h2>
               <ul className="text-grey">
                 <li className="mb-4">
-                  <a href="#" className="hover:underline">
+                  <a href="/privacy-policy" className="hover:underline">
                     Privacy Policy
                   </a>
                 </li>
                 <li className="mb-4">
-                  <a href="#" className="hover:underline">
+                  <a href="/terms" className="hover:underline">
                     Terms &amp; Conditions
+                  </a>
+                </li>
+                 <li className="mb-4">
+                  <a href="/legal-notice" className="hover:underline">
+                    Legal Notice
                   </a>
                 </li>
               </ul>
