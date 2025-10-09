@@ -17,25 +17,7 @@ import EventCard, { type EventData } from "@/components/event-card"
 
 // Sample events data - this would typically come from a CMS or API
 const eventsData: EventData[] = [
-  {
-    id: "orat-sept-2025",
-    title: "Ottawa Responsible AI Talks",
-    subtitle: "Responsible AI in Practice: Community Voices, Meaningful Impact",
-    description:
-      "Join us for an engaging discussion on how responsible AI practices are being implemented in real-world scenarios, featuring community voices and exploring meaningful impact across various sectors.",
-    date: "Thursday, September 4th, 2025",
-    time: "5:00 PM - 7:30 PM EST",
-    location: "Ottawa, Canada",
-    venue: "Rideau-Rockcliffe Community Resource Centre (815 St. Laurent Blvd)",
-    host: "Oluwadara Adekunle, Board Member Ottawa Responsible AI Hub/CEO Farmties",
-    website: "https://talks.responsibleaiottawa.ca",
-    registrationUrl: "https://www.eventbrite.com/e/ottawa-responsible-ai-talks-tickets-1519890125279?aff=oddtdtcreator",
-    image: "/oratposter.jpg", // Placeholder - replace with actual event image
-    status: "past",
-    featured: true,
-    tags: ["ORAT", "Community", "Practice", "Impact", "Discussion"],
-  },
-  {
+   {
     id: "orat-november-2025",
     title: "Ottawa Responsible AI Summit",
     subtitle: "Governing Data and AI for Equity and Public Good",
@@ -53,6 +35,24 @@ const eventsData: EventData[] = [
     featured: true,
     tags: ["ORAS", "Governance", "AI", "Impact", "Discussion"],
   },
+  {
+    id: "orat-sept-2025",
+    title: "Ottawa Responsible AI Talks",
+    subtitle: "Responsible AI in Practice: Community Voices, Meaningful Impact",
+    description:
+      "Join us for an engaging discussion on how responsible AI practices are being implemented in real-world scenarios, featuring community voices and exploring meaningful impact across various sectors.",
+    date: "Thursday, September 4th, 2025",
+    time: "5:00 PM - 7:30 PM EST",
+    location: "Ottawa, Canada",
+    venue: "Rideau-Rockcliffe Community Resource Centre (815 St. Laurent Blvd)",
+    host: "Oluwadara Adekunle, Board Member Ottawa Responsible AI Hub/CEO Farmties",
+    website: "https://talks.responsibleaiottawa.ca",
+    registrationUrl: "https://www.eventbrite.com/e/ottawa-responsible-ai-talks-tickets-1519890125279?aff=oddtdtcreator",
+    image: "/oratposter.jpg", // Placeholder - replace with actual event image
+    status: "past",
+    featured: true,
+    tags: ["ORAT", "Community", "Practice", "Impact", "Discussion"],
+  }
 ]
 
 export default function EventsPage() {
