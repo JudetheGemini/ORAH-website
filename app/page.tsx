@@ -50,7 +50,7 @@ export default function Home() {
             </motion.p>
 
             {/* CTA Button */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.6 }}
@@ -73,7 +73,7 @@ export default function Home() {
                 
               </motion.button>
               </Link>
-            </motion.div>
+            </motion.div> */}
 
             {/* Decorative Elements */}
             <motion.div
