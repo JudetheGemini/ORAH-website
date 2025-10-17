@@ -42,13 +42,18 @@ export default function Footer() {
               </h2>
               <ul className="text-grey">
                 <li className="mb-4">
-                  <a href="#" className="hover:underline">
+                  <a href="/privacy-policy" className="hover:underline">
                     Privacy Policy
                   </a>
                 </li>
                 <li className="mb-4">
-                  <a href="#" className="hover:underline">
+                  <a href="/terms" className="hover:underline">
                     Terms &amp; Conditions
+                  </a>
+                </li>
+                 <li className="mb-4">
+                  <a href="/legal-notice" className="hover:underline">
+                    Legal Notice
                   </a>
                 </li>
               </ul>
@@ -69,14 +74,14 @@ export default function Footer() {
           </span>
           <div className="flex mt-4 sm:justify-center sm:mt-0">
             <a
-              href="https://youtube.com/channel/OttawaResponsibleAIHub"
+              href="https://youtube.com/@OttawaResponsibleAIHub"
               className="text-white hover:text-gray-900 dark:hover:text-white"
             >
               <img src="/youtube.svg" className="w-5 h-5" alt="Youtube Logo" />
               <span className="sr-only">Youtube</span>
             </a>
             <a
-              href="https://instagram.com/ottawaresaihub"
+              href="https://instagram.com/responsibleaiottawa"
               className="text-white hover:text-gray-900 dark:hover:text-white ms-5"
             >
               <img
@@ -87,7 +92,7 @@ export default function Footer() {
               <span className="sr-only">Instagram community</span>
             </a>
             <a
-              href="https://x.com/AIOttawa"
+              href="https://x.com/OttawaResAIHub"
               className="text-white hover:text-gray-900 dark:hover:text-white ms-5"
             >
               <svg

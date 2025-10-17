@@ -17,6 +17,24 @@ import EventCard, { type EventData } from "@/components/event-card"
 
 // Sample events data - this would typically come from a CMS or API
 const eventsData: EventData[] = [
+   {
+    id: "orat-november-2025",
+    title: "Ottawa Responsible AI Summit",
+    subtitle: "Governing Data and AI for Equity and Public Good",
+    description:
+      "Our goal is to connect global expertise with local action, ensuring that the future of AI reflects fairness, transparency, and community impact.",
+    date: "Wednesday, November 19th, 2025",
+    time: "8:30 AM",
+    location: "Ottawa, Canada",
+    venue: "BayView Yards, Ottawa",
+    host: "TBA",
+    website: "https://summit.responsibleaiottawa.ca",
+    registrationUrl: "https://luma.com/bu421tiw",
+    image: "/summit.jpg", // Placeholder - replace with actual event image
+    status: "upcoming",
+    featured: true,
+    tags: ["ORAS", "Governance", "AI", "Impact", "Discussion"],
+  },
   {
     id: "orat-sept-2025",
     title: "Ottawa Responsible AI Talks",
@@ -34,7 +52,7 @@ const eventsData: EventData[] = [
     status: "past",
     featured: true,
     tags: ["ORAT", "Community", "Practice", "Impact", "Discussion"],
-  },
+  }
 ]
 
 export default function EventsPage() {
