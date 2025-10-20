@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Linkedin, Mail, Users, Award, Link } from "lucide-react"
+import { Linkedin, Mail, Users, Award } from "lucide-react"
 import Link from "next/link"
 
 interface AdvisoryMember {
