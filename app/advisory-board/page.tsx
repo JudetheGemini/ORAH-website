@@ -1,7 +1,8 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Linkedin, Mail, Users, Award } from "lucide-react"
+import { Linkedin, Mail, Users, Award, Link } from "lucide-react"
+import Link from "next/link"
 
 interface AdvisoryMember {
   id: number
@@ -60,7 +61,7 @@ const advisoryMembers: AdvisoryMember[] = [
     name: "Dr. Luc Lalande",
     title: "Innovator-in-Residence",
     organization: "Rideau-Rockcliffe Community Resource Centre",
-    bio: "Luc Lalande is an educator, mentor, community innovation practitioner and civic entrepreneur with extensive experience in academic-industry-government sectors. He specializes in the design of place-based programs that build innovation capacity for communities in both rural and urban regions. As Innovator-in-Residence at the Rideau-Rockcliffe Community Resource Centre he has introduced award-winning use cases for creatively applying generative AI tools in the centre's program for seniors.",
+    bio: "Luc Lalande is an educator, mentor, community innovation practitioner and civic entrepreneur with extensive experience in academic-industry-government sectors. He specializes in the design of place-based programs that build innovation capacity for communities in both rural and urban regions. As Innovator-in-Residence at the Rideau-Rockcliffe Community Resource Centre he has introduced award-winning use cases for creatively applying generative AI tools in the centre&apos;s program for seniors.",
     image: "/luc-lalande.jpeg",
     linkedin: "https://www.linkedin.com/in/luclalande/",
     expertise: ["Privacy Preservation", "Federated Learning", "Data Security", "Research"],
@@ -214,7 +215,7 @@ export default function AdvisoryBoardPage() {
 
             <h1 className="text-4xl lg:text-6xl font-bold mb-6">Advisory Board</h1>
             <p className="text-xl lg:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
-              Meet the leaders, researchers, and practitioners guiding ORAH's mission to advance responsible
+              Meet the leaders, researchers, and practitioners guiding ORAH&apos;s mission to advance responsible
               AI in Ottawa and beyond.
             </p>
           </motion.div>
@@ -240,7 +241,7 @@ export default function AdvisoryBoardPage() {
             <p className="text-lg text-gray-700 leading-relaxed">
               Our advisory board brings together thought leaders from academia, industry, government, and civil society.
               With backgrounds spanning AI ethics, policy, community engagement, and technical innovation, they guide
-              ORAH's strategic direction and ensure our work reflects the values of responsible AI development.
+              ORAH&apos;s strategic direction and ensure our work reflects the values of responsible AI development.
             </p>
           </motion.div>
         </div>
@@ -284,7 +285,7 @@ export default function AdvisoryBoardPage() {
                 </div>
                 <h3 className="text-xl font-bold text-[#003366] mb-2">Strategic Direction</h3>
                 <p className="text-gray-700">
-                  Advisory members shape ORAH's priorities, ensuring our initiatives address the most pressing
+                  Advisory members shape ORAH&apos;s priorities, ensuring our initiatives address the most pressing
                   challenges in responsible AI.
                 </p>
               </div>
@@ -305,7 +306,7 @@ export default function AdvisoryBoardPage() {
                 </div>
                 <h3 className="text-xl font-bold text-[#003366] mb-2">Expert Guidance</h3>
                 <p className="text-gray-700">
-                  Their knowledge and experience ensure ORAH's work is grounded in the latest research and best
+                  Their knowledge and experience ensure ORAH&apos;s work is grounded in the latest research and best
                   practices.
                 </p>
               </div>
@@ -327,16 +328,16 @@ export default function AdvisoryBoardPage() {
             <Users className="w-16 h-16 mx-auto mb-6 text-[#00C4A7]" />
             <h2 className="text-3xl lg:text-4xl font-bold mb-6">Join Our Community</h2>
             <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Interested in becoming part of ORAH's mission? Whether you want to volunteer, sponsor an event, or
-              collaborate on research, we'd love to hear from you.
+              Interested in becoming part of ORAH&apos;s mission? Whether you want to volunteer, sponsor an event, or
+              collaborate on research, we&apos;d love to hear from you.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <a
+              <Link
                 href="/#contact"
                 className="inline-flex items-center px-8 py-4 bg-[#00C4A7] text-white font-semibold rounded-lg hover:bg-[#00C4A7]/90 transition-colors"
               >
                 Get Involved
-              </a>
+              </Link>
               <a
                 href="https://www.linkedin.com/company/ottawa-responsible-ai-hub/"
                 target="_blank"
