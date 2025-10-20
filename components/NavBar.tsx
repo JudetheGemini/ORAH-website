@@ -41,6 +41,9 @@ export default function NavBar() {
                         <a onClick={toggleMenu} href="/programs" className="block py-2 pr-4 pl-3 text-darkBlue border-b border-gray-50 rounded lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0">Programs</a>
                     </li>
                     <li>
+                        <a onClick={toggleMenu} href="/advisory-board" className="block py-2 pr-4 pl-3 text-darkBlue border-b border-gray-50 rounded lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0">Advisory Board</a>
+                    </li>
+                    <li>
                         <a onClick={toggleMenu} href="/events" className="block py-2 pr-4 pl-3 text-darkBlue border-b border-gray-50 rounded lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0">Events</a>
                     </li>
                     <li>
