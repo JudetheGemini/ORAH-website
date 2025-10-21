@@ -41,7 +41,7 @@ const advisoryMembers: AdvisoryMember[] = [
     name: "Kendra Cooke",
     title: "Advisory Board Member",
     organization: "SYPartners",
-    bio: "Aisha is passionate about ensuring AI development includes diverse community voices. She has worked extensively with marginalized communities to center their perspectives in technology policy and innovation.",
+    bio: "Kendra is passionate about ensuring AI development includes diverse community voices. She has worked extensively with marginalized communities to center their perspectives in technology policy and innovation.",
     image: "/kendra.jpeg",
     linkedin: "https://www.linkedin.com/in/kendra-cooke-0bba581/",
     expertise: ["Community Engagement", "Equity", "Accessibility", "Civic Tech"],
