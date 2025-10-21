@@ -28,7 +28,7 @@ const advisoryMembers: AdvisoryMember[] = [
   },
   {
     id: 2,
-    name: "Jake Okechukwu Effoduh",
+    name: "Jake Okechukwu Effoduh PhD",
     title: "Advisory Board Member",
     organization: "Lincoln Alexander School of Law",
     bio: "Experienced lawyer with expertise in human rights, tech, and artificial intelligence. Demonstrated history of working across various national, regional, and international institutions.",
@@ -58,7 +58,7 @@ const advisoryMembers: AdvisoryMember[] = [
   },
   {
     id: 5,
-    name: "Dr. Luc Lalande",
+    name: "Luc Lalande",
     title: "Innovator-in-Residence",
     organization: "Rideau-Rockcliffe Community Resource Centre",
     bio: "Luc Lalande is an educator, mentor, community innovation practitioner and civic entrepreneur with extensive experience in academic-industry-government sectors. He specializes in the design of place-based programs that build innovation capacity for communities in both rural and urban regions. As Innovator-in-Residence at the Rideau-Rockcliffe Community Resource Centre he has introduced award-winning use cases for creatively applying generative AI tools in the centre&apos;s program for seniors.",
