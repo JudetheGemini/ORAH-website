@@ -28,7 +28,7 @@ const advisoryMembers: AdvisoryMember[] = [
   },
   {
     id: 2,
-    name: "Jake Effoduh PhD",
+    name: "Jake Effoduh, PhD",
     title: "Advisory Board Member",
     organization: "Lincoln Alexander School of Law",
     bio: "Experienced lawyer with expertise in human rights, tech, and artificial intelligence. Demonstrated history of working across various national, regional, and international institutions.",
