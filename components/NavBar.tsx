@@ -49,9 +49,9 @@ export default function NavBar() {
                     <li>
                         <a onClick={toggleMenu} href="/gallery" className="block py-2 pr-4 pl-3 text-darkBlue border-b border-gray-50 rounded lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0">Gallery</a>
                     </li>
-                    {/* <li>
+                    <li>
                         <a onClick={toggleMenu} target='_blank' href="https://blog.responsibleaiottawa.ca" className="block py-2 pr-4 pl-3 text-darkBlue border-b border-gray-50 rounded lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0">Blog</a>
-                    </li> */}
+                    </li>
                 </ul>
             </div>
         </div>
