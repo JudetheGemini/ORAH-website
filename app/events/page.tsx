@@ -27,7 +27,7 @@ const eventsData: EventData[] = [
     time: "8:30 AM",
     location: "Ottawa, Canada",
     venue: "BayView Yards, Ottawa",
-    host: "TBA",
+    host: "Gina Soparlo, Senior Advisor for International Relations, Mitacs",
     website: "https://summit.responsibleaiottawa.ca",
     registrationUrl: "https://luma.com/bu421tiw",
     image: "/summit.jpg", // Placeholder - replace with actual event image
