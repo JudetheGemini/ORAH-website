@@ -31,7 +31,7 @@ const eventsData: EventData[] = [
     website: "https://summit.responsibleaiottawa.ca",
     registrationUrl: "https://luma.com/bu421tiw",
     image: "/summit.jpg", // Placeholder - replace with actual event image
-    status: "upcoming",
+    status: "past",
     featured: true,
     tags: ["ORAS", "Governance", "AI", "Impact", "Discussion"],
   },
