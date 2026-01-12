@@ -4,7 +4,7 @@ export const siteConfig = {
   name: 'Ottawa Responsible AI Hub',
   description: 'ORAH is a community-driven initiative to promote responsible AI practices in Ottawa.',
   url: 'https://orah.ca',
-  ogImage: '/logo.svg',
+  ogImage: '/logoo.png',
   links: {
     twitter: 'https://twitter.com/orah',
     linkedin: 'https://linkedin.com/company/orah',

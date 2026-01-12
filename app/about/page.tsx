@@ -1,9 +1,9 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ChevronRight, Globe, Shield, Users, Lightbulb, Code } from "lucide-react"
+import { Globe, Shield, Users, Lightbulb, Code } from "lucide-react"
 import Image from "next/image"
-import Link from "next/link"
+// import Link from "next/link"
 
 export default function AboutPage() {
   return (
@@ -350,7 +350,7 @@ export default function AboutPage() {
               Be part of shaping the future of ethical AI in Ottawa and beyond. Connect with like-minded professionals,
               researchers, and advocates.
             </p>
-            <div className="flex flex-wrap justify-center gap-4 pt-4">
+            {/* <div className="flex flex-wrap justify-center gap-4 pt-4">
               <Link target="_blank" href="https://join.slack.com/t/ottawarespons-ocm1166/shared_invite/zt-3dq79ru0n-9DVA_wJVCxNT74zC9NgG4g">
               <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -361,7 +361,7 @@ export default function AboutPage() {
                 <ChevronRight className="ml-2 w-5 h-5" />
               </motion.button>
               </Link>
-            </div>
+            </div> */}
           </motion.div>
         </div>
       </section>
