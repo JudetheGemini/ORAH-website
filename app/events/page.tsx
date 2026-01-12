@@ -48,7 +48,7 @@ const eventsData: EventData[] = [
     host: "Oluwadara Adekunle, Board Member Ottawa Responsible AI Hub/CEO Farmties",
     website: "https://talks.responsibleaiottawa.ca",
     registrationUrl: "https://www.eventbrite.com/e/ottawa-responsible-ai-talks-tickets-1519890125279?aff=oddtdtcreator",
-    image: "/oratposter.jpg", // Placeholder - replace with actual event image
+    image: "/oratposter.jpg",
     status: "past",
     featured: true,
     tags: ["ORAT", "Community", "Practice", "Impact", "Discussion"],
