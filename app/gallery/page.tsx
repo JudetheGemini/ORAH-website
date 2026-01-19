@@ -37,8 +37,7 @@ const galleryData = [
       { id: 17, src: "/orat/orat-event-17.jpg", alt: "ORAH event", caption: "" },
       { id: 18, src: "/orat/orat-event-18.jpg", alt: "ORAH event", caption: "" },
       { id: 19, src: "/orat/orat-event-19.jpg", alt: "ORAH event", caption: "" },
-      { id: 20, src: "/orat/orat-event-20.jpg", alt: "ORAH event", caption: "" },
-      { id: 21, src: "/orat/orat-event-21.jpg", alt: "ORAH event", caption: "" },
+      { id: 20, src: "/orat/orat-event-20.jpg", alt: "ORAH event", caption: "" }
     ],
   },
   // Future events can be added here following the same structure
