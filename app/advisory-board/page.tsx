@@ -71,7 +71,7 @@ const advisoryMembers: AdvisoryMember[] = [
     name: "Ruth Bankey",
     title: "Senior Advisor Artificial Intelligence and Business Intelligence",
     organization: "Canada Revenue Agency (CRA)",
-    bio: "Dr. Bankey has been a board member and chair of a variety of Boards of Directors for Civil Society Organizations (CSOs), nonprofits, and environmental NGOs since 2004. She currently serves as an Advisory Board Member of the Ottawa Responsible AI Hub (ORAH).",
+    bio: "Dr. Bankey has been a board member and chair of a variety of Boards of Directors for Civil Society Organizations, nonprofits, and environmental NGOs since 2004. She currently serves as an Advisory Board Member of the Ottawa Responsible AI Hub (ORAH).",
     image: "/ruth.png",
     linkedin: "https://www.linkedin.com/in/ruth-bankey-3b552220",
     expertise: ["AI Governance", "Business Intelligence", "Board Leadership", "Environmental NGOs"],
