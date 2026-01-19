@@ -42,19 +42,38 @@ const galleryData = [
     ],
   },
   // Future events can be added here following the same structure
-  // {
-  //   eventId: "summit-2025",
-  //   eventTitle: "Ottawa Responsible AI Summit 2025",
-  //   eventSubtitle: "Governing Data and AI for Equity and Public Good",
-  //   date: "October 23, 2025",
-  //   location: "Shaw Centre, Ottawa",
-  //   attendees: 300,
-  //   photographer: "ORAH Media Team",
-  //   description: "Our flagship annual event bringing together policymakers, developers, and community voices.",
-  //   images: [
-  //     // Summit images would go here
-  //   ],
-  // },
+  {
+    eventId: "summit-2025",
+    eventTitle: "Ottawa Responsible AI Summit 2025",
+    eventSubtitle: "Governing Data and AI for Equity and Public Good",
+    date: "November 19, 2025",
+    location: "BayView Yards, Invest Ottawa",
+    attendees: 300,
+    photographer: "ORAH Media Team",
+    description: "Our flagship annual event bringing together policymakers, developers, and community voices.",
+    images: [
+      { id: 1, src: "/orasv1/summit-event-01.jpg", alt: "ORAH summit event", caption: "" },
+      { id: 2, src: "/orasv1/summit-event-02.jpg", alt: "ORAH summit event", caption: "" },
+      { id: 3, src: "/orasv1/summit-event-03.jpg", alt: "ORAH summit event", caption: "" },
+      { id: 4, src: "/orasv1/summit-event-04.jpg", alt: "ORAH summit event", caption: "" },
+      { id: 5, src: "/orasv1/summit-event-05.jpg", alt: "ORAH summit event", caption: "" },
+      { id: 6, src: "/orasv1/summit-event-06.jpg", alt: "ORAH summit event", caption: "" },
+      { id: 7, src: "/orasv1/summit-event-07.jpg", alt: "ORAH summit event", caption: "" },
+      { id: 8, src: "/orasv1/summit-event-08.jpg", alt: "ORAH summit event", caption: "" },
+      { id: 9, src: "/orasv1/summit-event-09.jpg", alt: "ORAH summit event", caption: "" },
+      { id: 10, src: "/orasv1/summit-event-10.jpg", alt: "ORAH summit event", caption: "" },
+      { id: 11, src: "/orasv1/summit-event-11.jpg", alt: "ORAH summit event", caption: "" },
+      { id: 12, src: "/orasv1/summit-event-12.jpg", alt: "ORAH summit event", caption: "" },
+      { id: 13, src: "/orasv1/summit-event-13.jpg", alt: "ORAH summit event", caption: "" },
+      { id: 14, src: "/orasv1/summit-event-14.jpg", alt: "ORAH summit event", caption: "" },
+      { id: 15, src: "/orasv1/summit-event-15.jpg", alt: "ORAH summit event", caption: "" },
+      { id: 16, src: "/orasv1/summit-event-16.jpg", alt: "ORAH summit event", caption: "" },
+      { id: 17, src: "/orasv1/summit-event-17.jpg", alt: "ORAH summit event", caption: "" },
+      { id: 18, src: "/orasv1/summit-event-18.jpg", alt: "ORAH summit event", caption: "" },
+      { id: 19, src: "/orasv1/summit-event-19.jpg", alt: "ORAH summit event", caption: "" },
+      { id: 20, src: "/orasv1/summit-event-20.jpg", alt: "ORAH summit event", caption: "" }
+    ],
+  },
 ]
 
 export default function GalleryPage() {
