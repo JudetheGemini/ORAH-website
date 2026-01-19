@@ -181,8 +181,60 @@ export default function NavBar() {
                   </a> */}
                 </div>
               </li>
+                    
+                    <li className="relative group">
+                <button
+                  onClick={toggleEventsDropdown}
+                  className="flex items-center gap-1 py-2 pr-4 pl-3 text-darkBlue border-b border-gray-50 rounded lg:border-0 lg:hover:bg-transparent lg:hover:text-primary-700 lg:p-0 w-full lg:w-auto justify-between lg:justify-start"
+                >
+                  Resources
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform ${isEventsDropdownOpen ? "lg:rotate-180" : ""}`}
+                  />
+                </button>
 
-              <li>
+                {/* Mobile dropdown */}
+                {isEventsDropdownOpen && (
+                  <div className="lg:hidden bg-gray-50 border-b border-gray-50">
+                    <a
+                      href="/gallery"
+                      onClick={closeMenus}
+                      className="block py-2 pr-4 pl-6 text-darkBlue hover:bg-gray-100"
+                    >
+                      Gallery
+                    </a>
+                    <a
+                      href="/reports"
+                      onClick={closeMenus}
+                      className="block py-2 pr-4 pl-6 text-darkBlue hover:bg-gray-100"
+                    >
+                      Reports
+                    </a>
+                  </div>
+                )}
+
+                {/* Desktop dropdown */}
+                <div className="hidden lg:absolute lg:left-0 lg:top-full lg:group-hover:block lg:bg-white lg:shadow-lg lg:rounded-md lg:py-2 lg:min-w-max lg:z-100">
+                  <a
+                    href="/gallery"
+                    onClick={closeMenus}
+                    className="block px-4 py-2 text-darkBlue hover:bg-gray-100"
+                  >
+                    Gallery
+                  </a>
+                  <a
+                    href="/reports"
+                    onClick={closeMenus}
+                    className="block px-4 py-2 text-darkBlue hover:bg-gray-100"
+                  >
+                    Reports
+                  </a>
+
+                </div>
+              </li>
+
+
+              {/* <li>
                 <a
                   onClick={closeMenus}
                   href="/gallery"
@@ -190,7 +242,7 @@ export default function NavBar() {
                 >
                   Gallery
                 </a>
-              </li>
+              </li> */}
               <li>
                 <a
                   onClick={closeMenus}
