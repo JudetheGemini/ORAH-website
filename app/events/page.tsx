@@ -17,6 +17,24 @@ import EventCard, { type EventData } from "@/components/event-card"
 
 // Sample events data - this would typically come from a CMS or API
 const eventsData: EventData[] = [
+     {
+    id: "gfr-march-2026",
+    title: "Global Forum for Responsible AI",
+    subtitle: "Designing Adaptable Responsible AI Frameworks Grounded in Data Justice",
+    description:
+      "The event strengthens international cooperation through dialogue, knowledge exchange, and collaborative action to ensure AI technologies support societal well-being, uphold human rights, and serve the public interest.",
+    date: "March, 2026",
+    time: "TBA",
+    location: "TBA",
+    venue: "TBA",
+    host: "TBA",
+    website: "https://forum.responsibleaiottawa.ca",
+    registrationUrl: "https://luma.com/event/evt-7MCoAs4d57jmGFu",
+    image: "/gfr.jpg", // Placeholder - replace with actual event image
+    status: "upcoming",
+    featured: true,
+    tags: ["GFR", "Governance", "AI", "Impact", "Discussion"],
+  },
    {
     id: "orat-november-2025",
     title: "Ottawa Responsible AI Summit",

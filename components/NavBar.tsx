@@ -117,7 +117,7 @@ export default function NavBar() {
                   onClick={toggleEventsDropdown}
                   className="flex items-center gap-1 py-2 pr-4 pl-3 text-darkBlue border-b border-gray-50 rounded lg:border-0 lg:hover:bg-transparent lg:hover:text-primary-700 lg:p-0 w-full lg:w-auto justify-between lg:justify-start"
                 >
-                  Events
+                  Initiatives
                   <ChevronDown
                     className={`w-4 h-4 transition-transform ${isEventsDropdownOpen ? "lg:rotate-180" : ""}`}
                   />
@@ -142,14 +142,14 @@ export default function NavBar() {
                     >
                       Responsible AI Talks
                     </a>
-                    {/* <a
-                    target="_blank"
+                                        <a
+                      target="_blank"
                       href="https://forum.responsibleaiottawa.ca"
                       onClick={closeMenus}
                       className="block py-2 pr-4 pl-6 text-darkBlue hover:bg-gray-100"
                     >
                       Global Forum for Responsible AI
-                    </a> */}
+                    </a>
                   </div>
                 )}
 
@@ -171,14 +171,14 @@ export default function NavBar() {
                   >
                     Responsible AI Talks
                   </a>
-                  {/* <a
+                  <a
                     target="_blank"
                     href="https://forum.responsibleaiottawa.ca"
                     onClick={closeMenus}
                     className="block px-4 py-2 text-darkBlue hover:bg-gray-100"
                   >
                     Global Forum for Responsible AI
-                  </a> */}
+                  </a>
                 </div>
               </li>
                     
@@ -196,6 +196,13 @@ export default function NavBar() {
                 {/* Mobile dropdown */}
                 {isEventsDropdownOpen && (
                   <div className="lg:hidden bg-gray-50 border-b border-gray-50">
+                    <a
+                      href="/events"
+                      onClick={closeMenus}
+                      className="block py-2 pr-4 pl-6 text-darkBlue hover:bg-gray-100"
+                    >
+                      Events
+                    </a>
                     <a
                       href="/gallery"
                       onClick={closeMenus}
@@ -215,6 +222,13 @@ export default function NavBar() {
 
                 {/* Desktop dropdown */}
                 <div className="hidden lg:absolute lg:left-0 lg:top-full lg:group-hover:block lg:bg-white lg:shadow-lg lg:rounded-md lg:py-2 lg:min-w-max lg:z-100">
+                  <a
+                      href="/events"
+                      onClick={closeMenus}
+                      className="block py-2 pr-4 pl-6 text-darkBlue hover:bg-gray-100"
+                    >
+                      Events
+                    </a>
                   <a
                     href="/gallery"
                     onClick={closeMenus}

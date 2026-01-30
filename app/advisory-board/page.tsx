@@ -86,6 +86,16 @@ const advisoryMembers: AdvisoryMember[] = [
     linkedin: "https://linkedin.com/in/adegboyegaojo",
     expertise: ["Machine Learning", "Education", "Curriculum Design", "Technical Standards"],
   },
+   {
+    id: 8,
+    name: "Lori Stanley",
+    title: "Advisory Board Member",
+    organization: "Lori Stanley Nonprofit Consulting",
+    bio: "Lori is the Founder of Lori Stanley Nonprofit Consulting, working with global, national, and local nonprofit organizations across the public and private sectors. She brings deep experience in strategic planning, community engagement, and ethical leadership.",
+    image: "/lori.jpg",
+    linkedin: "https://www.linkedin.com/in/loristanleynonprofitconsulting/",
+    expertise: ["Consulting", "Non-profit", "AI"]
+  },
 //   {
 //     id: 7,
 //     name: "Elena Rodriguez",
