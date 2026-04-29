@@ -40,6 +40,28 @@ const galleryData = [
       { id: 20, src: "/orat/orat-event-20.jpg", alt: "ORAH event", caption: "" }
     ],
   },
+  {
+    eventId: "gfrai-2024",
+    eventTitle: "Global Forum on Responsible AI 2026",
+    eventSubtitle: "Beyond Universal Models: Designing Adaptable Responsible AI Frameworks Grounded in Data Justice",
+    date: "March 13, 2026",
+    location: "The Hague University of Applied Sciences",
+    attendees: '250+',
+    photographer: "ORAH Media Team",
+    description: "International experts and stakeholders gathered to discuss responsible AI frameworks and global governance strategies.",
+    images: [
+      { id: 1, src: "/gfrai/DSC08530.jpg", alt: "Global Forum on Responsible AI event", caption: "" },
+      { id: 2, src: "/gfrai/DSC08548.jpg", alt: "Global Forum on Responsible AI event", caption: "" },
+      { id: 3, src: "/gfrai/DSC08563.jpg", alt: "Global Forum on Responsible AI event", caption: "" },
+      { id: 4, src: "/gfrai/DSC08578.jpg", alt: "Global Forum on Responsible AI event", caption: "" },
+      { id: 5, src: "/gfrai/DSC08598.jpg", alt: "Global Forum on Responsible AI event", caption: "" },
+      { id: 6, src: "/gfrai/DSC08606.jpg", alt: "Global Forum on Responsible AI event", caption: "" },
+      { id: 7, src: "/gfrai/DSC08649.jpg", alt: "Global Forum on Responsible AI event", caption: "" },
+      { id: 8, src: "/gfrai/DSC08700.jpg", alt: "Global Forum on Responsible AI event", caption: "" },
+      { id: 9, src: "/gfrai/DSC08749.jpg", alt: "Global Forum on Responsible AI event", caption: "" },
+      { id: 10, src: "/gfrai/DSC08787.jpg", alt: "Global Forum on Responsible AI event", caption: "" }
+    ],
+  },
   // Future events can be added here following the same structure
   {
     eventId: "summit-2025",
