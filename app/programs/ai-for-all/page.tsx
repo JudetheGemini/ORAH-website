@@ -3,10 +3,10 @@
 import { motion } from 'framer-motion'
 import { GraduationCap, Heart, Sprout, Calendar, ExternalLink } from 'lucide-react'
 
-export const metadata = {
-    title: 'AI for All: Seniors AI Literacy Program | ORAH',
-    description: 'Join our youth volunteer program to help seniors learn about AI and stay safe online. 8-week commitment, Fridays in Ottawa.',
-}
+// export const metadata = {
+//     title: 'AI for All: Seniors AI Literacy Program | ORAH',
+//     description: 'Join our youth volunteer program to help seniors learn about AI and stay safe online. 8-week commitment, Fridays in Ottawa.',
+// }
 
 const containerVariants = {
     hidden: { opacity: 0 },
