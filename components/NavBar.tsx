@@ -26,7 +26,7 @@ export default function NavBar() {
       <nav className="border-gray-200 md:px-4 lg:px-6 py-2.5 mt-4 mb-2">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
           <Link href="/" className="flex items-center px-4">
-            <img src="logo2.svg" className="mr-3 h-8 sm:h-12" alt="ORAH Logo" />
+            <img src="/logo2.svg" className="mr-3 h-8 sm:h-12" alt="ORAH Logo" />
           </Link>
           <div className="flex items-center lg:order-2 px-4">
             <Link
