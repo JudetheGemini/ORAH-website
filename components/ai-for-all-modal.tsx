@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, AnimatePresence } from 'framer-motion'
-import { X, GraduationCap, Heart, Sprout, Calendar, ExternalLink, Clock, MapPin } from 'lucide-react'
+import { X, GraduationCap, Heart, Sprout, Calendar, ExternalLink, MapPin } from 'lucide-react'
 
 interface AIForAllModalProps {
     isOpen: boolean
@@ -82,7 +82,7 @@ export default function AIForAllModal({ isOpen, onClose }: AIForAllModalProps) {
                         >
                             <X className="w-5 h-5" />
                         </button>
-                        
+
                         <div className="pr-12">
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-sm font-medium mb-4">
                                 <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
@@ -122,7 +122,7 @@ export default function AIForAllModal({ isOpen, onClose }: AIForAllModalProps) {
 
                         {/* What You'll Do */}
                         <div>
-                            <h3 className="text-xl font-bold text-[#003366] mb-4">What You'll Do</h3>
+                            <h3 className="text-xl font-bold text-[#003366] mb-4">What You&apos;ll Do</h3>
                             <div className="grid md:grid-cols-2 gap-4">
                                 {activities.map((activity, index) => (
                                     <motion.div
