@@ -1,4 +1,4 @@
-import { Calendar, MapPin, Users, Clock, DollarSign, GraduationCap, Briefcase, Heart } from 'lucide-react'
+import { Calendar, MapPin, Users, DollarSign, GraduationCap, Briefcase, Heart } from 'lucide-react'
 
 // Example configurations for different events
 

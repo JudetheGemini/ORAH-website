@@ -12,19 +12,19 @@ interface EventDetail {
 interface EventPromoPopupProps {
     // Event identification
     eventId: string // Unique ID for sessionStorage (e.g., 'ai-for-all-2026')
-    
+
     // Header content
     badge?: string // e.g., 'NEW PROGRAM', 'EARLY BIRD', 'LAST CHANCE'
     title: string
     description: string
-    
+
     // Event details
     details: EventDetail[]
-    
+
     // Benefits/highlights
     benefitsTitle?: string
     benefits: string[]
-    
+
     // Actions
     primaryAction: {
         text: string
@@ -36,14 +36,14 @@ interface EventPromoPopupProps {
         url: string
         external?: boolean
     }
-    
+
     // Timing
     delayMs?: number // Default: 2000ms
-    
+
     // Styling
     gradientFrom?: string // Default: '#00C4A7'
     gradientTo?: string   // Default: '#003366'
-    
+
     // Control
     isEnabled?: boolean // Default: true
 }
@@ -70,7 +70,7 @@ export default function EventPromoPopup({
 
         // Check if popup has been shown in this session
         const popupShown = sessionStorage.getItem(`eventPopup_${eventId}`)
-        
+
         if (!popupShown) {
             const timer = setTimeout(() => {
                 setIsVisible(true)
@@ -96,7 +96,7 @@ export default function EventPromoPopup({
 
     const handleSecondaryAction = () => {
         if (!secondaryAction) return
-        
+
         if (secondaryAction.external) {
             window.open(secondaryAction.url, '_blank')
         } else {
@@ -119,7 +119,7 @@ export default function EventPromoPopup({
                         className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50"
                         onClick={handleClose}
                     />
-                    
+
                     {/* Popup */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -130,7 +130,7 @@ export default function EventPromoPopup({
                     >
                         <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200">
                             {/* Header with gradient */}
-                            <div 
+                            <div
                                 className="relative p-4 sm:p-6 text-white"
                                 style={{
                                     background: `linear-gradient(to right, ${gradientFrom}, ${gradientTo})`
@@ -142,14 +142,14 @@ export default function EventPromoPopup({
                                 >
                                     <X className="w-4 h-4" />
                                 </button>
-                                
+
                                 <div className="flex items-center gap-2 mb-3 pr-10">
                                     <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-300" />
                                     <span className="text-xs sm:text-sm font-medium bg-white/20 px-2 py-1 rounded-full">
                                         {badge}
                                     </span>
                                 </div>
-                                
+
                                 <h3 className="text-lg sm:text-xl font-bold mb-2 pr-10 leading-tight">
                                     {title}
                                 </h3>
@@ -198,7 +198,7 @@ export default function EventPromoPopup({
                                         {primaryAction.text}
                                         {primaryAction.external && <ExternalLink className="w-4 h-4" />}
                                     </button>
-                                    
+
                                     {secondaryAction && (
                                         <button
                                             onClick={handleSecondaryAction}
@@ -223,7 +223,7 @@ export default function EventPromoPopup({
 
                                 {/* Small disclaimer */}
                                 <p className="text-xs text-gray-500 text-center leading-relaxed">
-                                    This popup won't show again during your visit
+                                    This popup won&apos;t show again during your visit
                                 </p>
                             </div>
                         </div>
