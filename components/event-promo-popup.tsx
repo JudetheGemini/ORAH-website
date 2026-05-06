@@ -126,9 +126,9 @@ export default function EventPromoPopup({
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.9, y: 20 }}
                         transition={{ duration: 0.3, ease: "easeOut" }}
-                        className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-md mx-4 sm:mx-6 max-h-[90vh] overflow-y-auto"
+                        className="fixed inset-4 sm:top-1/2 sm:left-1/2 sm:transform sm:-translate-x-1/2 sm:-translate-y-1/2 sm:inset-auto z-50 w-auto sm:w-full sm:max-w-md max-h-[calc(100vh-2rem)] sm:max-h-[90vh] overflow-y-auto flex items-center sm:block"
                     >
-                        <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200">
+                        <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200 w-full max-w-sm mx-auto sm:max-w-none">
                             {/* Header with gradient */}
                             <div
                                 className="relative p-4 sm:p-6 text-white"
@@ -166,7 +166,7 @@ export default function EventPromoPopup({
                                         {details.map((detail, index) => (
                                             <div key={index} className="flex items-start gap-3 text-sm text-gray-600">
                                                 <detail.icon className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: gradientFrom }} />
-                                                <span className="leading-relaxed">{detail.text}</span>
+                                                <span className="leading-relaxed break-words">{detail.text}</span>
                                             </div>
                                         ))}
                                     </div>
@@ -180,29 +180,29 @@ export default function EventPromoPopup({
                                         </h4>
                                         <ul className="text-sm text-gray-600 space-y-1">
                                             {benefits.map((benefit, index) => (
-                                                <li key={index} className="leading-relaxed">• {benefit}</li>
+                                                <li key={index} className="leading-relaxed break-words">• {benefit}</li>
                                             ))}
                                         </ul>
                                     </div>
                                 )}
 
                                 {/* Action buttons */}
-                                <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                                <div className="flex flex-col gap-3 pt-2">
                                     <button
                                         onClick={handlePrimaryAction}
-                                        className="w-full sm:flex-1 text-white font-semibold py-3 px-4 rounded-lg hover:shadow-lg transition-all duration-300 text-sm inline-flex items-center justify-center gap-2 touch-manipulation min-h-[44px]"
+                                        className="w-full text-white font-semibold py-3 px-3 rounded-lg hover:shadow-lg transition-all duration-300 text-sm inline-flex items-center justify-center gap-2 touch-manipulation min-h-[44px]"
                                         style={{
                                             background: `linear-gradient(to right, ${gradientFrom}, ${gradientTo})`
                                         }}
                                     >
-                                        {primaryAction.text}
-                                        {primaryAction.external && <ExternalLink className="w-4 h-4" />}
+                                        <span className="truncate">{primaryAction.text}</span>
+                                        {primaryAction.external && <ExternalLink className="w-4 h-4 flex-shrink-0" />}
                                     </button>
 
                                     {secondaryAction && (
                                         <button
                                             onClick={handleSecondaryAction}
-                                            className="w-full sm:flex-1 border-2 font-semibold py-3 px-4 rounded-lg hover:bg-opacity-10 transition-all duration-300 text-sm touch-manipulation min-h-[44px] inline-flex items-center justify-center gap-1"
+                                            className="w-full border-2 font-semibold py-3 px-3 rounded-lg hover:bg-opacity-10 transition-all duration-300 text-sm touch-manipulation min-h-[44px] inline-flex items-center justify-center gap-1"
                                             style={{
                                                 borderColor: gradientFrom,
                                                 color: gradientTo,
@@ -215,8 +215,8 @@ export default function EventPromoPopup({
                                                 e.currentTarget.style.backgroundColor = 'transparent'
                                             }}
                                         >
-                                            {secondaryAction.text}
-                                            {secondaryAction.external && <ExternalLink className="w-4 h-4" />}
+                                            <span className="truncate">{secondaryAction.text}</span>
+                                            {secondaryAction.external && <ExternalLink className="w-4 h-4 flex-shrink-0" />}
                                         </button>
                                     )}
                                 </div>
