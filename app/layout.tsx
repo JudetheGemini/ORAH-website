@@ -1,10 +1,11 @@
 import { Inter } from "next/font/google";
+import "../lib/polyfills";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import "./globals.css";
 import Script from "next/script";
 import "vanilla-cookieconsent/dist/cookieconsent.css";
-import { defaultMetadata } from "@/lib/metadata";
+import { defaultMetadata, defaultViewport } from "@/lib/metadata";
 import {
   StructuredData,
   organizationSchema,
@@ -15,7 +16,13 @@ import { GoogleAnalytics } from "@/components/analytics";
 
 const inter = Inter({ subsets: ["latin"] });
 
+// export const metadata = defaultMetadata;
+// export const viewport = defaultViewport;
+
+// const inter = Inter({ subsets: ["latin"] });
+
 export const metadata = defaultMetadata;
+export const viewport = defaultViewport;
 
 export default function RootLayout({
   children,

@@ -12,6 +12,7 @@ export const siteConfig = {
 }
 
 export const defaultMetadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.name,
     template: `%s | ${siteConfig.name}`,
@@ -65,5 +66,8 @@ export const defaultMetadata: Metadata = {
     apple: '/logo.svg',
   },
   manifest: '/manifest.json',
+}
+
+export const defaultViewport = {
   themeColor: '#ecfeff',
 }

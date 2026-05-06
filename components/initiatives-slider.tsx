@@ -13,8 +13,10 @@ import {
   MessageSquare,
   GraduationCap,
   BookOpen,
+  Eye,
 } from "lucide-react"
 import Link from "next/link"
+import AIForAllModal from "./ai-for-all-modal"
 
 const initiatives = [
   {
@@ -67,6 +69,7 @@ const initiatives = [
 export default function InitiativesSlider() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   // Auto-slide functionality
   useEffect(() => {
@@ -183,12 +186,28 @@ export default function InitiativesSlider() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.5, duration: 0.5 }}
+                      className="flex gap-3 flex-wrap"
                     >
+                      {/* Show modal button only for AI for All program */}
+                      {initiatives[currentSlide].id === 1 && (
+                        <motion.button
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          onClick={() => {
+                            console.log('Opening AI for All modal');
+                            setIsModalOpen(true);
+                          }}
+                          className="inline-flex items-center px-6 py-3 bg-[#00C4A7] text-white font-semibold rounded-lg hover:bg-[#00C4A7]/90 transition-colors shadow-lg border-2 border-white"
+                        >
+                          <Eye className="mr-2 w-5 h-5" />
+                          View Details
+                        </motion.button>
+                      )}
                       <Link href="/programs">
                         <motion.button
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
-                          className="inline-flex items-center px-8 py-4 bg-white text-[#003366] font-semibold rounded-lg hover:bg-white/90 transition-colors shadow-lg"
+                          className="inline-flex items-center px-8 py-3 bg-white text-[#003366] font-semibold rounded-lg hover:bg-white/90 transition-colors shadow-lg"
                         >
                           Read More
                           <ArrowRight className="ml-2 w-5 h-5" />
@@ -267,6 +286,12 @@ export default function InitiativesSlider() {
           </div>
         </div> */}
       </div>
+      
+      {/* AI for All Modal */}
+      <AIForAllModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
     </section>
   )
 }

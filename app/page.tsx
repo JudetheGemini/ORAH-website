@@ -6,11 +6,21 @@ import { motion } from "framer-motion";
 import MissionVision from "@/components/mission-and_vision";
 import ContactForm from "@/components/contact-form";
 import InitiativesSlider from "@/components/initiatives-slider";
+import AIForAllPromoPopup from "@/components/ai-for-all-promo-popup";
+
+// "use client";
+// // import Image from "next/image";
+// // import Link from "next/link";
+// import { motion } from "framer-motion";
+
+// import MissionVision from "@/components/mission-and_vision";
+// import ContactForm from "@/components/contact-form";
+// import InitiativesSlider from "@/components/initiatives-slider";
 
 export default function Home() {
   return (
     <>
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
@@ -142,6 +152,9 @@ export default function Home() {
       <MissionVision />
       <InitiativesSlider />
       <ContactForm />
+      
+      {/* Promotional Popup */}
+      <AIForAllPromoPopup />
     </>
   );
 }
