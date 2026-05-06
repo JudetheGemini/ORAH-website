@@ -114,7 +114,7 @@ export default function AIForAllPage() {
     return (
         <main className="min-h-screen bg-white">
             {/* Hero Section */}
-            <section className="relative min-h-screen flex items-center pt-10 overflow-hidden bg-gradient-to-br from-white via-white to-[#00C4A7]/5">
+            <section className="relative min-h-screen flex items-center pt-8 overflow-hidden bg-gradient-to-br from-white via-white to-[#00C4A7]/5">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#003366]/8 via-transparent to-[#00C4A7]/8" />
 
                 <div className="relative z-10 max-w-6xl mx-auto px-4 w-full">
