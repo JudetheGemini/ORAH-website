@@ -157,29 +157,42 @@ export default function AIForAllPage() {
                             </div>
                         </motion.div>
 
-                        <motion.div variants={itemVariants} className="relative">
-                            <div className="bg-white border-2 border-[#00C4A7] rounded-2xl p-8 shadow-lg">
-                                <div className="text-sm font-semibold text-[#003366] mb-6 uppercase tracking-wider">Program at a Glance</div>
-
-                                <div className="space-y-5">
-                                    <div className="pb-5 border-b border-gray-200">
-                                        <div className="text-3xl font-bold text-[#00C4A7]">8</div>
-                                        <div className="text-sm text-gray-600 mt-1">Weeks · Fridays</div>
+                        <motion.div variants={itemVariants} className="relative space-y-6">
+                            <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                                <img
+                                    src="/volunteer.jpg"
+                                    alt="Youth volunteer helping senior with tablet during AI literacy session"
+                                    className="w-full h-[300px] object-cover"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                                <div className="absolute bottom-4 left-4 right-4 text-white">
+                                    <div className="text-sm font-medium bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full w-fit mb-2">
+                                        Real Impact
                                     </div>
+                                    <h3 className="text-lg font-bold mb-1">Bridging Generations Through Technology</h3>
+                                    <p className="text-white/90 text-sm">Join volunteers making a difference</p>
+                                </div>
+                            </div>
 
-                                    <div className="pb-5 border-b border-gray-200">
-                                        <div className="text-3xl font-bold text-[#003366]">2hrs</div>
-                                        <div className="text-sm text-gray-600 mt-1">Per session, weekly</div>
+                            {/* Program Stats */}
+                            <div className="bg-white border-2 border-[#00C4A7] rounded-2xl p-6 shadow-lg">
+                                <div className="text-sm font-semibold text-[#003366] mb-4 uppercase tracking-wider">Program at a Glance</div>
+                                <div className="grid grid-cols-2 gap-4">
+                                    <div className="text-center">
+                                        <div className="text-2xl font-bold text-[#00C4A7]">8</div>
+                                        <div className="text-xs text-gray-600">Weeks · Fridays</div>
                                     </div>
-
-                                    <div className="pb-5 border-b border-gray-200">
-                                        <div className="text-2xl font-bold text-[#00C4A7]">May–Jun</div>
-                                        <div className="text-sm text-gray-600 mt-1">May 8 – June 26, 2026</div>
+                                    <div className="text-center">
+                                        <div className="text-2xl font-bold text-[#003366]">2hrs</div>
+                                        <div className="text-xs text-gray-600">Per session</div>
                                     </div>
-
-                                    <div>
-                                        <div className="text-xl font-bold text-[#003366]">The Glebe</div>
-                                        <div className="text-sm text-gray-600 mt-1">Abbotsford Centre, Ottawa</div>
+                                    <div className="text-center">
+                                        <div className="text-lg font-bold text-[#00C4A7]">May–Jun</div>
+                                        <div className="text-xs text-gray-600">2026</div>
+                                    </div>
+                                    <div className="text-center">
+                                        <div className="text-lg font-bold text-[#003366]">The Glebe</div>
+                                        <div className="text-xs text-gray-600">Ottawa</div>
                                     </div>
                                 </div>
                             </div>
