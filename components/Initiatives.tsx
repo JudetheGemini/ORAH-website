@@ -2,7 +2,8 @@
 
 import { useEffect, useRef, useState } from "react"
 import { motion, useInView, useScroll, useTransform } from "framer-motion"
-import { Calendar, Users, Lightbulb, GraduationCap, BookOpen } from "lucide-react"
+import { Calendar, Users, Lightbulb, GraduationCap, BookOpen, ArrowRight } from "lucide-react"
+import Link from "next/link"
 
 const initiatives = [
   {
@@ -13,6 +14,7 @@ const initiatives = [
     icon: Users,
     image: "/newSeniors.jpg",
     status: "Active",
+    link: "/programs/ai-for-all-seniors",
   },
   {
     id: "ai-with-intent",
@@ -88,13 +90,15 @@ function InitiativeCard({ initiative, index }: { initiative: (typeof initiatives
 
             <p className="text-lg text-gray-600 leading-relaxed">{initiative.description}</p>
 
-            {/* <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center px-6 py-3 bg-[#00C4A7] text-white font-semibold rounded-lg hover:bg-[#00C4A7]/90 transition-colors"
-            >
-              Learn More
-            </motion.button> */}
+            {initiative.link && (
+              <Link
+                href={initiative.link}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#00C4A7] text-white font-semibold rounded-lg hover:bg-[#003366] transition-colors duration-300"
+              >
+                Learn More
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            )}
           </motion.div>
 
           {/* Image */}

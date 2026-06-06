@@ -4,28 +4,28 @@ import { Calendar, MapPin, Users, DollarSign, GraduationCap, Briefcase, Heart } 
 
 export const aiForAllPopupConfig = {
     eventId: 'ai-for-all-2026',
-    badge: 'NEW PROGRAM',
+    badge: 'NOW OPEN',
     title: 'AI for All: Empowering Seniors',
-    description: 'Join our youth volunteer program helping seniors learn about AI and stay safe online',
+    description: 'A free six-week program helping older adults in Ottawa build confidence with AI — no tech experience needed',
     details: [
-        { icon: Calendar, text: '8 weeks • May 8 – June 26, 2026' },
-        { icon: MapPin, text: 'Abbotsford Centre, Ottawa' },
-        { icon: Users, text: 'For high school & post-secondary students' }
+        { icon: Calendar, text: 'July 16 – August 14, 2026' },
+        { icon: MapPin, text: 'Rideau-Rockcliffe Community Resource Centre, Ottawa' },
+        { icon: Users, text: 'Open to all adults · Bilingual (EN/FR)' }
     ],
-    benefitsTitle: 'What You\'ll Gain:',
+    benefitsTitle: 'What You\'ll Learn:',
     benefits: [
-        'Volunteer hours & community impact',
-        'Cross-generational mentoring experience',
-        'AI literacy & digital safety skills'
+        'What AI is and how it works in everyday life',
+        'How to spot scams, deepfakes, and online fraud',
+        'Using AI tools for health, connection, and daily tasks'
     ],
     primaryAction: {
-        text: 'Join Program',
-        url: 'https://docs.google.com/forms/d/e/1FAIpQLSd5JqbePX6G4qgw9sKoz_GOiUTbPND3oHa4Hy35t7uKAT_ZmQ/viewform',
+        text: 'Register Now',
+        url: 'https://forms.gle/SWcJv1hNVARLAN5K6',
         external: true
     },
     secondaryAction: {
         text: 'Learn More',
-        url: '/programs/ai-for-all',
+        url: '/programs/ai-for-all-seniors',
         external: false
     }
 }
