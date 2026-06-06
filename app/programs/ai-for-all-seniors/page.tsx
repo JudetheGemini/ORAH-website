@@ -454,7 +454,7 @@ export default function AIForAllSeniorsPage() {
                             <h3 className="text-lg font-bold text-gray-900">Ugo Okoye</h3>
                             <p className="text-sm text-[#003366] font-medium">Ottawa Responsible AI Hub (ORAH)</p>
                             <p className="text-sm text-gray-500 leading-relaxed">
-                                Ugo moderates the closing intergenerational panel on August 14 — <span className="italic">"AI, Work, and Us"</span> — facilitating a community dialogue between seniors and Youth Volunteers on AI&apos;s impact on work, society, and the future.
+                                Ugo moderates the closing intergenerational panel on August 14 — <span className="italic">&ldquo;AI, Work, and Us&rdquo;</span> — facilitating a community dialogue between seniors and Youth Volunteers on AI&apos;s impact on work, society, and the future.
                             </p>
                         </div>
                     </motion.div>
