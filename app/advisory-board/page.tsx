@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Linkedin, Mail, Users, Award } from "lucide-react"
+import { Linkedin, Award, ArrowRight } from "lucide-react"
 import Link from "next/link"
 
 interface AdvisoryMember {
@@ -19,9 +19,9 @@ const advisoryMembers: AdvisoryMember[] = [
   {
     id: 1,
     name: "Somto Mbelu, PMP",
-    title: "Founder and Program Lead",
+    title: "Founder & Program Lead",
     organization: "Ottawa Responsible AI Hub (ORAH)",
-    bio: "Somto works at the intersection of AI ethics, policy, digital health, governance, compliance, risk, finance, and business—bridging research and practice to shape technology that serves society.",
+    bio: "Somto works at the intersection of AI ethics, policy, digital health, governance, compliance, risk, finance, and business, bridging research and practice to shape technology that serves society.",
     image: "/somto.jpeg",
     linkedin: "https://www.linkedin.com/in/somto-mbelu/",
     expertise: ["AI Ethics", "Algorithmic Fairness", "Healthcare AI", "Research"],
@@ -48,150 +48,107 @@ const advisoryMembers: AdvisoryMember[] = [
   },
   {
     id: 4,
-    name: "Oluwadara (Dara) Adekunle",
+    name: "Oluwadara Adekunle",
     title: "Advisory Board Member",
     organization: "Farmties Capital Limited",
-    bio: "Oluwadara Adekunle (Dara) is an entrepreneur and development professional with over 10 years of experience. She is the founder of Farmties Capital Limited, an innovative investment firm dedicated to empowering high-growth Small and Medium Enterprises (SMEs).",
+    bio: "An entrepreneur and development professional with over 10 years of experience. Founder of Farmties Capital Limited, an innovative investment firm dedicated to empowering high-growth SMEs.",
     image: "/dara.jpeg",
     linkedin: "https://www.linkedin.com/in/darakunle/",
-    expertise: ["AI Transparency", "Entrepreneurship", "Technical Implementation", "Enterprise AI"],
+    expertise: ["AI Transparency", "Entrepreneurship", "Enterprise AI"],
   },
   {
     id: 5,
     name: "Luc Lalande",
     title: "Innovator-in-Residence",
     organization: "Rideau-Rockcliffe Community Resource Centre",
-    bio: "Luc Lalande is an educator, mentor, community innovation practitioner and civic entrepreneur with extensive experience in academic-industry-government sectors. He specializes in the design of place-based programs that build innovation capacity for communities in both rural and urban regions.",
+    bio: "An educator, mentor, community innovation practitioner and civic entrepreneur with extensive experience across academic-industry-government sectors, specializing in place-based programs that build innovation capacity.",
     image: "/luc-lalande.jpeg",
     linkedin: "https://www.linkedin.com/in/luclalande/",
-    expertise: ["Privacy Preservation", "Federated Learning", "Data Security", "Research"],
+    expertise: ["Community Innovation", "Civic Entrepreneurship", "Education"],
   },
   {
     id: 6,
     name: "Ruth Bankey",
-    title: "Senior Advisor Artificial Intelligence and Business Intelligence",
+    title: "Senior Advisor, AI & Business Intelligence",
     organization: "Canada Revenue Agency (CRA)",
-    bio: "Dr. Bankey has been a board member and chair of a variety of Boards of Directors for Civil Society Organizations, nonprofits, and environmental NGOs since 2004. She currently serves as an Advisory Board Member of the Ottawa Responsible AI Hub (ORAH).",
+    bio: "Board member and chair of a variety of Boards of Directors for Civil Society Organizations, nonprofits, and environmental NGOs since 2004. Currently serves as an Advisory Board Member of ORAH.",
     image: "/ruth.png",
     linkedin: "https://www.linkedin.com/in/ruth-bankey-3b552220",
-    expertise: ["AI Governance", "Business Intelligence", "Board Leadership", "Environmental NGOs"],
+    expertise: ["AI Governance", "Business Intelligence", "Board Leadership"],
   },
   {
     id: 7,
     name: "Prof. Adegboyega Ojo",
-    title: "Professor",
+    title: "Professor & Canada Research Chair",
     organization: "Carleton University",
-    bio: "Adegboyega is a Full Professor and Canada Research Chair in the Governance and AI at the School of Public Policy and Administration, Faculty of Public Affairs, Carleton University, Ottawa ON, Canada",
+    bio: "Full Professor and Canada Research Chair in the Governance and AI at the School of Public Policy and Administration, Faculty of Public Affairs, Carleton University, Ottawa.",
     image: "/ojo.jpeg",
     linkedin: "https://linkedin.com/in/adegboyegaojo",
-    expertise: ["Machine Learning", "Education", "Curriculum Design", "Technical Standards"],
+    expertise: ["AI Governance", "Public Policy", "Research"],
   },
-   {
+  {
     id: 8,
     name: "Lori Stanley",
     title: "Advisory Board Member",
     organization: "Lori Stanley Nonprofit Consulting",
-    bio: "Lori is the Founder of Lori Stanley Nonprofit Consulting, working with global, national, and local nonprofit organizations across the public and private sectors. She brings deep experience in strategic planning, community engagement, and ethical leadership.",
+    bio: "Founder of Lori Stanley Nonprofit Consulting, working with global, national, and local nonprofit organizations across the public and private sectors. Deep experience in strategic planning and ethical leadership.",
     image: "/lori.jpg",
     linkedin: "https://www.linkedin.com/in/loristanleynonprofitconsulting/",
-    expertise: ["Consulting", "Non-profit", "AI"]
+    expertise: ["Nonprofit Strategy", "Community Engagement", "AI"],
   },
-//   {
-//     id: 7,
-//     name: "Elena Rodriguez",
-//     title: "Communications Strategist",
-//     organization: "ORAH Communications",
-//     bio: "Elena develops communication strategies that make complex AI ethics concepts accessible to broad audiences. She brings creative expertise in narrative-building and public engagement.",
-//     image: "/placeholder.svg?height=400&width=400&text=Elena+Rodriguez",
-//     linkedin: "https://linkedin.com",
-//     expertise: ["Communications", "Public Engagement", "Narrative", "Storytelling"],
-//   },
-//   {
-//     id: 8,
-//     name: "Thomas Wright",
-//     title: "Government Relations Lead",
-//     organization: "Federal Innovation Office",
-//     bio: "Thomas bridges government and civil society perspectives on responsible AI. His experience in federal policy and innovation programs brings crucial insights on institutional change.",
-//     image: "/placeholder.svg?height=400&width=400&text=Thomas+Wright",
-//     linkedin: "https://linkedin.com",
-//     expertise: ["Government Policy", "Innovation", "Institutional Change", "Public Sector"],
-//   },
 ]
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.2,
-    },
-  },
-}
-
-// const itemVariants = {
-//   hidden: { opacity: 0, y: 20 },
-//   visible: {
-//     opacity: 1,
-//     y: 0,
-//     transition: { duration: 0.6 },
-//   },
-// }
-
-function AdvisoryCard({ member, index }: { member: AdvisoryMember; index: number }) {
+function MemberCard({ member, index }: { member: AdvisoryMember; index: number }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: index * 0.05 }}
       viewport={{ once: true }}
-      whileHover={{ y: -8 }}
-      className="group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100"
+      className="group bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-[#00C4A7]/25 transition-all duration-300 overflow-hidden"
     >
-      {/* Image Container */}
-      <div className="relative h-80 overflow-hidden bg-gradient-to-br from-[#00C4A7]/10 to-[#003366]/10">
+      {/* Photo */}
+      <div className="relative h-56 overflow-hidden bg-gradient-to-br from-[#00C4A7]/10 to-[#003366]/10">
         <img
           src={member.image || "/placeholder.svg"}
           alt={member.name}
-          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-      </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
 
-      {/* Content Container */}
-      <div className="p-6 lg:p-8">
-        {/* Name and Title */}
-        <div className="mb-4">
-          <h3 className="text-2xl font-bold text-[#003366] mb-1">{member.name}</h3>
-          <p className="text-[#00C4A7] font-semibold">{member.title}</p>
-          <p className="text-sm text-gray-600">{member.organization}</p>
-        </div>
-
-        {/* Bio */}
-        <p className="text-gray-700 leading-relaxed mb-6 text-sm lg:text-base">{member.bio}</p>
-
-        {/* Expertise Tags */}
-        {/* <div className="flex flex-wrap gap-2 mb-6">
-          {member.expertise.map((exp, idx) => (
-            <span
-              key={idx}
-              className="px-3 py-1 bg-[#00C4A7]/10 text-[#00C4A7] text-xs font-medium rounded-full border border-[#00C4A7]/20"
-            >
-              {exp}
-            </span>
-          ))}
-        </div> */}
-
-        {/* LinkedIn Link */}
+        {/* LinkedIn badge on photo */}
         <a
           href={member.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center px-4 py-2 bg-[#0A66C2] text-white font-semibold rounded-lg hover:bg-[#0A66C2]/90 transition-colors"
+          className="absolute bottom-3 right-3 w-8 h-8 bg-[#0A66C2] rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-md"
+          aria-label={`${member.name} on LinkedIn`}
         >
-          <Linkedin className="w-4 h-4 mr-2" />
-          Connect on LinkedIn
+          <Linkedin className="w-4 h-4 text-white" />
         </a>
+      </div>
+
+      {/* Content */}
+      <div className="p-6 space-y-3">
+        <div>
+          <h3 className="text-lg font-bold text-[#003366] leading-snug">{member.name}</h3>
+          <p className="text-sm font-semibold text-[#00C4A7]">{member.title}</p>
+          <p className="text-xs text-gray-400 mt-0.5">{member.organization}</p>
+        </div>
+
+        <p className="text-sm text-gray-600 leading-relaxed">{member.bio}</p>
+
+        {/* Expertise tags */}
+        <div className="flex flex-wrap gap-1.5 pt-1">
+          {member.expertise.map((tag) => (
+            <span
+              key={tag}
+              className="px-2.5 py-1 text-xs font-medium rounded-full bg-[#00C4A7]/8 text-[#00C4A7] border border-[#00C4A7]/15"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
       </div>
     </motion.div>
   )
@@ -200,177 +157,99 @@ function AdvisoryCard({ member, index }: { member: AdvisoryMember; index: number
 export default function AdvisoryBoardPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative py-24 px-4 bg-gradient-to-br from-[#003366] to-[#003366]/90 text-white overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-full h-full">
-            {[...Array(30)].map((_, i) => (
-              <div
-                key={i}
-                className="absolute rounded-full bg-white"
-                style={{
-                  width: Math.random() * 10 + 2 + "px",
-                  height: Math.random() * 10 + 2 + "px",
-                  top: Math.random() * 100 + "%",
-                  left: Math.random() * 100 + "%",
-                  opacity: Math.random() * 0.5 + 0.2,
-                }}
-              />
+
+      {/* ── Hero ─────────────────────────────────────────────── */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#003366] to-[#004e99]">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_#00C4A7_0%,_transparent_60%)] opacity-20" />
+
+        <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 lg:py-24">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-2xl"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full border border-white/20 mb-6">
+              <Award className="w-4 h-4 text-[#00C4A7]" />
+              <span className="text-sm font-medium text-white/90">Leadership</span>
+            </div>
+
+            <h1 className="text-4xl lg:text-6xl font-bold text-white mb-5 leading-tight">
+              Advisory Board
+            </h1>
+
+            <p className="text-xl text-white/70 leading-relaxed">
+              Meet the leaders, researchers, and practitioners guiding ORAH&apos;s mission to advance responsible AI in Ottawa and beyond. Our board brings together expertise from academia, industry, government, and civil society.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── Member Grid ──────────────────────────────────────── */}
+      <section className="py-24 px-4">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <p className="text-[#00C4A7] font-semibold uppercase tracking-widest text-sm mb-3">The Team</p>
+            <div className="flex items-end justify-between gap-4 flex-wrap">
+              <h2 className="text-4xl font-bold text-[#003366]">
+                {advisoryMembers.length} Members
+              </h2>
+            </div>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+            {advisoryMembers.map((member, index) => (
+              <MemberCard key={member.id} member={member} index={index} />
             ))}
           </div>
         </div>
-
-        <div className="max-w-6xl mx-auto relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <div className="inline-flex items-center px-4 py-2 bg-[#00C4A7]/20 rounded-full border border-[#00C4A7]/30 mb-8">
-              <Award className="w-5 h-5 text-[#00C4A7] mr-2" />
-              <span className="text-[#00C4A7] font-medium">Leadership</span>
-            </div>
-
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6">Advisory Board</h1>
-            <p className="text-xl lg:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
-              Meet the leaders, researchers, and practitioners guiding ORAH&apos;s mission to advance responsible
-              AI in Ottawa and beyond.
-            </p>
-          </motion.div>
-        </div>
       </section>
 
-      {/* Introduction Section */}
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
+      {/* ── CTA ──────────────────────────────────────────────── */}
+      <section className="py-24 px-4 bg-gradient-to-br from-[#003366] to-[#004e99] relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_#00C4A7_0%,_transparent_55%)] opacity-20" />
+        <div className="relative z-10 max-w-3xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center"
+            className="space-y-7"
           >
-            <div className="flex items-center justify-center mb-6">
-              <div className="w-14 h-14 bg-gradient-to-br from-[#00C4A7] to-[#00C4A7]/80 rounded-2xl flex items-center justify-center">
-                <Users className="w-7 h-7 text-white" />
-              </div>
-            </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#003366] mb-6">Diverse Expertise, Shared Vision</h2>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              Our advisory board brings together thought leaders from academia, industry, government, and civil society.
-              With backgrounds spanning AI ethics, policy, community engagement, and technical innovation, they guide
-              ORAH&apos;s strategic direction and ensure our work reflects the values of responsible AI development.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Advisory Board Grid */}
-      <section className="py-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-          >
-            {advisoryMembers.map((member, index) => (
-              <AdvisoryCard key={member.id} member={member} index={index} />
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Board Impact Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-[#003366]/5 to-[#00C4A7]/5">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="bg-white rounded-3xl p-8 lg:p-12 shadow-lg border border-gray-100"
-          >
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#003366] mb-8 text-center">
-              Guiding Our Mission Forward
+            <p className="text-[#00C4A7] font-semibold uppercase tracking-widest text-sm">Get Involved</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-white">
+              Join Our Community
             </h2>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#00C4A7] to-[#00C4A7]/80 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Award className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-[#003366] mb-2">Strategic Direction</h3>
-                <p className="text-gray-700">
-                  Advisory members shape ORAH&apos;s priorities, ensuring our initiatives address the most pressing
-                  challenges in responsible AI.
-                </p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#00C4A7] to-[#00C4A7]/80 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-[#003366] mb-2">Community Bridge</h3>
-                <p className="text-gray-700">
-                  They connect ORAH to diverse networks across academia, industry, government, and civil society.
-                </p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#00C4A7] to-[#00C4A7]/80 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Mail className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-[#003366] mb-2">Expert Guidance</h3>
-                <p className="text-gray-700">
-                  Their knowledge and experience ensure ORAH&apos;s work is grounded in the latest research and best
-                  practices.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Join Us Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="bg-gradient-to-br from-[#003366] to-[#003366]/90 rounded-3xl p-8 lg:p-12 text-white text-center"
-          >
-            <Users className="w-16 h-16 mx-auto mb-6 text-[#00C4A7]" />
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6">Join Our Community</h2>
-            <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Interested in becoming part of ORAH&apos;s mission? Whether you want to volunteer, sponsor an event, or
-              collaborate on research, we&apos;d love to hear from you.
+            <p className="text-xl text-white/65 leading-relaxed">
+              Interested in becoming part of ORAH&apos;s mission? Whether you want to volunteer, sponsor an event, or collaborate on research, we&apos;d love to hear from you.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link
-                href="/#contact"
-                className="inline-flex items-center px-8 py-4 bg-[#00C4A7] text-white font-semibold rounded-lg hover:bg-[#00C4A7]/90 transition-colors"
-              >
-                Get Involved
+            <div className="flex flex-wrap gap-4 justify-center pt-2">
+              <Link href="/#contact">
+                <button className="inline-flex items-center gap-2 px-8 py-4 bg-[#00C4A7] text-white font-bold rounded-xl hover:bg-[#00a88e] hover:-translate-y-0.5 transition-all duration-300">
+                  Get Involved
+                  <ArrowRight className="w-5 h-5" />
+                </button>
               </Link>
               <a
                 href="https://www.linkedin.com/company/ottawa-responsible-ai-hub/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-8 py-4 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 transition-colors border border-white/20"
+                className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/10 hover:border-white/50 transition-all duration-300"
               >
-                Follow Our LinkedIn
-                <Linkedin className="ml-2 w-5 h-5" />
+                <Linkedin className="w-5 h-5" />
+                Follow on LinkedIn
               </a>
             </div>
           </motion.div>
         </div>
       </section>
+
     </div>
   )
 }
