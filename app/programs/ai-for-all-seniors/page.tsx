@@ -92,7 +92,7 @@ const sessions = [
         number: 5,
         date: 'Friday, August 14',
         time: '4:30 PM – 6:30 PM',
-        title: 'Open Lab, Closing Panel & Celebration',
+        title: 'Inter-Generational AI Literacy Workshop',
         description: 'A hands-on practice session, an intergenerational panel discussion, and a closing celebration. You leave with tools, confidence, and a community to keep exploring.',
         highlights: [
             'Open Lab: explore any AI tool you\'ve discovered, at your own pace',
@@ -177,11 +177,11 @@ export default function AIForAllSeniorsPage() {
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
                                 <div className="absolute bottom-6 left-6 right-6 text-white">
-                                    <div className="text-xs font-semibold bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full w-fit mb-3 uppercase tracking-wider">
+                                    {/* <div className="text-xs font-semibold bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full w-fit mb-3 uppercase tracking-wider">
                                         Cohort 1 · Pilot Program
-                                    </div>
+                                    </div> */}
                                     <h3 className="text-xl font-bold mb-1">Community-Led AI Literacy in Ottawa</h3>
-                                    <p className="text-white/80 text-sm">Funded by the Government of Canada 🇨🇦</p>
+                                    {/* <p className="text-white/80 text-sm">Funded by the Government of Canada 🇨🇦</p> */}
                                 </div>
                             </div>
 
@@ -264,7 +264,7 @@ export default function AIForAllSeniorsPage() {
                                         <div className="w-8 h-8 rounded-full bg-[#003366]/10 flex items-center justify-center flex-shrink-0">
                                             <span className="text-xs font-bold text-[#003366]">CA</span>
                                         </div>
-                                        <span>Funded by the <span className="font-medium text-gray-700">Government of Canada</span> 🇨🇦, New Horizons for Seniors Program (NHSP)</span>
+                                        {/* <span>Funded by the <span className="font-medium text-gray-700">Government of Canada</span> 🇨🇦, New Horizons for Seniors Program (NHSP)</span> */}
                                     </div>
                                 </div>
                             </div>
@@ -300,17 +300,15 @@ export default function AIForAllSeniorsPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: i * 0.07 }}
                                 viewport={{ once: true }}
-                                className={`flex gap-6 items-start rounded-2xl border p-6 transition-all duration-300 group ${
-                                    session.isClosing
-                                        ? 'bg-gradient-to-br from-[#003366] to-[#004e99] border-transparent shadow-lg shadow-[#003366]/20 text-white'
-                                        : 'bg-white border-gray-100 shadow-sm hover:shadow-md hover:border-[#00C4A7]/25'
-                                }`}
+                                className={`flex gap-6 items-start rounded-2xl border p-6 transition-all duration-300 group ${session.isClosing
+                                    ? 'bg-gradient-to-br from-[#003366] to-[#004e99] border-transparent shadow-lg shadow-[#003366]/20 text-white'
+                                    : 'bg-white border-gray-100 shadow-sm hover:shadow-md hover:border-[#00C4A7]/25'
+                                    }`}
                             >
-                                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
-                                    session.isClosing
-                                        ? 'bg-white/15'
-                                        : 'bg-gradient-to-br from-[#00C4A7]/15 to-[#003366]/10 group-hover:from-[#00C4A7]/25'
-                                }`}>
+                                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-all duration-300 ${session.isClosing
+                                    ? 'bg-white/15'
+                                    : 'bg-gradient-to-br from-[#00C4A7]/15 to-[#003366]/10 group-hover:from-[#00C4A7]/25'
+                                    }`}>
                                     <span className={`text-2xl font-bold ${session.isClosing ? 'text-white' : 'text-[#003366]'}`}>
                                         {session.number}
                                     </span>
@@ -320,26 +318,23 @@ export default function AIForAllSeniorsPage() {
                                         <span className={`text-xs font-semibold uppercase tracking-widest ${session.isClosing ? 'text-[#00C4A7]' : 'text-[#00C4A7]'}`}>
                                             Session {session.number}
                                         </span>
-                                        <span className={`inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full ${
-                                            session.isClosing
-                                                ? 'bg-white/15 text-white/80'
-                                                : 'bg-gray-100 text-gray-500'
-                                        }`}>
+                                        <span className={`inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full ${session.isClosing
+                                            ? 'bg-white/15 text-white/80'
+                                            : 'bg-gray-100 text-gray-500'
+                                            }`}>
                                             <Calendar className="w-3 h-3" />
                                             {session.date}
                                         </span>
-                                        <span className={`inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full ${
-                                            session.isClosing
-                                                ? 'bg-white/15 text-white/80'
-                                                : 'bg-gray-100 text-gray-500'
-                                        }`}>
+                                        <span className={`inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full ${session.isClosing
+                                            ? 'bg-white/15 text-white/80'
+                                            : 'bg-gray-100 text-gray-500'
+                                            }`}>
                                             <Clock className="w-3 h-3" />
                                             {session.time}
                                         </span>
                                     </div>
-                                    <h3 className={`text-xl font-bold mb-2 transition-colors ${
-                                        session.isClosing ? 'text-white' : 'text-gray-900 group-hover:text-[#003366]'
-                                    }`}>
+                                    <h3 className={`text-xl font-bold mb-2 transition-colors ${session.isClosing ? 'text-white' : 'text-gray-900 group-hover:text-[#003366]'
+                                        }`}>
                                         {session.title}
                                     </h3>
                                     <p className={`leading-relaxed mb-4 ${session.isClosing ? 'text-white/70' : 'text-gray-500'}`}>
@@ -598,7 +593,7 @@ export default function AIForAllSeniorsPage() {
                         {[
                             { label: 'Delivered by', value: 'Ottawa Responsible AI Hub (ORAH)' },
                             { label: 'Hosted at', value: 'Rideau-Rockcliffe Community Resource Centre (RRCRC)' },
-                            { label: 'Funded by', value: '🇨🇦 Government of Canada, New Horizons for Seniors Program (NHSP)' },
+                            // { label: 'Funded by', value: '🇨🇦 Government of Canada, New Horizons for Seniors Program (NHSP)' },
                         ].map((credit) => (
                             <div key={credit.label} className="text-center">
                                 <div className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-1">{credit.label}</div>
