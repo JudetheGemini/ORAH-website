@@ -19,6 +19,18 @@ interface Report {
 
 const reportsData: Report[] = [
   {
+    id: 'gfrai-march-2026',
+    title: 'Global Forum for Responsible AI 2026 - Report',
+    eventTitle: 'Global Forum for Responsible AI 2026',
+    date: 'March 2026',
+    description: 'Report from the Global Forum for Responsible AI held in Den Haag, Netherlands. Covers international dialogue on designing adaptable responsible AI frameworks grounded in data justice, knowledge exchange, and collaborative action.',
+    attendees: 150,
+    downloadUrl: '/reports/GFRAI REPORT.pdf',
+    fileSize: '24 MB',
+    reportType: 'detailed',
+    tags: ['Global Forum', 'Data Justice', 'Governance', 'International'],
+  },
+  {
     id: 'inaugural-ai-summit-2025',
     title: 'Inaugural Responsible AI Summit 2025 - Report',
     eventTitle: 'Inaugural Responsible AI Summit 2025',
