@@ -32,7 +32,7 @@ const whyItMatters = [
     'Seniors are among the fastest-growing demographic groups in Canada and among the most underserved when it comes to AI education.',
     'AI-enabled scams, misinformation, and fraud disproportionately affect older adults who have not had access to practical digital literacy support.',
     'Many seniors are being asked to engage with AI-assisted healthcare portals, government services, and communication tools without any preparation.',
-    'This program is designed to close that gap — one community, one conversation at a time.',
+    'This program is designed to close that gap, one community and one conversation at a time.',
 ]
 
 const sessions = [
@@ -41,9 +41,9 @@ const sessions = [
         date: 'Thursday, July 16',
         time: '10:30 AM – 12:30 PM',
         title: 'What is AI?',
-        description: 'An accessible, plain-language introduction to artificial intelligence — what it is, how it works, and where participants already encounter it in their daily lives.',
+        description: 'An accessible, plain-language introduction to artificial intelligence, covering what it is, how it works, and where participants already encounter it in their daily lives.',
         highlights: [
-            'Icebreaker: "AI in my day?" — share a technology you used this week',
+            'Icebreaker: "AI in my day?" Share a technology you used this week',
             'Plain-language overview: what AI is and isn\'t, with everyday examples',
             'Paired activity with your Youth Volunteer: spot AI in your home',
             'Group discussion and pre-programme confidence survey',
@@ -54,7 +54,7 @@ const sessions = [
         date: 'Thursday, July 23',
         time: '10:30 AM – 12:30 PM',
         title: 'Staying Safe with AI',
-        description: 'Practical guidance on protecting yourself online — recognising scams, understanding deepfakes, and knowing how your personal information is used by AI-powered tools.',
+        description: 'Practical guidance on protecting yourself online: recognising scams, understanding deepfakes, and knowing how your personal information is used by AI-powered tools.',
         highlights: [
             'Real-world scenarios: AI phone scams and fake voice messages',
             'Hands-on privacy settings walk-through with your Youth Volunteer',
@@ -67,12 +67,12 @@ const sessions = [
         date: 'Thursday, July 30',
         time: '10:30 AM – 12:30 PM',
         title: 'AI for Everyday Life & Health',
-        description: 'Explore AI in daily activities and learn how it is used in healthcare and wellness — what to watch for and how to make informed decisions on your own terms.',
+        description: 'Explore AI in daily activities and learn how it is used in healthcare and wellness. Understand what to watch for and how to make informed decisions on your own terms.',
         highlights: [
             'Try an everyday AI tool (maps, voice assistant, weather app) with support',
             'AI for health: medication reminders, symptom checkers, and telehealth',
             'Discussion: "Would you trust AI with your health?"',
-            'Key message: AI supports your health — it does not replace your doctor',
+            'Key message: AI supports your health. It does not replace your doctor',
         ],
     },
     {
@@ -80,7 +80,7 @@ const sessions = [
         date: 'Thursday, August 6',
         time: '10:30 AM – 12:30 PM',
         title: 'AI for Staying Connected',
-        description: 'Discover how AI-powered tools can help you stay in touch with family, friends, and your community — safely and with confidence.',
+        description: 'Discover how AI-powered tools can help you stay in touch with family, friends, and your community, safely and with confidence.',
         highlights: [
             'Video calls, translation tools, and AI writing assistants',
             'Hands-on: draft a message to a friend or family member using AI',
@@ -97,7 +97,7 @@ const sessions = [
         highlights: [
             'Open Lab: explore any AI tool you\'ve discovered, at your own pace',
             'Community Showcase: pairs share their highlights from the programme',
-            'Intergenerational Panel: "AI, Work, and Us" — moderated by Ugo Okoye',
+            'Intergenerational Panel: "AI, Work, and Us", moderated by Ugo Okoye',
             'Youth Volunteer recognition and programme closing by Somto Mbelu',
         ],
         isClosing: true,
@@ -137,11 +137,11 @@ export default function AIForAllSeniorsPage() {
                             </div>
 
                             <p className="text-lg text-gray-600 leading-relaxed max-w-xl">
-                                Imagine being told the world has changed, but no one stops to show you how. For many older adults, AI is not a tool yet — it is a source of anxiety. And that is not their fault.
+                                Imagine being told the world has changed, but no one stops to show you how. For many older adults, AI is not a tool yet. It is a source of anxiety. And that is not their fault.
                             </p>
 
                             <p className="text-lg text-gray-600 leading-relaxed max-w-xl">
-                                This July, ORAH is delivering <span className="font-semibold text-gray-800">AI for All: Empowering Seniors</span> in Ottawa — a six-week community program helping adults build confidence with AI in a practical, supportive, and fully accessible environment.
+                                This July, ORAH is delivering <span className="font-semibold text-gray-800">AI for All: Empowering Seniors</span> in Ottawa: a six-week community program helping adults build confidence with AI in a practical, supportive, and fully accessible environment.
                             </p>
 
                             <p className="text-base text-[#003366] font-medium">
@@ -233,11 +233,11 @@ export default function AIForAllSeniorsPage() {
                             </p>
 
                             <p className="text-lg text-gray-600 leading-relaxed">
-                                It operates as a pilot — <span className="font-medium text-gray-800">Cohort 1</span> — from July to August 2026, with documentation and evaluation designed to inform a potential Year 2 national scale-up.
+                                It operates as a pilot (<span className="font-medium text-gray-800">Cohort 1</span>) from July to August 2026, with documentation and evaluation designed to inform a potential Year 2 national scale-up.
                             </p>
 
                             <p className="text-lg text-gray-600 leading-relaxed">
-                                Digital inclusion is no longer only about internet access. It is about helping people feel confident participating in a world that is changing fast — and that is exactly what this program is built to do.
+                                Digital inclusion is no longer only about internet access. It is about helping people feel confident participating in a world that is changing fast. That is exactly what this program is built to do.
                             </p>
                         </motion.div>
 
@@ -264,7 +264,7 @@ export default function AIForAllSeniorsPage() {
                                         <div className="w-8 h-8 rounded-full bg-[#003366]/10 flex items-center justify-center flex-shrink-0">
                                             <span className="text-xs font-bold text-[#003366]">CA</span>
                                         </div>
-                                        <span>Funded by the <span className="font-medium text-gray-700">Government of Canada</span> 🇨🇦 — New Horizons for Seniors Program (NHSP)</span>
+                                        <span>Funded by the <span className="font-medium text-gray-700">Government of Canada</span> 🇨🇦, New Horizons for Seniors Program (NHSP)</span>
                                     </div>
                                 </div>
                             </div>
@@ -288,7 +288,7 @@ export default function AIForAllSeniorsPage() {
                             What to <span className="bg-gradient-to-r from-[#00C4A7] to-[#003366] bg-clip-text text-transparent">Expect</span>
                         </h2>
                         <p className="text-lg text-gray-600 max-w-2xl">
-                            Across five sessions running July 16 to August 14, you will explore AI and its role in everyday life — from staying safe online to how AI is used in healthcare, communication, and daily routines. Every session is welcoming, practical, and paced for participants with no prior technology experience.
+                            Across five sessions running July 16 to August 14, you will explore AI and its role in everyday life: from staying safe online to how AI is used in healthcare, communication, and daily routines. Every session is welcoming, practical, and paced for participants with no prior technology experience.
                         </p>
                     </motion.div>
 
@@ -454,7 +454,7 @@ export default function AIForAllSeniorsPage() {
                             <h3 className="text-lg font-bold text-gray-900">Ugo Okoye</h3>
                             <p className="text-sm text-[#003366] font-medium">Ottawa Responsible AI Hub (ORAH)</p>
                             <p className="text-sm text-gray-500 leading-relaxed">
-                                Ugo moderates the closing intergenerational panel on August 14 — <span className="italic">&ldquo;AI, Work, and Us&rdquo;</span> — facilitating a community dialogue between seniors and Youth Volunteers on AI&apos;s impact on work, society, and the future.
+                                Ugo moderates the closing intergenerational panel on August 14, <span className="italic">&ldquo;AI, Work, and Us&rdquo;</span>, facilitating a community dialogue between seniors and Youth Volunteers on AI&apos;s impact on work, society, and the future.
                             </p>
                         </div>
                     </motion.div>
@@ -474,7 +474,7 @@ export default function AIForAllSeniorsPage() {
                             <div>
                                 <h3 className="text-xl font-bold mb-3">Youth Partners</h3>
                                 <p className="text-white/75 leading-relaxed max-w-2xl">
-                                    Each workshop session is co-facilitated by trained Youth Partners — young people who bring technical knowledge, patience, and a genuine enthusiasm for helping older adults feel at ease with new technology. Youth Partners provide one-on-one support throughout every session, creating an intergenerational learning environment built on mutual respect.
+                                    Each workshop session is co-facilitated by trained Youth Partners: young people who bring technical knowledge, patience, and a genuine enthusiasm for helping older adults feel at ease with new technology. Youth Partners provide one-on-one support throughout every session, creating an intergenerational learning environment built on mutual respect.
                                 </p>
                                 <a
                                     href="#volunteer"
@@ -510,7 +510,7 @@ export default function AIForAllSeniorsPage() {
                                 <div>
                                     <h3 className="text-2xl font-bold mb-2">Ready to join us?</h3>
                                     <p className="text-white/70 leading-relaxed">
-                                        Registration is open for adults in Ottawa. Spaces are limited — secure your spot today.
+                                        Registration is open for adults in Ottawa. Spaces are limited, so secure your spot today.
                                     </p>
                                 </div>
                                 <div className="flex flex-wrap gap-4 text-white/60 text-sm">
@@ -548,7 +548,7 @@ export default function AIForAllSeniorsPage() {
                             <div>
                                 <h3 className="text-2xl font-bold text-gray-900 mb-2">Know a young person who wants to make a difference?</h3>
                                 <p className="text-gray-600 leading-relaxed">
-                                    We are looking for enthusiastic high school and university students to join our team as Youth Partner volunteers. No prior tech experience needed — just curiosity and a willingness to learn alongside our participants.
+                                    We are looking for enthusiastic high school and university students to join our team as Youth Partner volunteers. No prior tech experience needed. Just bring curiosity and a willingness to learn alongside our participants.
                                 </p>
                             </div>
                             <div className="flex flex-wrap gap-4 text-gray-500 text-sm">
@@ -584,7 +584,7 @@ export default function AIForAllSeniorsPage() {
                         className="text-center mb-12"
                     >
                         <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed italic">
-                            &ldquo;Digital inclusion is no longer only about internet access. It is about helping people feel confident participating in a world that is changing fast — and that is exactly what this program is built to do.&rdquo;
+                            &ldquo;Digital inclusion is no longer only about internet access. It is about helping people feel confident participating in a world that is changing fast. That is exactly what this program is built to do.&rdquo;
                         </p>
                     </motion.div>
 
@@ -598,7 +598,7 @@ export default function AIForAllSeniorsPage() {
                         {[
                             { label: 'Delivered by', value: 'Ottawa Responsible AI Hub (ORAH)' },
                             { label: 'Hosted at', value: 'Rideau-Rockcliffe Community Resource Centre (RRCRC)' },
-                            { label: 'Funded by', value: '🇨🇦 Government of Canada — New Horizons for Seniors Program (NHSP)' },
+                            { label: 'Funded by', value: '🇨🇦 Government of Canada, New Horizons for Seniors Program (NHSP)' },
                         ].map((credit) => (
                             <div key={credit.label} className="text-center">
                                 <div className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-1">{credit.label}</div>

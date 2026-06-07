@@ -1,24 +1,37 @@
-import { Card, CardContent } from "@/components/ui/card"
+"use client"
+
+import { motion } from "framer-motion"
+
+const stats = [
+  { value: "100+", label: "Community Members", color: "text-[#003366]" },
+  { value: "4+",   label: "Workshops Held",    color: "text-[#00C4A7]" },
+  { value: "5",    label: "Active Programs",   color: "text-[#003366]" },
+]
 
 export default function StatsBlock() {
   return (
-    <Card className="w-full bg-white dark:bg-gray-950">
-      <CardContent className="p-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          <div className="space-y-2">
-            <h3 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100">600+</h3>
-            <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Community Members</p>
-          </div>
-          <div className="space-y-2 md:border-x md:px-8 border-gray-200 dark:border-gray-800">
-            <h3 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100">11+</h3>
-            <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Workshops Held</p>
-          </div>
-          <div className="space-y-2">
-            <h3 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100">6</h3>
-            <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Policy Briefs Published</p>
-          </div>
+    <section className="bg-white border-y border-gray-100">
+      <div className="max-w-5xl mx-auto px-4 py-10">
+        <div className="grid grid-cols-3 gap-0 divide-x divide-gray-100">
+          {stats.map((stat, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+              viewport={{ once: true }}
+              className="flex flex-col items-center justify-center py-6 px-4 text-center"
+            >
+              <span className={`text-4xl lg:text-5xl font-bold tracking-tight ${stat.color}`}>
+                {stat.value}
+              </span>
+              <span className="mt-2 text-sm font-medium text-gray-500 leading-snug">
+                {stat.label}
+              </span>
+            </motion.div>
+          ))}
         </div>
-      </CardContent>
-    </Card>
+      </div>
+    </section>
   )
 }

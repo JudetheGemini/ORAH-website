@@ -1,21 +1,14 @@
 "use client";
-// import Image from "next/image";
-// import Link from "next/link";
+import Link from "next/link";
 import { motion } from "framer-motion";
+import { ArrowRight, Users } from "lucide-react";
 
 import MissionVision from "@/components/mission-and_vision";
 import ContactForm from "@/components/contact-form";
 import InitiativesSlider from "@/components/initiatives-slider";
+import StatsBlock from "@/components/stats-block";
 import AIForAllPromoPopup from "@/components/ai-for-all-promo-popup";
 
-// "use client";
-// // import Image from "next/image";
-// // import Link from "next/link";
-// import { motion } from "framer-motion";
-
-// import MissionVision from "@/components/mission-and_vision";
-// import ContactForm from "@/components/contact-form";
-// import InitiativesSlider from "@/components/initiatives-slider";
 
 export default function Home() {
   return (
@@ -28,71 +21,74 @@ export default function Home() {
             alt="ORAH community gathering"
             className="w-full h-full object-cover"
           />
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#003366]/80 via-[#003366]/70 to-[#003366]/60" />
+          {/* Lighter overlay so the photo comes through */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#003366]/75 via-[#003366]/55 to-[#003366]/40" />
         </div>
 
         {/* Content */}
-        <div className="relative z-10 max-w-6xl mx-auto px-4 text-center text-white">
+        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center text-white">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.9 }}
             className="space-y-8"
           >
+            {/* Eyebrow tag */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="flex justify-center"
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/25 bg-white/10 backdrop-blur-sm">
+                <div className="w-2 h-2 rounded-full bg-[#00C4A7] animate-pulse" />
+                <span className="text-sm font-medium text-white/90 tracking-wide">Ottawa · Canada · Since 2023</span>
+              </div>
+            </motion.div>
+
             {/* Main Heading */}
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight">
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.2 }}
+              className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.08] tracking-tight"
+            >
               Leading the Future of{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00C4A7] to-[#00C4A7]/80">
                 Ethical and Responsible AI
               </span>{" "}
               in Ottawa
-            </h1>
+            </motion.h1>
 
             {/* Description */}
             <motion.p
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.3 }}
-              className="text-xl lg:text-2xl text-gray-200 leading-relaxed max-w-4xl mx-auto"
+              transition={{ duration: 0.9, delay: 0.35 }}
+              className="text-lg lg:text-xl text-white/80 leading-relaxed max-w-2xl mx-auto"
             >
-              Creating a community dedicated to ethical AI governance, education, advocacy, and innovation.
+              A community dedicated to ethical AI governance, education, advocacy, and innovation, built in Ottawa for everyone.
             </motion.p>
 
-            {/* CTA Button */}
-            {/* <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.6 }}
-              className="pt-4"
-            >
-              <Link target="_blank" href="https://join.slack.com/t/ottawarespons-ocm1166/shared_invite/zt-3dq79ru0n-9DVA_wJVCxNT74zC9NgG4g">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center px-8 py-4 bg-[#00C4A7] text-white font-semibold text-lg rounded-lg hover:bg-[#00C4A7]/90 transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                Join Our Community
-                <motion.div
-                  className="ml-2 cursor-pointer"
-                  animate={{ x: [0, 5, 0] }}
-                  transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY }}
-                >
-                  →
-                </motion.div>
-                
-              </motion.button>
-              </Link>
-            </motion.div> */}
-
-            {/* Decorative Elements */}
+            {/* CTAs */}
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.9 }}
-              className="flex justify-center pt-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.5 }}
+              className="flex flex-wrap gap-4 justify-center pt-2"
             >
-              <div className="w-24 h-1 bg-[#00C4A7] rounded-full" />
+              <Link href="/programs">
+                <button className="inline-flex items-center gap-2 px-8 py-4 bg-[#00C4A7] text-white font-semibold text-lg rounded-xl hover:bg-[#00a88e] hover:-translate-y-0.5 hover:shadow-2xl hover:shadow-[#00C4A7]/30 transition-all duration-300">
+                  Explore Our Programs
+                  <ArrowRight className="w-5 h-5" />
+                </button>
+              </Link>
+              <a href="#contact">
+                <button className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/40 text-white font-semibold text-lg rounded-xl hover:bg-white/10 hover:border-white/70 transition-all duration-300">
+                  <Users className="w-5 h-5" />
+                  Get Involved
+                </button>
+              </a>
             </motion.div>
           </motion.div>
         </div>
@@ -101,17 +97,17 @@ export default function Home() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.2 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white"
+          transition={{ duration: 1, delay: 1 }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white"
         >
           <motion.div
-            animate={{ y: [0, 10, 0] }}
+            animate={{ y: [0, 8, 0] }}
             transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-            className="flex flex-col items-center"
+            className="flex flex-col items-center gap-2"
           >
-            <span className="text-sm mb-2 text-gray-300">Scroll to explore</span>
-            <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-              <div className="w-1 h-3 bg-white rounded-full mt-2" />
+            <span className="text-xs tracking-widest uppercase text-white/50">Scroll</span>
+            <div className="w-5 h-9 border border-white/25 rounded-full flex justify-center pt-1.5">
+              <div className="w-1 h-2.5 bg-white/60 rounded-full" />
             </div>
           </motion.div>
         </motion.div>
@@ -149,6 +145,7 @@ export default function Home() {
         </div>
       </motion.div> */}
 
+      <StatsBlock />
       <MissionVision />
       <InitiativesSlider />
       <ContactForm />

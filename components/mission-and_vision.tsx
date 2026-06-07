@@ -1,115 +1,104 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Target, Eye } from "lucide-react"
+import { Scale, GraduationCap, Megaphone, Lightbulb } from "lucide-react"
+
+const pillars = [
+  {
+    icon: Scale,
+    title: "Governance",
+    description: "Advancing ethical AI policy frameworks and accountability standards that protect communities.",
+  },
+  {
+    icon: GraduationCap,
+    title: "Education",
+    description: "Building AI literacy across all demographics through workshops, programs, and accessible resources.",
+  },
+  {
+    icon: Megaphone,
+    title: "Advocacy",
+    description: "Championing inclusive and transparent AI development at the community, national, and global level.",
+  },
+  {
+    icon: Lightbulb,
+    title: "Innovation",
+    description: "Fostering responsible tech innovation that serves the public good and reflects community values.",
+  },
+]
 
 export default function MissionVision() {
   return (
-    <section className="py-20 px-4 bg-white relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 right-20 w-64 h-64 bg-[#00C4A7]/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 left-20 w-80 h-80 bg-[#003366]/10 rounded-full blur-3xl" />
-      </div>
+    <section className="py-24 px-4 bg-white">
+      <div className="max-w-6xl mx-auto">
 
-      <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <h2 className="text-4xl lg:text-5xl font-black text-[#003366] mb-6">We are Ottawa Responsible AI</h2>
-          <div className="w-24 h-1 bg-[#00C4A7] mx-auto" />
+          <p className="text-[#00C4A7] font-semibold uppercase tracking-widest text-sm mb-3">Who We Are</p>
+          <h2 className="text-4xl lg:text-5xl font-bold text-[#003366]">Ottawa Responsible AI Hub</h2>
         </motion.div>
 
-        {/* Cards Container */}
-        <div className="grid lg:grid-cols-2 gap-8">
-          {/* Mission Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            whileHover={{ y: -5 }}
-            className="group"
-          >
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 h-full">
-              {/* Icon Header */}
-              <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#00C4A7] to-[#00C4A7]/80 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Target className="w-8 h-8 text-white" />
+        {/* Mission statement */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          viewport={{ once: true }}
+          className="max-w-4xl mx-auto text-center mb-16"
+        >
+          <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed">
+            Our mission is to inspire and support the creation of{" "}
+            <span className="text-[#003366] font-bold">500 responsible tech innovations</span>{" "}
+            in Ottawa over the next 10 years, building a thriving ecosystem where AI serves humanity with{" "}
+            <span className="text-[#00C4A7] font-semibold">transparency, fairness, and integrity</span>.
+          </p>
+        </motion.div>
+
+        {/* Pillars */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
+          {pillars.map((pillar, i) => {
+            const Icon = pillar.icon
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: i * 0.08 }}
+                viewport={{ once: true }}
+                className="bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:border-[#00C4A7]/30 hover:shadow-md transition-all duration-300 group"
+              >
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#00C4A7]/15 to-[#003366]/10 flex items-center justify-center mb-4 group-hover:from-[#00C4A7]/25 transition-all duration-300">
+                  <Icon className="w-5 h-5 text-[#003366]" />
                 </div>
-                <div className="ml-4">
-                  <h3 className="text-2xl font-bold text-[#003366]">Our Mission</h3>
-                  <div className="w-12 h-0.5 bg-[#00C4A7] mt-2" />
-                </div>
-              </div>
-
-              {/* Content */}
-              <p className="text-gray-700 leading-relaxed sm:text-lg mb-6">
-                Our mission is to inspire and support the creation of 500 responsible tech innovations in Ottawa over the next 10 years. Through community-led hackathons, collaborative research, open-source initiatives, ethical design practices, and our flagship yearly conference, we are building a thriving ecosystem where AI serves humanity with transparency, fairness, and integrity.
-              </p>
-
-          
-            </div>
-          </motion.div>
-
-          {/* Vision Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-            whileHover={{ y: -5 }}
-            className="group"
-          >
-            <div className="bg-gradient-to-br from-[#003366] to-[#003366]/90 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 h-full text-white relative overflow-hidden">
-              {/* Background Pattern */}
-              <div className="absolute inset-0 opacity-10">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#00C4A7] rounded-full -translate-y-16 translate-x-16" />
-                <div className="absolute bottom-0 left-0 w-24 h-24 bg-[#00C4A7] rounded-full translate-y-12 -translate-x-12" />
-              </div>
-
-              {/* Icon Header */}
-              <div className="flex items-center mb-6 relative z-10">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#00C4A7] to-[#00C4A7]/80 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Eye className="w-8 h-8 text-white" />
-                </div>
-                <div className="ml-4">
-                  <h3 className="text-2xl font-bold text-white">Our Vision</h3>
-                  <div className="w-12 h-0.5 bg-[#00C4A7] mt-2" />
-                </div>
-              </div>
-
-              {/* Content */}
-              <p className="text-gray-100 leading-relaxed sm:text-lg mb-6 relative z-10">
-                We envision Ottawa as a global leader in responsible AI innovation, where technology advances the public good and empowers every community.
-              </p>
-
-          
-
-              {/* Accent Line */}
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00C4A7] to-transparent" />
-            </div>
-          </motion.div>
+                <h3 className="font-bold text-[#003366] mb-2">{pillar.title}</h3>
+                <p className="text-sm text-gray-500 leading-relaxed">{pillar.description}</p>
+              </motion.div>
+            )
+          })}
         </div>
 
-        {/* Bottom Accent */}
+        {/* Vision — full-width accent */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
           viewport={{ once: true }}
-          className="text-center mt-16"
+          className="relative overflow-hidden bg-gradient-to-br from-[#003366] to-[#004e99] rounded-3xl px-10 py-12 text-center text-white"
         >
-          <div className="inline-flex items-center px-6 py-3 bg-[#00C4A7]/10 text-[#00C4A7] rounded-full text-sm font-medium">
-            <div className="w-2 h-2 bg-[#00C4A7] rounded-full mr-3 animate-pulse" />
-            Building the future of responsible AI together
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_#00C4A7_0%,_transparent_60%)] opacity-15" />
+          <div className="relative z-10">
+            <p className="text-[#00C4A7] font-semibold uppercase tracking-widest text-sm mb-4">Our Vision</p>
+            <p className="text-2xl lg:text-3xl font-bold leading-snug max-w-3xl mx-auto">
+              Ottawa as a global leader in responsible AI innovation, where technology advances the public good and empowers every community.
+            </p>
           </div>
         </motion.div>
+
       </div>
     </section>
   )

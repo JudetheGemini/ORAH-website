@@ -1,20 +1,8 @@
 "use client"
 
-import React from "react"
-
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import {
-  ChevronLeft,
-  ChevronRight,
-  ArrowRight,
-  Users,
-  Calendar,
-  MessageSquare,
-  GraduationCap,
-  BookOpen,
-  Eye,
-} from "lucide-react"
+import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import AIForAllModal from "./ai-for-all-modal"
 
@@ -24,274 +12,198 @@ const initiatives = [
     title: "AI for All: Empowering Seniors",
     description:
       "A digital literacy and inclusion program helping older adults (60+) confidently engage with everyday AI through hands-on workshops and community partnerships.",
-    icon: Users,
     image: "/ai_for_all_empowering_seniors.jpg",
-    color: "from-[#00C4A7] to-[#00C4A7]/80",
+    tag: "Active Program",
+    href: "/programs/ai-for-all-seniors",
   },
   {
     id: 2,
     title: "Ottawa Responsible AI Summit",
     description:
       "Our flagship annual event bringing together policymakers, developers, academics, and community voices to explore the future of ethical AI in Canada.",
-    icon: Calendar,
     image: "/ai_with_intent_conference.jpg",
-    color: "from-[#003366] to-[#003366]/80",
+    tag: "Annual Event",
+    href: "/programs",
   },
   {
     id: 3,
     title: "Ottawa Responsible AI Talks (ORAT)",
     description:
       "Quarterly meetups fostering cross-sector dialogue between researchers, developers, policymakers, and community members on responsible AI developments.",
-    icon: MessageSquare,
     image: "/orat.jpg",
-    color: "from-[#00C4A7] to-[#003366]",
+    tag: "Quarterly",
+    href: "/programs",
   },
   {
     id: 4,
     title: "Youth AI Changemakers",
     description:
       "A civic innovation fellowship for students and young adults passionate about using AI for public good, launching Spring 2026.",
-    icon: GraduationCap,
     image: "/ai_youth_changer.jpg",
-    color: "from-[#003366] to-[#00C4A7]",
+    tag: "Launching 2026",
+    href: "/programs",
   },
   {
     id: 5,
     title: "Responsible AI Research & Governance Collective",
     description:
       "A collaborative platform for researchers and practitioners to publish, co-design, and pilot responsible AI frameworks with real-world impact.",
-    icon: BookOpen,
     image: "/research.jpg",
-    color: "from-[#00C4A7]/80 to-[#003366]",
+    tag: "Coming Soon",
+    href: "/programs",
   },
 ]
 
 export default function InitiativesSlider() {
-  const [currentSlide, setCurrentSlide] = useState(0)
+  const [current, setCurrent] = useState(0)
+  const [direction, setDirection] = useState(1)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
-  // Auto-slide functionality
+  const go = (index: number, dir: number) => {
+    setDirection(dir)
+    setCurrent(index)
+  }
+
+  const next = () => go((current + 1) % initiatives.length, 1)
+  const prev = () => go((current - 1 + initiatives.length) % initiatives.length, -1)
+
   useEffect(() => {
     if (!isAutoPlaying) return
+    timerRef.current = setInterval(next, 5000)
+    return () => { if (timerRef.current) clearInterval(timerRef.current) }
+  }, [isAutoPlaying, current])
 
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % initiatives.length)
-    }, 4000)
-
-    return () => clearInterval(interval)
-  }, [isAutoPlaying])
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % initiatives.length)
-  }
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + initiatives.length) % initiatives.length)
-  }
-
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index)
+  const variants = {
+    enter: (dir: number) => ({ opacity: 0, x: dir > 0 ? 60 : -60 }),
+    center: { opacity: 1, x: 0 },
+    exit: (dir: number) => ({ opacity: 0, x: dir > 0 ? -60 : 60 }),
   }
 
   return (
-    <section className="py-20 px-4 bg-gray-50 relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#003366]/20 to-[#00C4A7]/20" />
-      </div>
+    <section
+      className="py-24 px-4 bg-gray-50"
+      onMouseEnter={() => setIsAutoPlaying(false)}
+      onMouseLeave={() => setIsAutoPlaying(true)}
+    >
+      <div className="max-w-6xl mx-auto">
 
-      <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="mb-10"
         >
-          <div className="inline-flex items-center px-4 py-2 bg-[#00C4A7]/10 text-[#00C4A7] rounded-full text-sm font-medium mb-6">
-            <BookOpen className="w-4 h-4 mr-2" />
-            Our Programs
+          <p className="text-[#00C4A7] font-semibold uppercase tracking-widest text-sm mb-3">What We Do</p>
+          <div className="flex items-end justify-between gap-4 flex-wrap">
+            <h2 className="text-4xl lg:text-5xl font-bold text-[#003366]">Our Initiatives</h2>
+            <Link href="/programs" className="text-sm font-semibold text-[#003366] hover:text-[#00C4A7] transition-colors flex items-center gap-1 pb-1">
+              View all programs <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-[#003366] mb-6">Our Initiatives</h2>
-          <p className="sm:text-xl text-gray-600 max-w-3xl mx-auto">
-            Discover our flagship programs driving responsible AI innovation across Ottawa and beyond
-          </p>
         </motion.div>
 
-        {/* Main Slider Container */}
-        <div
-          className="relative"
-          onMouseEnter={() => setIsAutoPlaying(false)}
-          onMouseLeave={() => setIsAutoPlaying(true)}
-        >
-          {/* Slider Content */}
-          <div className="relative h-[600px] lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentSlide}
-                initial={{ opacity: 0, y: 300 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -300 }}
-                transition={{ duration: 0.6, ease: "easeInOut" }}
-                className="absolute inset-0"
-              >
-                {/* Background Image */}
-                <div className="absolute inset-0">
-                  <img
-                    src={initiatives[currentSlide].image || "/placeholder.svg"}
-                    alt={initiatives[currentSlide].title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className={`absolute inset-0 bg-gradient-to-r ${initiatives[currentSlide].color} opacity-90`} />
+        {/* Slider */}
+        <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[480px] lg:h-[420px]">
+          <AnimatePresence mode="wait" custom={direction}>
+            <motion.div
+              key={current}
+              custom={direction}
+              variants={variants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{ duration: 0.45, ease: "easeInOut" }}
+              className="absolute inset-0"
+            >
+              {/* Full-bleed photo */}
+              <img
+                src={initiatives[current].image}
+                alt={initiatives[current].title}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+
+              {/* Mobile: full dark overlay. Desktop: fades right so photo bleeds through */}
+              <div className="absolute inset-0 bg-[#003366]/85 lg:bg-transparent" />
+              <div className="absolute inset-0 hidden lg:block bg-gradient-to-r from-[#003366]/95 via-[#003366]/65 to-transparent" />
+
+              {/* Content — full width on mobile, left 55% on desktop */}
+              <div className="relative z-10 h-full flex flex-col justify-center px-8 lg:px-14 max-w-full lg:max-w-[55%]">
+                <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-[#00C4A7] mb-4">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#00C4A7] animate-pulse" />
+                  {initiatives[current].tag}
+                </span>
+
+                <h3 className="text-2xl lg:text-4xl font-bold text-white leading-tight mb-4">
+                  {initiatives[current].title}
+                </h3>
+
+                <p className="text-white/75 leading-relaxed mb-8 text-sm lg:text-base max-w-md hidden sm:block">
+                  {initiatives[current].description}
+                </p>
+
+                <div className="flex gap-3 flex-wrap">
+                  {initiatives[current].id === 1 && (
+                    <button
+                      onClick={() => setIsModalOpen(true)}
+                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#00C4A7] text-white text-sm font-semibold rounded-xl hover:bg-[#00a88e] hover:-translate-y-0.5 transition-all duration-300"
+                    >
+                      Quick View
+                    </button>
+                  )}
+                  <Link
+                    href={initiatives[current].href}
+                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/15 backdrop-blur-sm text-white text-sm font-semibold rounded-xl border border-white/25 hover:bg-white/25 transition-all duration-300"
+                  >
+                    Learn More
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
                 </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
 
-                {/* Content */}
-                <div className="relative z-10 h-full flex flex-col lg:flex-row">
-                  {/* Left Side - Content */}
-                  <div className="flex-1 p-8 lg:p-12 flex flex-col justify-center text-white">
-                    {/* Number Badge */}
-                    <motion.div
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      transition={{ delay: 0.2, duration: 0.5 }}
-                      className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full text-2xl font-bold mb-6"
-                    >
-                      {initiatives[currentSlide].id}
-                    </motion.div>
+          {/* Left / Right arrows */}
+          <button
+            onClick={prev}
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/15 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-white/30 transition-all duration-200"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <button
+            onClick={next}
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/15 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-white/30 transition-all duration-200"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
 
-                    {/* Title */}
-                    <motion.h3
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.3, duration: 0.5 }}
-                      className="text-3xl lg:text-4xl font-bold mb-6 leading-tight"
-                    >
-                      {initiatives[currentSlide].title}
-                    </motion.h3>
-
-                    {/* Description */}
-                    <motion.p
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.4, duration: 0.5 }}
-                      className="lg:text-xl text-white/90 mb-8 leading-relaxed max-w-2xl"
-                    >
-                      {initiatives[currentSlide].description}
-                    </motion.p>
-
-                    {/* Read More Button */}
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.5, duration: 0.5 }}
-                      className="flex gap-3 flex-wrap"
-                    >
-                      {/* Show modal button only for AI for All program */}
-                      {initiatives[currentSlide].id === 1 && (
-                        <motion.button
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                          onClick={() => {
-                            console.log('Opening AI for All modal');
-                            setIsModalOpen(true);
-                          }}
-                          className="inline-flex items-center px-6 py-3 bg-[#00C4A7] text-white font-semibold rounded-lg hover:bg-[#00C4A7]/90 transition-colors shadow-lg border-2 border-white"
-                        >
-                          <Eye className="mr-2 w-5 h-5" />
-                          View Details
-                        </motion.button>
-                      )}
-                      <Link href="/programs">
-                        <motion.button
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                          className="inline-flex items-center px-8 py-3 bg-white text-[#003366] font-semibold rounded-lg hover:bg-white/90 transition-colors shadow-lg"
-                        >
-                          Read More
-                          <ArrowRight className="ml-2 w-5 h-5" />
-                        </motion.button>
-                      </Link>
-                    </motion.div>
-                  </div>
-
-                  {/* Right Side - Icon */}
-                  <div className="hidden lg:flex flex-1 items-center justify-center p-12">
-                    <motion.div
-                      initial={{ scale: 0, rotate: -180 }}
-                      animate={{ scale: 1, rotate: 0 }}
-                      transition={{ delay: 0.6, duration: 0.8, type: "spring" }}
-                      className="w-48 h-48 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center"
-                    >
-                      {React.createElement(initiatives[currentSlide].icon, { className: "w-24 h-24 text-white" })}
-                    </motion.div>
-                  </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
+          {/* Slide counter */}
+          <div className="absolute bottom-5 right-6 z-20 text-white/50 text-xs font-mono tabular-nums">
+            {String(current + 1).padStart(2, "0")} / {String(initiatives.length).padStart(2, "0")}
           </div>
-
-          {/* Navigation Arrows */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-1/2 top-4 transform -translate-x-1/2 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors z-20 rotate-90"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
-          <button
-            onClick={nextSlide}
-            className="absolute left-1/2 bottom-4 transform -translate-x-1/2 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors z-20 rotate-90"
-          >
-            <ChevronRight className="w-6 h-6" />
-          </button>
         </div>
 
-        {/* Navigation Dots */}
-        <div className="flex justify-center mt-8 space-x-3">
-          {initiatives.map((_, index) => (
+        {/* Progress dots */}
+        <div className="flex items-center justify-center gap-2 mt-6">
+          {initiatives.map((_, i) => (
             <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`relative w-12 h-12 rounded-full transition-all duration-300 ${
-                index === currentSlide
-                  ? "bg-[#00C4A7] text-white scale-110"
-                  : "bg-white text-[#003366] hover:bg-gray-100 border-2 border-gray-200"
+              key={i}
+              onClick={() => go(i, i > current ? 1 : -1)}
+              className={`transition-all duration-300 rounded-full ${
+                i === current
+                  ? "w-8 h-2 bg-[#003366]"
+                  : "w-2 h-2 bg-gray-300 hover:bg-gray-400"
               }`}
-            >
-              <span className="font-bold">{index + 1}</span>
-              {index === currentSlide && (
-                <motion.div
-                  layoutId="activeIndicator"
-                  className="absolute inset-0 rounded-full border-2 border-white/50"
-                />
-              )}
-            </button>
+            />
           ))}
         </div>
 
-        {/* Progress Bar */}
-        {/* <div className="mt-6 max-w-md mx-auto">
-          <div className="h-1 bg-gray-200 rounded-full overflow-hidden">
-            <motion.div
-              className="h-full bg-[#00C4A7] rounded-full"
-              initial={{ width: "0%" }}
-              animate={{ width: `${((currentSlide + 1) / initiatives.length) * 100}%` }}
-              transition={{ duration: 0.5 }}
-            />
-          </div>
-          <div className="flex justify-between text-sm text-gray-500 mt-2">
-            <span>Initiative {currentSlide + 1}</span>
-            <span>{initiatives.length} Total</span>
-          </div>
-        </div> */}
       </div>
-      
-      {/* AI for All Modal */}
-      <AIForAllModal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
-      />
+
+      <AIForAllModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   )
 }

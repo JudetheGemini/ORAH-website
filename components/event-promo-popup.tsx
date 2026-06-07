@@ -153,7 +153,7 @@ export default function EventPromoPopup({
                                 <h3 className="text-lg sm:text-xl font-bold mb-2 pr-10 leading-tight">
                                     {title}
                                 </h3>
-                                <p className="text-white/90 text-sm leading-relaxed pr-10">
+                                <p className="hidden sm:block text-white/90 text-sm leading-relaxed pr-10">
                                     {description}
                                 </p>
                             </div>
@@ -172,9 +172,9 @@ export default function EventPromoPopup({
                                     </div>
                                 )}
 
-                                {/* Benefits highlight */}
+                                {/* Benefits highlight — hidden on mobile to keep popup compact */}
                                 {benefits.length > 0 && (
-                                    <div className="bg-gray-50 rounded-lg p-3 sm:p-4">
+                                    <div className="hidden sm:block bg-gray-50 rounded-lg p-3 sm:p-4">
                                         <h4 className="font-semibold mb-2 text-sm sm:text-base" style={{ color: gradientTo }}>
                                             {benefitsTitle}
                                         </h4>
@@ -221,8 +221,8 @@ export default function EventPromoPopup({
                                     )}
                                 </div>
 
-                                {/* Small disclaimer */}
-                                <p className="text-xs text-gray-500 text-center leading-relaxed">
+                                {/* Small disclaimer — hidden on mobile */}
+                                <p className="hidden sm:block text-xs text-gray-500 text-center leading-relaxed">
                                     This popup won&apos;t show again during your visit
                                 </p>
                             </div>

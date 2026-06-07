@@ -46,7 +46,7 @@ export default function AIForAllPage() {
         {
             icon: Sprout,
             title: 'Learner Mindset',
-            description: "Willing to grow alongside participants — you don't need to know everything, just be curious.",
+            description: "Willing to grow alongside participants. You don't need to know everything, just be curious.",
         },
         {
             icon: Calendar,
@@ -218,7 +218,7 @@ export default function AIForAllPage() {
                             What You&apos;ll <span className="bg-gradient-to-r from-[#00C4A7] to-[#003366] bg-clip-text text-transparent">Do & Build</span>
                         </h2>
                         <p className="text-lg text-gray-600 max-w-2xl">
-                            As a youth volunteer, you&apos;ll guide seniors through AI literacy, digital tools, and online safety — while building your own leadership skills.
+                            As a youth volunteer, you&apos;ll guide seniors through AI literacy, digital tools, and online safety, while building your own leadership skills.
                         </p>
                     </motion.div>
 
@@ -346,7 +346,7 @@ export default function AIForAllPage() {
                             We&apos;re Looking <span className="bg-gradient-to-r from-[#00C4A7] to-[#003366] bg-clip-text text-transparent">for You</span>
                         </h2>
                         <p className="text-lg text-gray-600 max-w-2xl">
-                            No prior teaching experience needed — just enthusiasm, patience, and a desire to make a difference.
+                            No prior teaching experience needed. Just enthusiasm, patience, and a desire to make a difference.
                         </p>
                     </motion.div>
 

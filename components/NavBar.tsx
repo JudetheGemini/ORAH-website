@@ -1,277 +1,256 @@
 "use client"
 
 import Link from "next/link"
-import { useState } from "react"
-import { ChevronDown } from "lucide-react"
+import { useState, useEffect } from "react"
+import { ChevronDown, Menu, X } from "lucide-react"
+import { usePathname } from "next/navigation"
+
+const navLinks = [
+  { label: "About Us", href: "/about" },
+  { label: "Theory of Change", href: "/theory-of-change" },
+  { label: "Programs", href: "/programs" },
+  { label: "Board", href: "/advisory-board" },
+]
+
+const initiatives = [
+  { label: "Responsible AI Summit", href: "https://summit.responsibleaiottawa.ca", external: true },
+  { label: "Responsible AI Talks", href: "https://talks.responsibleaiottawa.ca", external: true },
+  { label: "Global Forum for Responsible AI", href: "https://forum.responsibleaiottawa.ca", external: true },
+]
+
+const resources = [
+  { label: "Events", href: "/events" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Reports", href: "/reports" },
+  { label: "Blog", href: "https://blog.responsibleaiottawa.ca", external: true },
+]
 
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isEventsDropdownOpen, setIsEventsDropdownOpen] = useState(false)
+  const [initiativesOpen, setInitiativesOpen] = useState(false)
+  const [resourcesOpen, setResourcesOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  const pathname = usePathname()
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10)
+    window.addEventListener("scroll", onScroll, { passive: true })
+    onScroll()
+    return () => window.removeEventListener("scroll", onScroll)
+  }, [])
 
-  const toggleEventsDropdown = () => {
-    setIsEventsDropdownOpen(!isEventsDropdownOpen)
-  }
-
-  const closeMenus = () => {
+  const close = () => {
     setIsMenuOpen(false)
-    setIsEventsDropdownOpen(false)
+    setInitiativesOpen(false)
+    setResourcesOpen(false)
   }
 
   return (
-    <header>
-      <nav className="border-gray-200 md:px-4 lg:px-6 py-2.5 mt-4 mb-2">
-        <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-          <Link href="/" className="flex items-center px-4">
-            <img src="/logo2.svg" className="mr-3 h-8 sm:h-12" alt="ORAH Logo" />
+    <header
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100"
+          : "bg-white border-b border-transparent"
+      }`}
+    >
+      <nav className="max-w-7xl mx-auto px-4 lg:px-8 h-16 flex items-center justify-between gap-8">
+
+        {/* Logo */}
+        <Link href="/" onClick={close} className="flex-shrink-0">
+          <img src="/logo2.svg" className="h-8 sm:h-10" alt="ORAH Logo" />
+        </Link>
+
+        {/* Desktop links */}
+        <ul className="hidden lg:flex items-center justify-center gap-0.5 flex-1">
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href || pathname.startsWith(link.href + "/")
+            return (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-colors duration-200 block ${
+                    isActive
+                      ? "text-[#00C4A7] bg-[#00C4A7]/8"
+                      : "text-gray-600 hover:text-[#003366] hover:bg-gray-50"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            )
+          })}
+
+          {/* Initiatives dropdown */}
+          <li
+            className="relative"
+            onMouseEnter={() => setInitiativesOpen(true)}
+            onMouseLeave={() => setInitiativesOpen(false)}
+          >
+            <button
+              className="flex items-center gap-1 px-3.5 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-[#003366] hover:bg-gray-50 transition-colors duration-200"
+            >
+              Initiatives
+              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${initiativesOpen ? "rotate-180 text-[#003366]" : ""}`} />
+            </button>
+            <div className={`absolute left-0 top-full pt-1.5 transition-all duration-200 ${initiativesOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-1 pointer-events-none"}`}>
+              <div className="bg-white rounded-xl shadow-xl border border-gray-100 py-1.5 min-w-[230px]">
+                {initiatives.map((item) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={close}
+                    className="block px-4 py-2.5 text-sm text-gray-700 hover:text-[#003366] hover:bg-gray-50 transition-colors"
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </li>
+
+          {/* Resources dropdown */}
+          <li
+            className="relative"
+            onMouseEnter={() => setResourcesOpen(true)}
+            onMouseLeave={() => setResourcesOpen(false)}
+          >
+            <button
+              className="flex items-center gap-1 px-3.5 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-[#003366] hover:bg-gray-50 transition-colors duration-200"
+            >
+              Resources
+              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${resourcesOpen ? "rotate-180 text-[#003366]" : ""}`} />
+            </button>
+            <div className={`absolute left-0 top-full pt-1.5 transition-all duration-200 ${resourcesOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-1 pointer-events-none"}`}>
+              <div className="bg-white rounded-xl shadow-xl border border-gray-100 py-1.5 min-w-[160px]">
+                {resources.map((item) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    target={item.external ? "_blank" : undefined}
+                    rel={item.external ? "noopener noreferrer" : undefined}
+                    onClick={close}
+                    className="block px-4 py-2.5 text-sm text-gray-700 hover:text-[#003366] hover:bg-gray-50 transition-colors"
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        {/* Desktop CTA */}
+        <div className="hidden lg:block flex-shrink-0">
+          <Link
+            href="/#contact"
+            className="inline-flex items-center px-5 py-2.5 bg-[#003366] text-white text-sm font-semibold rounded-xl hover:bg-[#00C4A7] transition-colors duration-300"
+          >
+            Contact Us
           </Link>
-          <div className="flex items-center lg:order-2 px-4">
+        </div>
+
+        {/* Mobile hamburger */}
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="lg:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
+          aria-label="Toggle menu"
+        >
+          {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+        </button>
+      </nav>
+
+      {/* Mobile menu */}
+      <div
+        className={`lg:hidden overflow-hidden transition-all duration-300 ${
+          isMenuOpen ? "max-h-screen border-t border-gray-100" : "max-h-0"
+        }`}
+      >
+        <div className="bg-white px-4 py-3 space-y-0.5">
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href || pathname.startsWith(link.href + "/")
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={close}
+                className={`block px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+                  isActive
+                    ? "text-[#00C4A7] bg-[#00C4A7]/8"
+                    : "text-gray-700 hover:text-[#003366] hover:bg-gray-50"
+                }`}
+              >
+                {link.label}
+              </a>
+            )
+          })}
+
+          {/* Mobile — Initiatives */}
+          <div>
+            <button
+              onClick={() => setInitiativesOpen(!initiativesOpen)}
+              className="flex items-center justify-between w-full px-3 py-2.5 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+            >
+              Initiatives
+              <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${initiativesOpen ? "rotate-180" : ""}`} />
+            </button>
+            <div className={`overflow-hidden transition-all duration-200 ${initiativesOpen ? "max-h-48" : "max-h-0"}`}>
+              <div className="pl-3 pb-1 space-y-0.5">
+                {initiatives.map((item) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={close}
+                    className="block px-3 py-2 text-sm text-gray-600 hover:text-[#003366] hover:bg-gray-50 rounded-lg transition-colors"
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile — Resources */}
+          <div>
+            <button
+              onClick={() => setResourcesOpen(!resourcesOpen)}
+              className="flex items-center justify-between w-full px-3 py-2.5 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+            >
+              Resources
+              <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${resourcesOpen ? "rotate-180" : ""}`} />
+            </button>
+            <div className={`overflow-hidden transition-all duration-200 ${resourcesOpen ? "max-h-48" : "max-h-0"}`}>
+              <div className="pl-3 pb-1 space-y-0.5">
+                {resources.map((item) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    target={item.external ? "_blank" : undefined}
+                    rel={item.external ? "noopener noreferrer" : undefined}
+                    onClick={close}
+                    className="block px-3 py-2 text-sm text-gray-600 hover:text-[#003366] hover:bg-gray-50 rounded-lg transition-colors"
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="pt-2 pb-1 border-t border-gray-100">
             <Link
               href="/#contact"
-              className="text-white bg-darkBlue focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
+              onClick={close}
+              className="block px-3 py-3 text-sm font-semibold text-white bg-[#003366] rounded-xl text-center hover:bg-[#00C4A7] transition-colors duration-300"
             >
               Contact Us
             </Link>
-            <button
-              onClick={toggleMenu}
-              type="button"
-              className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-              aria-controls="mobile-menu-2"
-              aria-expanded={isMenuOpen}
-            >
-              <span className="sr-only">Open main menu</span>
-              <svg
-                className={`${isMenuOpen ? "hidden" : "block"} w-6 h-6`}
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
-              <svg
-                className={`${isMenuOpen ? "block" : "hidden"} w-6 h-6`}
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
-            </button>
-          </div>
-          <div
-            className={`${isMenuOpen ? "block px-4 py-2 z-30 sm:z-0 absolute sm:relative top-[70px] sm:top-0 sm:bg-none bg-gradient-to-b from-cyan-50 via-cyan-50 to-white" : "hidden"} justify-between items-center w-full lg:flex lg:w-auto lg:order-1`}
-            id="mobile-menu-2"
-          >
-            <ul className="flex flex-col gap-2 text-lg font-inter mt-4 font-base lg:flex-row lg:space-x-8 lg:mt-0">
-              {/* <li>
-                        <Link onClick={toggleMenu} href="/" className="block py-2 pr-4 pl-3 text-darkBlue border-b border-gray-50 rounded lg:border-0 lg:bg-transparent lg:p-0 " aria-current="page">Home</Link>
-                    </li> */}
-              <li>
-                <a
-                  onClick={closeMenus}
-                  href="/about"
-                  className="block py-2 pr-4 pl-3 text-darkBlue border-b border-gray-50 rounded lg:border-0 lg:bg-transparent lg:p-0"
-                >
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a
-                  onClick={closeMenus}
-                  href="/theory-of-change"
-                  className="block py-2 pr-4 pl-3 text-darkBlue border-b border-gray-50 rounded lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0"
-                >
-                  Theory of Change
-                </a>
-              </li>
-              <li>
-                <a
-                  onClick={closeMenus}
-                  href="/programs"
-                  className="block py-2 pr-4 pl-3 text-darkBlue border-b border-gray-50 rounded lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0"
-                >
-                  Programs
-                </a>
-              </li>
-              <li>
-                <a
-                  onClick={closeMenus}
-                  href="/advisory-board"
-                  className="block py-2 pr-4 pl-3 text-darkBlue border-b border-gray-50 rounded lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0"
-                >
-                  Board
-                </a>
-              </li>
-
-              <li className="relative group">
-                <button
-                  onClick={toggleEventsDropdown}
-                  className="flex items-center gap-1 py-2 pr-4 pl-3 text-darkBlue border-b border-gray-50 rounded lg:border-0 lg:hover:bg-transparent lg:hover:text-primary-700 lg:p-0 w-full lg:w-auto justify-between lg:justify-start"
-                >
-                  Initiatives
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform ${isEventsDropdownOpen ? "lg:rotate-180" : ""}`}
-                  />
-                </button>
-
-                {/* Mobile dropdown */}
-                {isEventsDropdownOpen && (
-                  <div className="lg:hidden bg-gray-50 border-b border-gray-50">
-                    <a
-                      target="_blank"
-                      href="https://summit.responsibleaiottawa.ca"
-                      onClick={closeMenus}
-                      className="block py-2 pr-4 pl-6 text-darkBlue hover:bg-gray-100"
-                    >
-                      Responsible AI Summit
-                    </a>
-                    <a
-                      target="_blank"
-                      href="https://talks.responsibleaiottawa.ca"
-                      onClick={closeMenus}
-                      className="block py-2 pr-4 pl-6 text-darkBlue hover:bg-gray-100"
-                    >
-                      Responsible AI Talks
-                    </a>
-                                        <a
-                      target="_blank"
-                      href="https://forum.responsibleaiottawa.ca"
-                      onClick={closeMenus}
-                      className="block py-2 pr-4 pl-6 text-darkBlue hover:bg-gray-100"
-                    >
-                      Global Forum for Responsible AI
-                    </a>
-                  </div>
-                )}
-
-                {/* Desktop dropdown */}
-                <div className="hidden lg:absolute lg:left-0 lg:top-full lg:group-hover:block lg:bg-white lg:shadow-lg lg:rounded-md lg:py-2 lg:min-w-max lg:z-100">
-                  <a
-                    target="_blank"
-                    href="https://summit.responsibleaiottawa.ca"
-                    onClick={closeMenus}
-                    className="block px-4 py-2 text-darkBlue hover:bg-gray-100"
-                  >
-                    Responsible AI Summit
-                  </a>
-                  <a
-                    target="_blank"
-                    href="https://talks.responsibleaiottawa.ca"
-                    onClick={closeMenus}
-                    className="block px-4 py-2 text-darkBlue hover:bg-gray-100"
-                  >
-                    Responsible AI Talks
-                  </a>
-                  <a
-                    target="_blank"
-                    href="https://forum.responsibleaiottawa.ca"
-                    onClick={closeMenus}
-                    className="block px-4 py-2 text-darkBlue hover:bg-gray-100"
-                  >
-                    Global Forum for Responsible AI
-                  </a>
-                </div>
-              </li>
-                    
-                    <li className="relative group">
-                <button
-                  onClick={toggleEventsDropdown}
-                  className="flex items-center gap-1 py-2 pr-4 pl-3 text-darkBlue border-b border-gray-50 rounded lg:border-0 lg:hover:bg-transparent lg:hover:text-primary-700 lg:p-0 w-full lg:w-auto justify-between lg:justify-start"
-                >
-                  Resources
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform ${isEventsDropdownOpen ? "lg:rotate-180" : ""}`}
-                  />
-                </button>
-
-                {/* Mobile dropdown */}
-                {isEventsDropdownOpen && (
-                  <div className="lg:hidden bg-gray-50 border-b border-gray-50">
-                    <a
-                      href="/events"
-                      onClick={closeMenus}
-                      className="block py-2 pr-4 pl-6 text-darkBlue hover:bg-gray-100"
-                    >
-                      Events
-                    </a>
-                    <a
-                      href="/gallery"
-                      onClick={closeMenus}
-                      className="block py-2 pr-4 pl-6 text-darkBlue hover:bg-gray-100"
-                    >
-                      Gallery
-                    </a>
-                    <a
-                      href="/reports"
-                      onClick={closeMenus}
-                      className="block py-2 pr-4 pl-6 text-darkBlue hover:bg-gray-100"
-                    >
-                      Reports
-                    </a>
-                  </div>
-                )}
-
-                {/* Desktop dropdown */}
-                <div className="hidden lg:absolute lg:left-0 lg:top-full lg:group-hover:block lg:bg-white lg:shadow-lg lg:rounded-md lg:py-2 lg:min-w-max lg:z-100">
-                  <a
-                      href="/events"
-                      onClick={closeMenus}
-                      className="block py-2 pr-4 pl-6 text-darkBlue hover:bg-gray-100"
-                    >
-                      Events
-                    </a>
-                  <a
-                    href="/gallery"
-                    onClick={closeMenus}
-                    className="block px-4 py-2 text-darkBlue hover:bg-gray-100"
-                  >
-                    Gallery
-                  </a>
-                  <a
-                    href="/reports"
-                    onClick={closeMenus}
-                    className="block px-4 py-2 text-darkBlue hover:bg-gray-100"
-                  >
-                    Reports
-                  </a>
-
-                </div>
-              </li>
-
-
-              {/* <li>
-                <a
-                  onClick={closeMenus}
-                  href="/gallery"
-                  className="block py-2 pr-4 pl-3 text-darkBlue border-b border-gray-50 rounded lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0"
-                >
-                  Gallery
-                </a>
-              </li> */}
-              <li>
-                <a
-                  onClick={closeMenus}
-                  target="_blank"
-                  href="https://blog.responsibleaiottawa.ca"
-                  className="block py-2 pr-4 pl-3 text-darkBlue border-b border-gray-50 rounded lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0"
-                  rel="noreferrer"
-                >
-                  Blog
-                </a>
-              </li>
-            </ul>
           </div>
         </div>
-      </nav>
+      </div>
     </header>
   )
 }
