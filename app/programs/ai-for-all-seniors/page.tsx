@@ -109,10 +109,10 @@ export default function AIForAllSeniorsPage() {
         <main className="min-h-screen bg-white">
 
             {/* ── Hero ─────────────────────────────────────────────────── */}
-            <section className="relative overflow-hidden bg-gradient-to-br from-white via-white to-[#00C4A7]/5 pt-8">
+            <section className="relative overflow-hidden bg-gradient-to-br from-white via-white to-[#00C4A7]/5">
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_#003366_0%,_transparent_65%)] opacity-[0.05]" />
 
-                <div className="relative z-10 max-w-6xl mx-auto px-4 py-20">
+                <div className="relative z-10 max-w-6xl mx-auto px-4 pt-8 pb-16">
                     <motion.div
                         variants={containerVariants}
                         initial="hidden"
