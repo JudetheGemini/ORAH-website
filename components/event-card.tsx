@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion"
 import { Calendar, MapPin, Globe, ArrowRight, Users } from "lucide-react"
-import Link from "next/link"
 
 export interface EventData {
   id: string
@@ -32,8 +31,8 @@ function StatusBadge({ status }: { status: EventData["status"] }) {
     status === "upcoming"
       ? "bg-[#00C4A7]/90 text-white"
       : status === "ongoing"
-      ? "bg-green-500/90 text-white"
-      : "bg-gray-500/80 text-white"
+        ? "bg-green-500/90 text-white"
+        : "bg-gray-500/80 text-white"
   return (
     <span className={`px-2.5 py-1 rounded-full text-xs font-medium backdrop-blur-sm ${styles}`}>
       {status.charAt(0).toUpperCase() + status.slice(1)}
