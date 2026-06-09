@@ -69,7 +69,7 @@ export default function InitiativesSlider() {
     if (!isAutoPlaying) return
     timerRef.current = setInterval(next, 5000)
     return () => { if (timerRef.current) clearInterval(timerRef.current) }
-  }, [isAutoPlaying, current])
+  }, [isAutoPlaying, current, next])
 
   const variants = {
     enter: (dir: number) => ({ opacity: 0, x: dir > 0 ? 60 : -60 }),

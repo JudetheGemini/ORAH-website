@@ -71,6 +71,7 @@ export default function NavBar() {
 
         {/* Logo */}
         <Link href={`/${locale}`} onClick={close} className="flex-shrink-0">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/logo2.svg" className="h-8 sm:h-10" alt="ORAH Logo" />
         </Link>
 

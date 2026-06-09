@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, GraduationCap, Heart, Sprout, Calendar, ExternalLink, MapPin } from 'lucide-react'
+import Link from 'next/link'
 
 interface AIForAllModalProps {
     isOpen: boolean
@@ -180,12 +181,12 @@ export default function AIForAllModal({ isOpen, onClose }: AIForAllModalProps) {
                                     Join the Program
                                     <ExternalLink className="w-4 h-4" />
                                 </a>
-                                <a
+                                <Link
                                     href="/programs/ai-for-all"
                                     className="px-6 py-3 border-2 border-[#00C4A7] text-[#003366] font-semibold rounded-lg hover:bg-[#00C4A7]/10 transition-all duration-300"
                                 >
                                     Learn More
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
