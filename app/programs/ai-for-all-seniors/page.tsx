@@ -177,11 +177,8 @@ export default function AIForAllSeniorsPage() {
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
                                 <div className="absolute bottom-6 left-6 right-6 text-white">
-                                    {/* <div className="text-xs font-semibold bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full w-fit mb-3 uppercase tracking-wider">
-                                        Cohort 1 · Pilot Program
-                                    </div> */}
                                     <h3 className="text-xl font-bold mb-1">Community-Led AI Literacy in Ottawa</h3>
-                                    {/* <p className="text-white/80 text-sm">Funded by the Government of Canada 🇨🇦</p> */}
+                                    <p className="text-white/80 text-sm">Funded by the Government of Canada 🇨🇦</p>
                                 </div>
                             </div>
 
@@ -202,6 +199,20 @@ export default function AIForAllSeniorsPage() {
                                         </div>
                                     )
                                 })}
+                            </div>
+
+                            {/* Funding badge */}
+                            <div className="flex items-center gap-4 bg-white border border-gray-100 rounded-2xl shadow-sm px-5 py-4">
+                                <img
+                                    src="/nhsp.jpeg"
+                                    alt="New Horizons for Seniors Program"
+                                    className="h-10 w-auto object-contain flex-shrink-0"
+                                />
+                                <div>
+                                    <div className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-0.5">Funded by</div>
+                                    <div className="text-sm font-semibold text-gray-800">Government of Canada 🇨🇦</div>
+                                    <div className="text-xs text-gray-500">New Horizons for Seniors Program (NHSP)</div>
+                                </div>
                             </div>
                         </motion.div>
                     </motion.div>
@@ -260,11 +271,9 @@ export default function AIForAllSeniorsPage() {
                                 </ul>
 
                                 <div className="mt-8 pt-6 border-t border-gray-100">
-                                    <div className="flex items-center gap-3 text-sm text-gray-500">
-                                        <div className="w-8 h-8 rounded-full bg-[#003366]/10 flex items-center justify-center flex-shrink-0">
-                                            <span className="text-xs font-bold text-[#003366]">CA</span>
-                                        </div>
-                                        {/* <span>Funded by the <span className="font-medium text-gray-700">Government of Canada</span> 🇨🇦, New Horizons for Seniors Program (NHSP)</span> */}
+                                    <div className="flex items-center gap-3">
+                                        <img src="/nhsp.jpeg" alt="NHSP" className="h-8 w-auto object-contain flex-shrink-0" />
+                                        <span className="text-sm text-gray-500">Funded by the <span className="font-medium text-gray-700">Government of Canada</span> 🇨🇦, New Horizons for Seniors Program (NHSP)</span>
                                     </div>
                                 </div>
                             </div>
@@ -415,19 +424,20 @@ export default function AIForAllSeniorsPage() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.7, delay: 0.1 }}
                             viewport={{ once: true }}
-                            className="bg-white rounded-2xl border border-gray-100 shadow-sm p-7 flex gap-5 items-start hover:shadow-md hover:border-[#00C4A7]/30 transition-all duration-300"
+                            className="bg-white rounded-2xl border border-dashed border-[#00C4A7]/40 p-7 flex gap-5 items-start"
                         >
-                            <img
-                                src="/somto.jpeg"
-                                alt="Somto Mbelu"
-                                className="w-20 h-20 rounded-2xl object-cover flex-shrink-0"
-                            />
+                            <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#00C4A7]/15 to-[#003366]/10 flex items-center justify-center flex-shrink-0">
+                                <span className="text-3xl">👤</span>
+                            </div>
                             <div className="space-y-2">
-                                <div className="text-xs font-semibold uppercase tracking-widest text-[#00C4A7]">Programme Lead</div>
-                                <h3 className="text-lg font-bold text-gray-900">Somto Mbelu, PhD</h3>
-                                <p className="text-sm text-[#003366] font-medium">Founder & Program Lead · Ottawa Responsible AI Hub (ORAH)</p>
+                                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-700 text-xs font-medium">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                                    Coming Soon
+                                </div>
+                                <h3 className="text-lg font-bold text-gray-900">Programme Lead</h3>
+                                <p className="text-sm text-[#003366] font-medium">To be confirmed</p>
                                 <p className="text-sm text-gray-500 leading-relaxed">
-                                    AI ethics doctoral researcher at Erasmus University Rotterdam, with over eight years of experience leading digital health, data governance, and public policy projects across nonprofits, academia, and international development.
+                                    Details will be shared once confirmed.
                                 </p>
                             </div>
                         </motion.div>
@@ -439,17 +449,20 @@ export default function AIForAllSeniorsPage() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.7, delay: 0.15 }}
                         viewport={{ once: true }}
-                        className="bg-white rounded-2xl border border-gray-100 shadow-sm p-7 flex gap-5 items-start hover:shadow-md hover:border-[#00C4A7]/30 transition-all duration-300 mb-6"
+                        className="bg-white rounded-2xl border border-dashed border-[#00C4A7]/40 p-7 flex gap-5 items-start mb-6"
                     >
                         <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#00C4A7]/15 to-[#003366]/10 flex items-center justify-center flex-shrink-0">
                             <span className="text-3xl">🎙️</span>
                         </div>
                         <div className="space-y-2">
-                            <div className="text-xs font-semibold uppercase tracking-widest text-[#00C4A7]">Closing Panel Moderator · Session 5</div>
-                            <h3 className="text-lg font-bold text-gray-900">Ugo Okoye</h3>
-                            <p className="text-sm text-[#003366] font-medium">Ottawa Responsible AI Hub (ORAH)</p>
+                            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-700 text-xs font-medium">
+                                <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                                Coming Soon
+                            </div>
+                            <h3 className="text-lg font-bold text-gray-900">Closing Panel Moderator · Session 5</h3>
+                            <p className="text-sm text-[#003366] font-medium">To be confirmed</p>
                             <p className="text-sm text-gray-500 leading-relaxed">
-                                Ugo moderates the closing intergenerational panel on August 14, <span className="italic">&ldquo;AI, Work, and Us&rdquo;</span>, facilitating a community dialogue between seniors and Youth Volunteers on AI&apos;s impact on work, society, and the future.
+                                Details will be shared once confirmed.
                             </p>
                         </div>
                     </motion.div>
@@ -593,13 +606,18 @@ export default function AIForAllSeniorsPage() {
                         {[
                             { label: 'Delivered by', value: 'Ottawa Responsible AI Hub (ORAH)' },
                             { label: 'Hosted at', value: 'Rideau-Rockcliffe Community Resource Centre (RRCRC)' },
-                            // { label: 'Funded by', value: '🇨🇦 Government of Canada, New Horizons for Seniors Program (NHSP)' },
+                            { label: 'Funded by', value: '🇨🇦 Government of Canada, New Horizons for Seniors Program (NHSP)' },
                         ].map((credit) => (
                             <div key={credit.label} className="text-center">
                                 <div className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-1">{credit.label}</div>
                                 <div className="font-medium text-gray-700">{credit.value}</div>
                             </div>
                         ))}
+
+                        {/* NHSP logo */}
+                        <div className="w-full flex justify-center mt-4">
+                            <img src="/nhsp.jpeg" alt="New Horizons for Seniors Program" className="h-12 w-auto object-contain opacity-80" />
+                        </div>
                     </motion.div>
 
                     <div className="text-center mt-8">

@@ -3,34 +3,38 @@
 import Link from "next/link"
 import { useState, useEffect } from "react"
 import { ChevronDown, Menu, X } from "lucide-react"
-import { usePathname } from "next/navigation"
-
-const navLinks = [
-  { label: "About Us", href: "/about" },
-  { label: "Theory of Change", href: "/theory-of-change" },
-  { label: "Programs", href: "/programs" },
-  { label: "Board", href: "/advisory-board" },
-]
-
-const initiatives = [
-  { label: "Responsible AI Summit", href: "https://summit.responsibleaiottawa.ca", external: true },
-  { label: "Responsible AI Talks", href: "https://talks.responsibleaiottawa.ca", external: true },
-  { label: "Global Forum for Responsible AI", href: "https://forum.responsibleaiottawa.ca", external: true },
-]
-
-const resources = [
-  { label: "Events", href: "/events" },
-  { label: "Gallery", href: "/gallery" },
-  { label: "Reports", href: "/reports" },
-  { label: "Blog", href: "https://blog.responsibleaiottawa.ca", external: true },
-]
+import { usePathname, useRouter } from "next/navigation"
+import { useTranslations, useLocale } from "next-intl"
 
 export default function NavBar() {
+  const t = useTranslations("nav")
+  const locale = useLocale()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [initiativesOpen, setInitiativesOpen] = useState(false)
   const [resourcesOpen, setResourcesOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
+  const router = useRouter()
+
+  const navLinks = [
+    { label: t("about"), href: `/${locale}/about` },
+    { label: t("theoryOfChange"), href: `/${locale}/theory-of-change` },
+    { label: t("programs"), href: `/${locale}/programs` },
+    { label: t("board"), href: `/${locale}/advisory-board` },
+  ]
+
+  const initiatives = [
+    { label: t("summit"), href: "https://summit.responsibleaiottawa.ca", external: true },
+    { label: t("talks"), href: "https://talks.responsibleaiottawa.ca", external: true },
+    { label: t("globalForum"), href: "https://forum.responsibleaiottawa.ca", external: true },
+  ]
+
+  const resources = [
+    { label: t("events"), href: `/${locale}/events` },
+    { label: t("gallery"), href: `/${locale}/gallery` },
+    { label: t("reports"), href: `/${locale}/reports` },
+    { label: t("blog"), href: "https://blog.responsibleaiottawa.ca", external: true },
+  ]
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10)
@@ -45,6 +49,16 @@ export default function NavBar() {
     setResourcesOpen(false)
   }
 
+  const switchLocale = (newLocale: string) => {
+    // Replace current locale prefix with new one
+    const segments = pathname.split("/")
+    segments[1] = newLocale
+    router.push(segments.join("/"))
+  }
+
+  const otherLocale = locale === "en" ? "fr" : "en"
+  const otherLocaleLabel = locale === "en" ? "FR" : "EN"
+
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
@@ -56,7 +70,7 @@ export default function NavBar() {
       <nav className="max-w-7xl mx-auto px-4 lg:px-8 h-16 flex items-center justify-between gap-8">
 
         {/* Logo */}
-        <Link href="/" onClick={close} className="flex-shrink-0">
+        <Link href={`/${locale}`} onClick={close} className="flex-shrink-0">
           <img src="/logo2.svg" className="h-8 sm:h-10" alt="ORAH Logo" />
         </Link>
 
@@ -86,23 +100,15 @@ export default function NavBar() {
             onMouseEnter={() => setInitiativesOpen(true)}
             onMouseLeave={() => setInitiativesOpen(false)}
           >
-            <button
-              className="flex items-center gap-1 px-3.5 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-[#003366] hover:bg-gray-50 transition-colors duration-200"
-            >
-              Initiatives
+            <button className="flex items-center gap-1 px-3.5 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-[#003366] hover:bg-gray-50 transition-colors duration-200">
+              {t("initiatives")}
               <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${initiativesOpen ? "rotate-180 text-[#003366]" : ""}`} />
             </button>
             <div className={`absolute left-0 top-full pt-1.5 transition-all duration-200 ${initiativesOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-1 pointer-events-none"}`}>
               <div className="bg-white rounded-xl shadow-xl border border-gray-100 py-1.5 min-w-[230px]">
                 {initiatives.map((item) => (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={close}
-                    className="block px-4 py-2.5 text-sm text-gray-700 hover:text-[#003366] hover:bg-gray-50 transition-colors"
-                  >
+                  <a key={item.href} href={item.href} target="_blank" rel="noopener noreferrer" onClick={close}
+                    className="block px-4 py-2.5 text-sm text-gray-700 hover:text-[#003366] hover:bg-gray-50 transition-colors">
                     {item.label}
                   </a>
                 ))}
@@ -116,23 +122,18 @@ export default function NavBar() {
             onMouseEnter={() => setResourcesOpen(true)}
             onMouseLeave={() => setResourcesOpen(false)}
           >
-            <button
-              className="flex items-center gap-1 px-3.5 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-[#003366] hover:bg-gray-50 transition-colors duration-200"
-            >
-              Resources
+            <button className="flex items-center gap-1 px-3.5 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-[#003366] hover:bg-gray-50 transition-colors duration-200">
+              {t("resources")}
               <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${resourcesOpen ? "rotate-180 text-[#003366]" : ""}`} />
             </button>
             <div className={`absolute left-0 top-full pt-1.5 transition-all duration-200 ${resourcesOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-1 pointer-events-none"}`}>
               <div className="bg-white rounded-xl shadow-xl border border-gray-100 py-1.5 min-w-[160px]">
                 {resources.map((item) => (
-                  <a
-                    key={item.href}
-                    href={item.href}
+                  <a key={item.href} href={item.href}
                     target={item.external ? "_blank" : undefined}
                     rel={item.external ? "noopener noreferrer" : undefined}
                     onClick={close}
-                    className="block px-4 py-2.5 text-sm text-gray-700 hover:text-[#003366] hover:bg-gray-50 transition-colors"
-                  >
+                    className="block px-4 py-2.5 text-sm text-gray-700 hover:text-[#003366] hover:bg-gray-50 transition-colors">
                     {item.label}
                   </a>
                 ))}
@@ -141,13 +142,20 @@ export default function NavBar() {
           </li>
         </ul>
 
-        {/* Desktop CTA */}
-        <div className="hidden lg:block flex-shrink-0">
+        {/* Desktop right — language toggle + CTA */}
+        <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
+          <button
+            onClick={() => switchLocale(otherLocale)}
+            className="px-3 py-1.5 text-sm font-semibold text-gray-500 hover:text-[#003366] border border-gray-200 rounded-lg hover:border-[#003366]/30 transition-colors duration-200"
+            aria-label={`Switch to ${otherLocale === 'fr' ? 'French' : 'English'}`}
+          >
+            {otherLocaleLabel}
+          </button>
           <Link
-            href="/#contact"
+            href={`/${locale}/#contact`}
             className="inline-flex items-center px-5 py-2.5 bg-[#003366] text-white text-sm font-semibold rounded-xl hover:bg-[#00C4A7] transition-colors duration-300"
           >
-            Contact Us
+            {t("contact")}
           </Link>
         </div>
 
@@ -162,50 +170,32 @@ export default function NavBar() {
       </nav>
 
       {/* Mobile menu */}
-      <div
-        className={`lg:hidden overflow-hidden transition-all duration-300 ${
-          isMenuOpen ? "max-h-screen border-t border-gray-100" : "max-h-0"
-        }`}
-      >
+      <div className={`lg:hidden overflow-hidden transition-all duration-300 ${isMenuOpen ? "max-h-screen border-t border-gray-100" : "max-h-0"}`}>
         <div className="bg-white px-4 py-3 space-y-0.5">
           {navLinks.map((link) => {
             const isActive = pathname === link.href || pathname.startsWith(link.href + "/")
             return (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={close}
+              <a key={link.href} href={link.href} onClick={close}
                 className={`block px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                  isActive
-                    ? "text-[#00C4A7] bg-[#00C4A7]/8"
-                    : "text-gray-700 hover:text-[#003366] hover:bg-gray-50"
-                }`}
-              >
+                  isActive ? "text-[#00C4A7] bg-[#00C4A7]/8" : "text-gray-700 hover:text-[#003366] hover:bg-gray-50"
+                }`}>
                 {link.label}
               </a>
             )
           })}
 
-          {/* Mobile — Initiatives */}
+          {/* Mobile Initiatives */}
           <div>
-            <button
-              onClick={() => setInitiativesOpen(!initiativesOpen)}
-              className="flex items-center justify-between w-full px-3 py-2.5 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
-            >
-              Initiatives
+            <button onClick={() => setInitiativesOpen(!initiativesOpen)}
+              className="flex items-center justify-between w-full px-3 py-2.5 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors">
+              {t("initiatives")}
               <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${initiativesOpen ? "rotate-180" : ""}`} />
             </button>
             <div className={`overflow-hidden transition-all duration-200 ${initiativesOpen ? "max-h-48" : "max-h-0"}`}>
               <div className="pl-3 pb-1 space-y-0.5">
                 {initiatives.map((item) => (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={close}
-                    className="block px-3 py-2 text-sm text-gray-600 hover:text-[#003366] hover:bg-gray-50 rounded-lg transition-colors"
-                  >
+                  <a key={item.href} href={item.href} target="_blank" rel="noopener noreferrer" onClick={close}
+                    className="block px-3 py-2 text-sm text-gray-600 hover:text-[#003366] hover:bg-gray-50 rounded-lg transition-colors">
                     {item.label}
                   </a>
                 ))}
@@ -213,26 +203,21 @@ export default function NavBar() {
             </div>
           </div>
 
-          {/* Mobile — Resources */}
+          {/* Mobile Resources */}
           <div>
-            <button
-              onClick={() => setResourcesOpen(!resourcesOpen)}
-              className="flex items-center justify-between w-full px-3 py-2.5 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
-            >
-              Resources
+            <button onClick={() => setResourcesOpen(!resourcesOpen)}
+              className="flex items-center justify-between w-full px-3 py-2.5 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors">
+              {t("resources")}
               <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${resourcesOpen ? "rotate-180" : ""}`} />
             </button>
             <div className={`overflow-hidden transition-all duration-200 ${resourcesOpen ? "max-h-48" : "max-h-0"}`}>
               <div className="pl-3 pb-1 space-y-0.5">
                 {resources.map((item) => (
-                  <a
-                    key={item.href}
-                    href={item.href}
+                  <a key={item.href} href={item.href}
                     target={item.external ? "_blank" : undefined}
                     rel={item.external ? "noopener noreferrer" : undefined}
                     onClick={close}
-                    className="block px-3 py-2 text-sm text-gray-600 hover:text-[#003366] hover:bg-gray-50 rounded-lg transition-colors"
-                  >
+                    className="block px-3 py-2 text-sm text-gray-600 hover:text-[#003366] hover:bg-gray-50 rounded-lg transition-colors">
                     {item.label}
                   </a>
                 ))}
@@ -240,13 +225,16 @@ export default function NavBar() {
             </div>
           </div>
 
-          <div className="pt-2 pb-1 border-t border-gray-100">
-            <Link
-              href="/#contact"
-              onClick={close}
-              className="block px-3 py-3 text-sm font-semibold text-white bg-[#003366] rounded-xl text-center hover:bg-[#00C4A7] transition-colors duration-300"
+          <div className="pt-2 pb-1 border-t border-gray-100 flex gap-2">
+            <button
+              onClick={() => { switchLocale(otherLocale); close() }}
+              className="px-4 py-2.5 text-sm font-semibold text-gray-600 border border-gray-200 rounded-xl hover:border-[#003366]/30 transition-colors flex-shrink-0"
             >
-              Contact Us
+              {otherLocaleLabel}
+            </button>
+            <Link href={`/${locale}/#contact`} onClick={close}
+              className="flex-1 block px-3 py-2.5 text-sm font-semibold text-white bg-[#003366] rounded-xl text-center hover:bg-[#00C4A7] transition-colors duration-300">
+              {t("contact")}
             </Link>
           </div>
         </div>

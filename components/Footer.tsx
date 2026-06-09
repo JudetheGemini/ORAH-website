@@ -1,27 +1,7 @@
-import Link from "next/link";
+"use client"
 
-const navigation = [
-  { label: "About Us", href: "/about" },
-  { label: "Theory of Change", href: "/theory-of-change" },
-  { label: "Programs", href: "/programs" },
-  { label: "Advisory Board", href: "/advisory-board" },
-  { label: "Events", href: "/events" },
-  { label: "Gallery", href: "/gallery" },
-]
-
-const initiatives = [
-  { label: "AI for All: Empowering Seniors", href: "/programs/ai-for-all-seniors" },
-  { label: "Responsible AI Summit", href: "https://summit.responsibleaiottawa.ca", external: true },
-  { label: "Responsible AI Talks (ORAT)", href: "https://talks.responsibleaiottawa.ca", external: true },
-  { label: "Youth AI Changemakers", href: "/programs" },
-  { label: "AI for All: Volunteers", href: "/programs/ai-for-all" },
-]
-
-const legal = [
-  { label: "Privacy Policy", href: "/privacy-policy" },
-  { label: "Terms & Conditions", href: "/terms" },
-  { label: "Legal Notice", href: "/legal-notice" },
-]
+import Link from "next/link"
+import { useTranslations, useLocale } from "next-intl"
 
 const socials = [
   {
@@ -63,28 +43,47 @@ const socials = [
 ]
 
 export default function Footer() {
+  const t = useTranslations("footer")
+  const tn = useTranslations("nav")
+  const locale = useLocale()
+
+  const navigation = [
+    { label: tn("about"), href: `/${locale}/about` },
+    { label: tn("theoryOfChange"), href: `/${locale}/theory-of-change` },
+    { label: tn("programs"), href: `/${locale}/programs` },
+    { label: tn("board"), href: `/${locale}/advisory-board` },
+    { label: tn("events"), href: `/${locale}/events` },
+    { label: tn("gallery"), href: `/${locale}/gallery` },
+  ]
+
+  const initiatives = [
+    { label: "AI for All: Empowering Seniors", href: `/${locale}/programs/ai-for-all-seniors` },
+    { label: tn("summit"), href: "https://summit.responsibleaiottawa.ca", external: true },
+    { label: tn("talks"), href: "https://talks.responsibleaiottawa.ca", external: true },
+    { label: "Youth AI Changemakers", href: `/${locale}/programs` },
+    { label: "AI for All: Volunteers", href: `/${locale}/programs/ai-for-all` },
+  ]
+
+  const legal = [
+    { label: t("privacy"), href: `/${locale}/privacy-policy` },
+    { label: t("terms"), href: `/${locale}/terms` },
+    { label: t("legalNotice"), href: `/${locale}/legal-notice` },
+  ]
+
   return (
     <footer className="bg-[#003366]">
       <div className="max-w-6xl mx-auto px-4 pt-16 pb-8">
-
-        {/* Main grid */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
 
           {/* Brand */}
           <div className="col-span-2 lg:col-span-1">
-            <Link href="/">
+            <Link href={`/${locale}`}>
               <img src="/logo3.svg" className="h-10" alt="ORAH Logo" />
             </Link>
-            <div className="flex items-center gap-3 mt-12">
+            <div className="flex items-center gap-3 mt-14">
               {socials.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={s.label}
-                  className="w-9 h-9 rounded-lg bg-white/8 flex items-center justify-center text-white/60 hover:bg-[#00C4A7] hover:text-white transition-all duration-200"
-                >
+                <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}
+                  className="w-9 h-9 rounded-lg bg-white/8 flex items-center justify-center text-white/60 hover:bg-[#00C4A7] hover:text-white transition-all duration-200">
                   {s.icon}
                 </a>
               ))}
@@ -93,14 +92,11 @@ export default function Footer() {
 
           {/* Navigate */}
           <div className="space-y-4">
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-white/40">Navigate</h3>
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-white/40">{t("navigate")}</h3>
             <ul className="space-y-2.5">
               {navigation.map((link) => (
                 <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-white/60 hover:text-white transition-colors duration-200"
-                  >
+                  <Link href={link.href} className="text-sm text-white/60 hover:text-white transition-colors duration-200">
                     {link.label}
                   </Link>
                 </li>
@@ -110,16 +106,14 @@ export default function Footer() {
 
           {/* Initiatives */}
           <div className="space-y-4">
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-white/40">Initiatives</h3>
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-white/40">{t("initiatives")}</h3>
             <ul className="space-y-2.5">
               {initiatives.map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
+                  <a href={link.href}
                     target={link.external ? "_blank" : undefined}
                     rel={link.external ? "noopener noreferrer" : undefined}
-                    className="text-sm text-white/60 hover:text-white transition-colors duration-200"
-                  >
+                    className="text-sm text-white/60 hover:text-white transition-colors duration-200">
                     {link.label}
                   </a>
                 </li>
@@ -129,37 +123,27 @@ export default function Footer() {
 
           {/* Legal + Contact */}
           <div className="space-y-4">
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-white/40">Legal</h3>
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-white/40">{t("legal")}</h3>
             <ul className="space-y-2.5 mb-6">
               {legal.map((link) => (
                 <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-white/60 hover:text-white transition-colors duration-200"
-                  >
+                  <Link href={link.href} className="text-sm text-white/60 hover:text-white transition-colors duration-200">
                     {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-white/40">Contact</h3>
-            <a
-              href="mailto:hello@responsibleaiottawa.ca"
-              className="text-sm text-white/60 hover:text-[#00C4A7] transition-colors duration-200 block"
-            >
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-white/40">{t("contact")}</h3>
+            <a href="mailto:hello@responsibleaiottawa.ca"
+              className="text-sm text-white/60 hover:text-[#00C4A7] transition-colors duration-200 block">
               hello@responsibleaiottawa.ca
             </a>
           </div>
         </div>
 
-        {/* Bottom bar */}
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-white/35">
-            © 2026 Ottawa Responsible AI Hub. All rights reserved.
-          </p>
-          <p className="text-xs text-white/25">
-            Ottawa · Canada
-          </p>
+          <p className="text-xs text-white/35">{t("copyright")}</p>
+          <p className="text-xs text-white/25">{t("location")}</p>
         </div>
       </div>
     </footer>

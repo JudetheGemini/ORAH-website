@@ -1,14 +1,17 @@
 "use client"
 
 import { motion } from "framer-motion"
-
-const stats = [
-  { value: "100+", label: "Community Members", color: "text-[#003366]" },
-  { value: "4+",   label: "Workshops Held",    color: "text-[#00C4A7]" },
-  { value: "5",    label: "Active Programs",   color: "text-[#003366]" },
-]
+import { useTranslations } from "next-intl"
 
 export default function StatsBlock() {
+  const t = useTranslations("stats")
+
+  const stats = [
+    { value: "100+", label: t("members"),   color: "text-[#003366]" },
+    { value: "4+",   label: t("workshops"), color: "text-[#00C4A7]" },
+    { value: "5",    label: t("programs"),  color: "text-[#003366]" },
+  ]
+
   return (
     <section className="bg-white border-y border-gray-100">
       <div className="max-w-5xl mx-auto px-4 py-10">
