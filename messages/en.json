@@ -152,6 +152,26 @@
     "title": "Our Initiatives",
     "subtitle": "At the Ottawa Responsible AI Hub (ORAH), we believe ethical AI should be inclusive, transparent, and accessible to all. Our flagship initiatives reflect that mission."
   },
+  "programsPage": {
+    "heroTitle": "Our Initiatives",
+    "heroSubtitle": "At the Ottawa Responsible AI Hub (ORAH), we believe ethical AI should be inclusive, transparent, and accessible to all. Our flagship initiatives reflect that mission—turning responsible AI from theory into real, community-driven action.",
+    "learnMore": "Learn More",
+    "i1Title": "AI for All: Empowering Seniors",
+    "i1Desc": "A digital literacy and inclusion program that helps older adults (60+) confidently engage with everyday AI—from smart health apps to voice assistants. Through hands-on workshops, hybrid learning, and trusted community partnerships, we're ensuring no one is left behind in Canada's digital future.",
+    "i1Status": "Active",
+    "i2Title": "Ottawa Responsible AI Summit",
+    "i2Desc": "Our annual anchor event convening policymakers, developers, academics, civic leaders, and community voices to explore the future of ethical AI. Held in Ottawa, this conference is a space to share, question, and co-create a more accountable AI ecosystem in Canada and beyond.",
+    "i2Status": "Annual Event",
+    "i3Title": "Ottawa Responsible AI Talks (ORAT)",
+    "i3Desc": "Our quarterly meetups bring together researchers, developers, policymakers, students, and community members to share ideas, present ongoing work, and discuss the latest developments in responsible AI. From algorithmic transparency to inclusive design, ORAT creates a welcoming space for cross-sector dialogue.",
+    "i3Status": "Quarterly",
+    "i4Title": "Youth AI Changemakers",
+    "i4Desc": "A civic innovation fellowship for students and young adults passionate about using AI for public good. Participants work in teams to explore responsible AI principles, design local solutions, and pitch to real-world mentors.",
+    "i4Status": "Launching Spring 2026",
+    "i5Title": "Responsible AI Research & Governance Collective",
+    "i5Desc": "A collaborative platform for researchers, students, and practitioners to publish, co-design, and pilot responsible AI frameworks with real-world impact. This initiative fosters open science, interdisciplinary dialogue, and community-informed governance.",
+    "i5Status": "Coming Soon"
+  },
   "toc": {
     "eyebrow": "Our Framework",
     "heroTitle": "Theory of Change",

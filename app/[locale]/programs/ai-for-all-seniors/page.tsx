@@ -17,11 +17,11 @@ export default function AIForAllSeniorsPage() {
     const t = useTranslations('seniors')
 
     const programDetails = [
-        { icon: Calendar,   label: t('detailDatesLabel'),    value: t('detailDatesValue') },
-        { icon: MapPin,     label: t('detailLocationLabel'), value: t('detailLocationValue'), sub: t('detailLocationSub') },
-        { icon: Clock,      label: t('detailFormatLabel'),   value: t('detailFormatValue') },
-        { icon: Globe2,     label: t('detailLanguageLabel'), value: t('detailLanguageValue') },
-        { icon: ShieldCheck,label: t('detailAccessLabel'),   value: t('detailAccessValue') },
+        { icon: Calendar, label: t('detailDatesLabel'), value: t('detailDatesValue') },
+        { icon: MapPin, label: t('detailLocationLabel'), value: t('detailLocationValue'), sub: t('detailLocationSub') },
+        { icon: Clock, label: t('detailFormatLabel'), value: t('detailFormatValue') },
+        { icon: Globe2, label: t('detailLanguageLabel'), value: t('detailLanguageValue') },
+        { icon: ShieldCheck, label: t('detailAccessLabel'), value: t('detailAccessValue') },
     ]
 
     const whyItMatters = [t('why1'), t('why2'), t('why3'), t('why4')]
@@ -254,7 +254,7 @@ export default function AIForAllSeniorsPage() {
                     {/* Coming soon cards */}
                     {[
                         { emoji: '🎓', titleKey: 'leadFacilitatorTitle', descKey: 'leadFacilitatorDesc' },
-                        { emoji: '👤', titleKey: 'programmeLeadTitle',   descKey: 'detailsConfirmed' },
+                        { emoji: '👤', titleKey: 'programmeLeadTitle', descKey: 'detailsConfirmed' },
                     ].map((card, i) => (
                         <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.7, delay: i * 0.1 }} viewport={{ once: true }}
@@ -358,7 +358,7 @@ export default function AIForAllSeniorsPage() {
                                     </div>
                                 ))}
                             </div>
-                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSd5JqbePX6G4qgw9sKoz_GOiUTbPND3oHa4Hy35t7uKAT_ZmQ/viewform"
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeYU_-Q9OY0jlQ0W2d1gbv3COnecnaCp7nJrdCnAER8vU0zyg/viewform"
                                 target="_blank" rel="noopener noreferrer"
                                 className="inline-flex items-center gap-2 px-7 py-3.5 border-2 border-[#003366] text-[#003366] font-bold rounded-xl hover:bg-[#003366] hover:text-white hover:-translate-y-0.5 transition-all duration-300">
                                 {t('volunteerBtn')} <ExternalLink className="w-4 h-4" />
@@ -383,8 +383,8 @@ export default function AIForAllSeniorsPage() {
                         className="flex flex-wrap justify-center gap-x-12 gap-y-4 text-sm text-gray-500">
                         {[
                             { label: t('creditDeliveredBy'), value: t('creditDeliveredByValue') },
-                            { label: t('creditHostedAt'),    value: t('creditHostedAtValue') },
-                            { label: t('creditFundedBy'),    value: t('creditFundedByValue') },
+                            { label: t('creditHostedAt'), value: t('creditHostedAtValue') },
+                            { label: t('creditFundedBy'), value: t('creditFundedByValue') },
                         ].map((credit) => (
                             <div key={credit.label} className="text-center">
                                 <div className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-1">{credit.label}</div>
