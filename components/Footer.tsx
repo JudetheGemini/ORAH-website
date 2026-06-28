@@ -58,7 +58,7 @@ export default function Footer() {
 
   const initiatives = [
     { label: "AI for All: Empowering Seniors", href: `/${locale}/programs/ai-for-all-seniors` },
-    { label: tn("summit"), href: "https://summit.responsibleaiottawa.ca", external: true },
+    { label: tn("summit"), href: "https://summitv2.responsibleaiottawa.ca", external: true },
     { label: tn("talks"), href: "https://talks.responsibleaiottawa.ca", external: true },
     { label: "Youth AI Changemakers", href: `/${locale}/programs` },
     { label: "AI for All: Volunteers", href: `/${locale}/programs/ai-for-all` },

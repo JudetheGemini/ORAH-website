@@ -24,7 +24,7 @@ export default function NavBar() {
   ]
 
   const initiatives = [
-    { label: t("summit"), href: "https://summit.responsibleaiottawa.ca", external: true },
+    { label: t("summit"), href: "https://summitv2.responsibleaiottawa.ca", external: true },
     { label: t("talks"), href: "https://talks.responsibleaiottawa.ca", external: true },
     { label: t("globalForum"), href: "https://forum.responsibleaiottawa.ca", external: true },
   ]

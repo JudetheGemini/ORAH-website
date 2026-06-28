@@ -11,12 +11,12 @@
     "reports": "Reports",
     "blog": "Blog",
     "contact": "Contact Us",
-    "summit": "Responsible AI Summit",
-    "talks": "Responsible AI Talks",
-    "globalForum": "Global Forum for Responsible AI"
+    "summit": "Ottawa Responsible AI Summit",
+    "talks": "Ottawa Responsible AI Talks",
+    "globalForum": "Ottawa Global Forum for Responsible AI"
   },
   "home": {
-    "eyebrow": "Ottawa · Canada · Since 2023",
+    "eyebrow": "Ottawa · Canada · Since 2025",
     "heading": "Leading the Future of",
     "headingAccent": "Ethical and Responsible AI",
     "headingEnd": "in Ottawa",
@@ -82,7 +82,7 @@
     "eyebrow": "About ORAH",
     "heroTitle": "Building Responsible AI in Ottawa",
     "heroSubtitle": "We envision Ottawa as a global leader in responsible AI innovation, where technology advances the public good and empowers every community.",
-    "est": "Est. 2023",
+    "est": "Est. 2025",
     "orgName": "Ottawa Responsible AI Hub",
     "missionEyebrow": "Our Purpose",
     "missionTitle": "Our Mission",
