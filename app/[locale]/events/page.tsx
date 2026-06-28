@@ -7,6 +7,24 @@ import EventCard, { type EventData } from "@/components/event-card"
 
 const eventsData: EventData[] = [
   {
+    id: "ai-for-all-seniors-2026",
+    title: "AI for All: Seniors AI Literacy Program",
+    subtitle: "Bridging Generations Through Digital Inclusion",
+    description:
+      "ORAH partnered with The Glebe Centre – Abbotsford Community Programs to deliver AI literacy workshops for Ottawa seniors, covering digital tools, scam detection, and online safety through intergenerational learning.",
+    date: "May – June 2026",
+    time: "",
+    location: "Ottawa, Canada",
+    venue: "The Glebe Centre – Abbotsford Community Programs, Ottawa",
+    host: "",
+    website: "",
+    registrationUrl: "",
+    image: "/ai_youth_changer.jpg",
+    status: "past",
+    featured: false,
+    tags: ["SeniorsAI", "CommunityAI", "DigitalInclusion"],
+  },
+  {
     id: "gfr-march-2026",
     title: "Global Forum for Responsible AI",
     subtitle: "Designing Adaptable Responsible AI Frameworks Grounded in Data Justice",
