@@ -204,7 +204,7 @@ export default function AIForAllSeniorsPage() {
                             {/* Funding badge */}
                             <div className="flex items-center gap-4 bg-white border border-gray-100 rounded-2xl shadow-sm px-5 py-4">
                                 <img
-                                    src="/nhsp.jpeg"
+                                    src="/nhsp.png"
                                     alt="New Horizons for Seniors Program"
                                     className="h-10 w-auto object-contain flex-shrink-0"
                                 />
@@ -272,7 +272,7 @@ export default function AIForAllSeniorsPage() {
 
                                 <div className="mt-8 pt-6 border-t border-gray-100">
                                     <div className="flex items-center gap-3">
-                                        <img src="/nhsp.jpeg" alt="NHSP" className="h-8 w-auto object-contain flex-shrink-0" />
+                                        <img src="/nhsp.png" alt="NHSP" className="h-8 w-auto object-contain flex-shrink-0" />
                                         <span className="text-sm text-gray-500">Funded by the <span className="font-medium text-gray-700">Government of Canada</span> 🇨🇦, New Horizons for Seniors Program (NHSP)</span>
                                     </div>
                                 </div>
@@ -616,7 +616,7 @@ export default function AIForAllSeniorsPage() {
 
                         {/* NHSP logo */}
                         <div className="w-full flex justify-center mt-4">
-                            <img src="/nhsp.jpeg" alt="New Horizons for Seniors Program" className="h-12 w-auto object-contain opacity-80" />
+                            <img src="/nhsp.png" alt="New Horizons for Seniors Program" className="h-12 w-auto object-contain opacity-80" />
                         </div>
                     </motion.div>
 

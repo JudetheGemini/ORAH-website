@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { FileText, Download, Calendar, Users, ArrowRight } from 'lucide-react'
+import { FileText, Download, Calendar, Users, ArrowRight, Handshake } from 'lucide-react'
 import Link from 'next/link'
 
 interface Report {
@@ -122,6 +122,43 @@ export default function ReportsPage() {
             <p className="text-lg md:text-xl text-gray-100 max-w-2xl mx-auto text-balance">
               Explore comprehensive reports from our community events. Access detailed findings, policy recommendations, and key insights from ORAH initiatives.
             </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Sponsorship Banner */}
+      <section className="py-10 px-4 sm:px-6 lg:px-8 bg-[#003366]">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 bg-gradient-to-r from-[#002244] to-[#003d80] border border-white/10 rounded-2xl px-8 py-8"
+          >
+            <div className="flex items-start gap-5">
+              <div className="w-12 h-12 rounded-xl bg-[#00C4A7]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <Handshake className="w-6 h-6 text-[#00C4A7]" />
+              </div>
+              <div>
+                <div className="inline-flex items-center px-3 py-1 bg-[#00C4A7]/20 rounded-full mb-3">
+                  <span className="text-xs font-semibold uppercase tracking-widest text-[#00C4A7]">Sponsorship · ORAIS 2026</span>
+                </div>
+                <h2 className="text-xl md:text-2xl font-bold text-white mb-2">
+                  Partner with the Ottawa Responsible AI Summit (ORAIS 2026)
+                </h2>
+                <p className="text-white/70 text-sm md:text-base max-w-2xl">
+                  Position your organization at the forefront of Canada's responsible AI ecosystem. Explore our sponsorship opportunities to learn how your organization can engage with us.
+                </p>
+              </div>
+            </div>
+            <a
+              href="/reports/ORAiS 2026 Sponsorship Packages.pdf"
+              download
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#00C4A7] text-white font-semibold rounded-xl hover:bg-[#00a892] transition-colors duration-200 flex-shrink-0 whitespace-nowrap"
+            >
+              <Download className="w-4 h-4" />
+              Download Package
+            </a>
           </motion.div>
         </div>
       </section>
