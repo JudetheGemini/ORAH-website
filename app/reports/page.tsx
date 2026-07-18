@@ -147,7 +147,7 @@ export default function ReportsPage() {
                   Partner with the Ottawa Responsible AI Summit (ORAIS 2026)
                 </h2>
                 <p className="text-white/70 text-sm md:text-base max-w-2xl">
-                  Position your organization at the forefront of Canada's responsible AI ecosystem. Explore our sponsorship opportunities to learn how your organization can engage with us.
+                  Position your organization at the forefront of Canada&apos;s responsible AI ecosystem. Explore our sponsorship opportunities to learn how your organization can engage with us.
                 </p>
               </div>
             </div>

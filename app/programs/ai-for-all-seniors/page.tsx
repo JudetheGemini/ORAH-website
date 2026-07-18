@@ -605,8 +605,7 @@ export default function AIForAllSeniorsPage() {
                     >
                         {[
                             { label: 'Delivered by', value: 'Ottawa Responsible AI Hub (ORAH)' },
-                            { label: 'Hosted at', value: 'Rideau-Rockcliffe Community Resource Centre (RRCRC)' },
-                            { label: 'Funded by', value: '🇨🇦 Government of Canada, New Horizons for Seniors Program (NHSP)' },
+                            { label: 'Hosted at', value: 'Rideau-Rockcliffe Community Resource Centre (RRCRC)' }
                         ].map((credit) => (
                             <div key={credit.label} className="text-center">
                                 <div className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-1">{credit.label}</div>
