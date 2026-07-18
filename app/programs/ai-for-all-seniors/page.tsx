@@ -178,7 +178,6 @@ export default function AIForAllSeniorsPage() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
                                 <div className="absolute bottom-6 left-6 right-6 text-white">
                                     <h3 className="text-xl font-bold mb-1">Community-Led AI Literacy in Ottawa</h3>
-                                    <p className="text-white/80 text-sm">Funded by the Government of Canada 🇨🇦</p>
                                 </div>
                             </div>
 
@@ -202,17 +201,12 @@ export default function AIForAllSeniorsPage() {
                             </div>
 
                             {/* Funding badge */}
-                            <div className="flex items-center gap-4 bg-white border border-gray-100 rounded-2xl shadow-sm px-5 py-4">
+                            <div className="flex items-center bg-white border border-gray-100 rounded-2xl shadow-sm px-5 py-4">
                                 <img
                                     src="/nhsp.png"
                                     alt="New Horizons for Seniors Program"
-                                    className="h-10 w-auto object-contain flex-shrink-0"
+                                    className="h-10 w-auto object-contain"
                                 />
-                                <div>
-                                    <div className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-0.5">Funded by</div>
-                                    <div className="text-sm font-semibold text-gray-800">Government of Canada 🇨🇦</div>
-                                    <div className="text-xs text-gray-500">New Horizons for Seniors Program (NHSP)</div>
-                                </div>
                             </div>
                         </motion.div>
                     </motion.div>
@@ -273,7 +267,6 @@ export default function AIForAllSeniorsPage() {
                                 <div className="mt-8 pt-6 border-t border-gray-100">
                                     <div className="flex items-center gap-3">
                                         <img src="/nhsp.png" alt="NHSP" className="h-8 w-auto object-contain flex-shrink-0" />
-                                        <span className="text-sm text-gray-500">Funded by the <span className="font-medium text-gray-700">Government of Canada</span> 🇨🇦, New Horizons for Seniors Program (NHSP)</span>
                                     </div>
                                 </div>
                             </div>
