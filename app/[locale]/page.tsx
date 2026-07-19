@@ -9,7 +9,6 @@ import MissionVision from "@/components/mission-and_vision"
 import ContactForm from "@/components/contact-form"
 import InitiativesSlider from "@/components/initiatives-slider"
 import StatsBlock from "@/components/stats-block"
-import AIForAllPromoPopup from "@/components/ai-for-all-promo-popup"
 
 export default function Home() {
   const t = useTranslations("home")
@@ -109,7 +108,6 @@ export default function Home() {
       <MissionVision />
       <InitiativesSlider />
       <ContactForm />
-      <AIForAllPromoPopup />
     </>
   )
 }

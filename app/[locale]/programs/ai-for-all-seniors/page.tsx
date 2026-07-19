@@ -125,13 +125,8 @@ export default function AIForAllSeniorsPage() {
                                 })}
                             </div>
 
-                            <div className="flex items-center gap-4 bg-white border border-gray-100 rounded-2xl shadow-sm px-5 py-4">
+                            <div className="flex items-center bg-white border border-gray-100 rounded-2xl shadow-sm px-5 py-4">
                                 <img src="/nhsp.png" alt="New Horizons for Seniors Program" className="h-10 w-auto object-contain flex-shrink-0" />
-                                <div>
-                                    <div className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-0.5">{t('fundedByLabel')}</div>
-                                    <div className="text-sm font-semibold text-gray-800">{t('fundedByName')}</div>
-                                    <div className="text-xs text-gray-500">{t('fundedByProgram')}</div>
-                                </div>
                             </div>
                         </motion.div>
                     </motion.div>
@@ -176,7 +171,6 @@ export default function AIForAllSeniorsPage() {
                                 <div className="mt-8 pt-6 border-t border-gray-100">
                                     <div className="flex items-center gap-3">
                                         <img src="/nhsp.png" alt="NHSP" className="h-8 w-auto object-contain flex-shrink-0" />
-                                        <span className="text-sm text-gray-500">{t('fundedFull')}</span>
                                     </div>
                                 </div>
                             </div>
@@ -251,44 +245,26 @@ export default function AIForAllSeniorsPage() {
                         <p className="text-lg text-gray-600 max-w-2xl">{t('teamSubtitle')}</p>
                     </motion.div>
 
-                    {/* Coming soon cards */}
+                    {/* Team cards */}
                     {[
-                        { emoji: '🎓', titleKey: 'leadFacilitatorTitle', descKey: 'leadFacilitatorDesc' },
-                        { emoji: '👤', titleKey: 'programmeLeadTitle', descKey: 'detailsConfirmed' },
+                        { image: '/somto.jpeg', nameKey: 'programmeLeadName', titleKey: 'programmeLeadTitle', descKey: 'programmeLeadDesc' },
+                        { image: '/tina.jpeg', nameKey: 'leadFacilitatorName', titleKey: 'leadFacilitatorTitle', descKey: 'leadFacilitatorDesc' },
                     ].map((card, i) => (
                         <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.7, delay: i * 0.1 }} viewport={{ once: true }}
-                            className={`bg-white rounded-2xl border border-dashed border-[#00C4A7]/40 p-7 flex gap-5 items-start ${i === 0 ? 'mb-6' : 'mb-6'}`}>
-                            <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#00C4A7]/15 to-[#003366]/10 flex items-center justify-center flex-shrink-0">
-                                <span className="text-3xl">{card.emoji}</span>
-                            </div>
+                            className="bg-white rounded-2xl border border-gray-100 shadow-sm p-7 flex gap-5 items-start mb-6">
+                            <img
+                                src={card.image}
+                                alt={t(card.nameKey as Parameters<typeof t>[0])}
+                                className="w-20 h-20 rounded-2xl object-cover flex-shrink-0"
+                            />
                             <div className="space-y-2">
-                                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-700 text-xs font-medium">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />{t('comingSoon')}
-                                </div>
-                                <h3 className="text-lg font-bold text-gray-900">{t(card.titleKey as Parameters<typeof t>[0])}</h3>
-                                <p className="text-sm text-[#003366] font-medium">{t('toBeConfirmed')}</p>
+                                <h3 className="text-lg font-bold text-gray-900">{t(card.nameKey as Parameters<typeof t>[0])}</h3>
+                                <p className="text-sm text-[#003366] font-medium">{t(card.titleKey as Parameters<typeof t>[0])}</p>
                                 <p className="text-sm text-gray-500 leading-relaxed">{t(card.descKey as Parameters<typeof t>[0])}</p>
                             </div>
                         </motion.div>
                     ))}
-
-                    {/* Panel moderator */}
-                    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.7, delay: 0.15 }} viewport={{ once: true }}
-                        className="bg-white rounded-2xl border border-dashed border-[#00C4A7]/40 p-7 flex gap-5 items-start mb-6">
-                        <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#00C4A7]/15 to-[#003366]/10 flex items-center justify-center flex-shrink-0">
-                            <span className="text-3xl">🎙️</span>
-                        </div>
-                        <div className="space-y-2">
-                            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-700 text-xs font-medium">
-                                <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />{t('comingSoon')}
-                            </div>
-                            <h3 className="text-lg font-bold text-gray-900">{t('panelModeratorTitle')}</h3>
-                            <p className="text-sm text-[#003366] font-medium">{t('toBeConfirmed')}</p>
-                            <p className="text-sm text-gray-500 leading-relaxed">{t('detailsConfirmed')}</p>
-                        </div>
-                    </motion.div>
 
                     {/* Youth Partners */}
                     <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
@@ -384,7 +360,6 @@ export default function AIForAllSeniorsPage() {
                         {[
                             { label: t('creditDeliveredBy'), value: t('creditDeliveredByValue') },
                             { label: t('creditHostedAt'), value: t('creditHostedAtValue') },
-                            { label: t('creditFundedBy'), value: t('creditFundedByValue') },
                         ].map((credit) => (
                             <div key={credit.label} className="text-center">
                                 <div className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-1">{credit.label}</div>

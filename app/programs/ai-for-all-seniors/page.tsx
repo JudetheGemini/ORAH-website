@@ -387,35 +387,11 @@ export default function AIForAllSeniorsPage() {
                     </motion.div>
 
                     <div className="grid md:grid-cols-2 gap-6 mb-10">
-                        {/* Lead Facilitator — placeholder */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.7 }}
-                            viewport={{ once: true }}
-                            className="bg-white rounded-2xl border border-dashed border-[#00C4A7]/40 p-7 flex gap-5 items-start"
-                        >
-                            <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#00C4A7]/15 to-[#003366]/10 flex items-center justify-center flex-shrink-0">
-                                <span className="text-3xl">🎓</span>
-                            </div>
-                            <div className="space-y-2">
-                                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-700 text-xs font-medium">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
-                                    Coming Soon
-                                </div>
-                                <h3 className="text-lg font-bold text-gray-900">Lead Facilitator</h3>
-                                <p className="text-sm text-[#003366] font-medium">To be confirmed</p>
-                                <p className="text-sm text-gray-500 leading-relaxed">
-                                    Our lead facilitator brings expertise in AI education and community engagement. Details will be shared once confirmed.
-                                </p>
-                            </div>
-                        </motion.div>
-
                         {/* Somto Mbelu */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.7, delay: 0.1 }}
+                            transition={{ duration: 0.7 }}
                             viewport={{ once: true }}
                             className="bg-white rounded-2xl border border-dashed border-[#00C4A7]/40 p-7 flex gap-5 items-start"
                         >
@@ -431,6 +407,30 @@ export default function AIForAllSeniorsPage() {
                                 <p className="text-sm text-[#003366] font-medium">To be confirmed</p>
                                 <p className="text-sm text-gray-500 leading-relaxed">
                                     Details will be shared once confirmed.
+                                </p>
+                            </div>
+                        </motion.div>
+
+                        {/* Facilitator — placeholder */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.7, delay: 0.1 }}
+                            viewport={{ once: true }}
+                            className="bg-white rounded-2xl border border-dashed border-[#00C4A7]/40 p-7 flex gap-5 items-start"
+                        >
+                            <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#00C4A7]/15 to-[#003366]/10 flex items-center justify-center flex-shrink-0">
+                                <span className="text-3xl">🎓</span>
+                            </div>
+                            <div className="space-y-2">
+                                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-700 text-xs font-medium">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                                    Coming Soon
+                                </div>
+                                <h3 className="text-lg font-bold text-gray-900">Facilitator</h3>
+                                <p className="text-sm text-[#003366] font-medium">To be confirmed</p>
+                                <p className="text-sm text-gray-500 leading-relaxed">
+                                    Our facilitator brings expertise in AI education and community engagement. Details will be shared once confirmed.
                                 </p>
                             </div>
                         </motion.div>
