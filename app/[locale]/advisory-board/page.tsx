@@ -18,7 +18,7 @@ interface AdvisoryMember {
 const advisoryMembers: AdvisoryMember[] = [
   {
     id: 1,
-    name: "Somto Mbelu, PMP",
+    name: "Somto Mbelu, PhD, PMP",
     title: "Founder & Program Lead",
     organization: "Ottawa Responsible AI Hub (ORAH)",
     bio: "Somto works at the intersection of AI ethics, policy, digital health, governance, compliance, risk, finance, and business, bridging research and practice to shape technology that serves society.",
