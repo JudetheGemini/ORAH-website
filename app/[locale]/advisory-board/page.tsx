@@ -32,7 +32,7 @@ const advisoryMembers: AdvisoryMember[] = [
     title: "Advisory Board Member",
     organization: "Lincoln Alexander School of Law",
     bio: "Experienced lawyer with expertise in human rights, tech, and artificial intelligence. Demonstrated history of working across various national, regional, and international institutions.",
-    image: "jake.jpeg",
+    image: "/jake.jpeg",
     linkedin: "https://www.linkedin.com/in/effoduh/",
     expertise: ["AI Policy", "Digital Rights", "Governance", "Advocacy"],
   },
