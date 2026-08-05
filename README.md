@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ORAH Website
+
+The official public website for the **Ottawa Responsible AI Hub (ORAH)**, a nonprofit community dedicated to ethical AI governance, education, advocacy, and innovation in Ottawa, Canada.
+
+Live site: [responsibleaiottawa.ca](https://responsibleaiottawa.ca)
+
+## About
+
+ORAH's website serves as the organization's public front door, communicating our mission, programs, and initiatives to the community, and providing a platform for the Ottawa Responsible AI Summit (ORAIS) and other events.
+
+The site is fully bilingual (English/French) to support accessibility across Canada's full population.
+
+## Features
+
+- **Bilingual (EN/FR)** — full English and French language support
+- **Programs & Initiatives** — dedicated pages for ORAH's programs, advisory board, and ongoing initiatives
+- **Blog** — articles and updates from the ORAH team
+- **Event microsites** — dedicated pages for ORAH events, including the Ottawa Responsible AI Summit (ORAIS)
+- **Responsive design** — optimized for desktop and mobile
+
+## Tech Stack
+
+- **Framework:** [Next.js](https://nextjs.org/) (full-stack, App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+
+## Project Structure
+
+```
+app/                  App Router pages (e.g. advisory-board, programs, initiatives)
+components/           Shared UI components (e.g. NavBar)
+public/                Static assets (images, team photos, etc.)
+```
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# install dependencies
+npm install
+
+# run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The site will be available at `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Contributing
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This repository is maintained by the ORAH core team. If you're part of the team and would like to contribute:
 
-## Learn More
+1. Create a branch for your change
+2. Make your changes and test locally
+3. Open a pull request for review
 
-To learn more about Next.js, take a look at the following resources:
+## Maintainers
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Maintained by the ORAH core team, including the Solutions Architect role responsible for the site's architecture, development, and ongoing maintenance.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Internal project for the Ottawa Responsible AI Hub. All rights reserved.
