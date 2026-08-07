@@ -187,6 +187,20 @@
     "primary": "S'inscrire",
     "secondary": "En savoir plus"
   },
+  "workshopPopup": {
+    "badge": "ÉVÉNEMENT DE CLÔTURE",
+    "title": "Atelier intergénérationnel sur la littératie en IA",
+    "description": "Participez à notre célébration de clôture gratuite avec une discussion en panel, une pratique concrète et une vitrine communautaire, ouverte à tous.",
+    "detailDate": "Vendredi 14 août 2026",
+    "detailTime": "16h30 – 18h30",
+    "detailLocation": "Centre de ressources communautaires Rideau-Rockcliffe, Ottawa",
+    "benefitsTitle": "Au programme :",
+    "benefit1": "Panel : Au-delà de la fracture numérique, faire progresser la littératie en IA pour tous",
+    "benefit2": "Labo ouvert et vitrine communautaire",
+    "benefit3": "Certificats, rafraîchissements et réseautage",
+    "primary": "S'inscrire",
+    "secondary": "Voir les détails"
+  },
   "seniors": {
     "eyebrow": "Pour les adultes · Ottawa 2026",
     "heroTitle1": "IA pour tous :",
@@ -272,6 +286,7 @@
     "s5h2": "Vitrine communautaire : les duos partagent leurs points forts du programme",
     "s5h3": "Panel intergénérationnel : « L'IA, le travail et nous », animé par Ugo Okoye",
     "s5h4": "Reconnaissance des Partenaires jeunes et clôture du programme par Somto Mbelu",
+    "s5CtaLabel": "Voir les détails de l'atelier",
     "teamEyebrow": "Facilitateurs",
     "teamTitle": "Rencontrez l'équipe",
     "teamSubtitle": "Nos séances sont animées par des éducateurs expérimentés en IA et soutenues par des Partenaires jeunes formés qui apportent connaissances et énergie à chaque atelier. Chaque facilitateur s'engage à rendre l'éducation à l'IA accessible, accueillante et ancrée dans les principes de l'IA responsable.",

@@ -207,6 +207,20 @@
     "primary": "Register Now",
     "secondary": "Learn More"
   },
+  "workshopPopup": {
+    "badge": "CLOSING EVENT",
+    "title": "Intergenerational AI Literacy Workshop",
+    "description": "Join our free closing celebration featuring a panel discussion, hands-on practice, and community showcase, open to everyone.",
+    "detailDate": "Friday, August 14, 2026",
+    "detailTime": "4:30 PM – 6:30 PM",
+    "detailLocation": "Rideau-Rockcliffe Community Resource Centre, Ottawa",
+    "benefitsTitle": "What to Expect:",
+    "benefit1": "Panel: Beyond the Digital Divide: Advancing AI Literacy for All",
+    "benefit2": "Open Lab and community showcase",
+    "benefit3": "Certificates, refreshments, and networking",
+    "primary": "Register Now",
+    "secondary": "View Details"
+  },
   "seniors": {
     "eyebrow": "For Adults · Ottawa 2026",
     "heroTitle1": "AI for All:",
@@ -292,6 +306,7 @@
     "s5h2": "Community Showcase: pairs share their highlights from the programme",
     "s5h3": "Intergenerational Panel: \"AI, Work, and Us\", moderated by Ugo Okoye",
     "s5h4": "Youth Volunteer recognition and programme closing by Somto Mbelu",
+    "s5CtaLabel": "View Workshop Details",
     "teamEyebrow": "Facilitators",
     "teamTitle": "Meet the Team",
     "teamSubtitle": "Our sessions are led by experienced AI educators and supported by trained Youth Partners who bring both knowledge and energy to every workshop. Every facilitator is committed to making AI education accessible, welcoming, and grounded in responsible AI principles.",

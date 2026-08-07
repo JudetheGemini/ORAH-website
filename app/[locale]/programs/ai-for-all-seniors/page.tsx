@@ -1,7 +1,8 @@
 'use client'
 
+import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { MapPin, Calendar, Clock, Globe2, ShieldCheck, ExternalLink, CheckCircle2, Users } from 'lucide-react'
+import { MapPin, Calendar, Clock, Globe2, ShieldCheck, ExternalLink, CheckCircle2, Users, ArrowRight } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 
 const containerVariants = {
@@ -222,6 +223,12 @@ export default function AIForAllSeniorsPage() {
                                             </li>
                                         ))}
                                     </ul>
+                                    {session.isClosing && (
+                                        <Link href="/programs/ai-for-all-seniors/intergenerational-workshop"
+                                            className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#00C4A7] hover:underline">
+                                            {t('s5CtaLabel')} <ArrowRight className="w-4 h-4" />
+                                        </Link>
+                                    )}
                                 </div>
                             </motion.div>
                         ))}
