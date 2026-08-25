@@ -9,7 +9,7 @@ import MissionVision from "@/components/mission-and_vision"
 import ContactForm from "@/components/contact-form"
 import InitiativesSlider from "@/components/initiatives-slider"
 import StatsBlock from "@/components/stats-block"
-import WorkshopPromoPopup from "@/components/workshop-promo-popup"
+import SummitPromoPopup from "@/components/summit-promo-popup"
 
 export default function Home() {
   const t = useTranslations("home")
@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <>
-      <WorkshopPromoPopup />
+      <SummitPromoPopup />
 
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">

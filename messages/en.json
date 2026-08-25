@@ -207,19 +207,20 @@
     "primary": "Register Now",
     "secondary": "Learn More"
   },
-  "workshopPopup": {
-    "badge": "CLOSING EVENT",
-    "title": "Intergenerational AI Literacy Workshop",
-    "description": "Join our free closing celebration featuring a panel discussion, hands-on practice, and community showcase, open to everyone.",
-    "detailDate": "Friday, August 14, 2026",
-    "detailTime": "4:30 PM – 6:30 PM",
-    "detailLocation": "Rideau-Rockcliffe Community Resource Centre, Ottawa",
-    "benefitsTitle": "What to Expect:",
-    "benefit1": "Panel: Beyond the Digital Divide: Advancing AI Literacy for All",
-    "benefit2": "Open Lab and community showcase",
-    "benefit3": "Certificates, refreshments, and networking",
+  "summitPopup": {
+    "badge": "2ND ANNUAL",
+    "title": "Ottawa Responsible AI Summit 2026",
+    "description": "Responsible AI and Data Governance in Practice: Institutions, Systems, and Impact — join 200+ leaders, practitioners, and policymakers.",
+    "detailDates": "October 20–21, 2026",
+    "detailDay1": "Day 1 · Oct 20, 5:30–8:30 PM · Canadian Museum of History",
+    "detailDay2": "Day 2 · Oct 21, 8:30 AM–6:00 PM · Bayview Yards, Invest Ottawa",
+    "detailAttendees": "200+ leaders, practitioners & policymakers",
+    "benefitsTitle": "What's Included:",
+    "benefit1": "Day 1: Creativity, Copyright, and AI",
+    "benefit2": "Day 2: Principles to Practice",
+    "benefit3": "Speakers, sponsors & networking",
     "primary": "Register Now",
-    "secondary": "View Details"
+    "secondary": "Visit Summit Site"
   },
   "seniors": {
     "eyebrow": "For Adults · Ottawa 2026",

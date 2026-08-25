@@ -187,19 +187,20 @@
     "primary": "S'inscrire",
     "secondary": "En savoir plus"
   },
-  "workshopPopup": {
-    "badge": "ÉVÉNEMENT DE CLÔTURE",
-    "title": "Atelier intergénérationnel sur la littératie en IA",
-    "description": "Participez à notre célébration de clôture gratuite avec une discussion en panel, une pratique concrète et une vitrine communautaire, ouverte à tous.",
-    "detailDate": "Vendredi 14 août 2026",
-    "detailTime": "16h30 – 18h30",
-    "detailLocation": "Centre de ressources communautaires Rideau-Rockcliffe, Ottawa",
+  "summitPopup": {
+    "badge": "2E ÉDITION ANNUELLE",
+    "title": "Sommet d'Ottawa sur l'IA responsable 2026",
+    "description": "L'IA responsable et la gouvernance des données en pratique : institutions, systèmes et impact — rejoignez plus de 200 dirigeants, praticiens et décideurs.",
+    "detailDates": "20–21 octobre 2026",
+    "detailDay1": "Jour 1 · 20 oct., 17h30–20h30 · Musée canadien de l'histoire",
+    "detailDay2": "Jour 2 · 21 oct., 8h30–18h00 · Bayview Yards, Invest Ottawa",
+    "detailAttendees": "Plus de 200 dirigeants, praticiens et décideurs",
     "benefitsTitle": "Au programme :",
-    "benefit1": "Panel : Au-delà de la fracture numérique, faire progresser la littératie en IA pour tous",
-    "benefit2": "Labo ouvert et vitrine communautaire",
-    "benefit3": "Certificats, rafraîchissements et réseautage",
+    "benefit1": "Jour 1 : Créativité, droit d'auteur et IA",
+    "benefit2": "Jour 2 : Des principes à la pratique",
+    "benefit3": "Conférenciers, commanditaires et réseautage",
     "primary": "S'inscrire",
-    "secondary": "Voir les détails"
+    "secondary": "Visiter le site du sommet"
   },
   "seniors": {
     "eyebrow": "Pour les adultes · Ottawa 2026",
