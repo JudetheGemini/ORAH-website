@@ -9,6 +9,7 @@ import { defaultMetadata, defaultViewport } from "@/lib/metadata";
 import { StructuredData, organizationSchema, websiteSchema } from "@/components/structured-data";
 import CookieConsentWrapper from "@/components/cookie-consent-wrapper";
 import { GoogleAnalytics } from "@/components/analytics";
+import FacebookPixel from "@/components/facebook-pixel";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { routing } from "@/i18n/routing";
@@ -60,6 +61,7 @@ export default async function LocaleLayout({
           <StructuredData data={organizationSchema} />
           <StructuredData data={websiteSchema} />
           <GoogleAnalytics />
+          <FacebookPixel />
           <NavBar />
           {children}
           <Footer />

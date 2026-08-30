@@ -1,14 +1,22 @@
 "use client"
 
-import { useActionState } from "react"
+import { useActionState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Send, Mail, Users, CheckCircle } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { submitContactForm } from "../actions/contact-form"
+import { event as fbEvent } from "@/lib/fpixel"
 
 export default function ContactForm() {
   const t = useTranslations("contact")
   const [state, action, isPending] = useActionState(submitContactForm, null)
+
+  // Fire the Facebook Pixel "Lead" standard event on a successful submission
+  useEffect(() => {
+    if (state?.success) {
+      fbEvent("Lead", { content_name: "Contact form" })
+    }
+  }, [state?.success])
 
   const contactOptions = [
     { icon: Mail,  label: t("general"),      value: "hello@responsibleaiottawa.ca",        href: "mailto:hello@responsibleaiottawa.ca" },
