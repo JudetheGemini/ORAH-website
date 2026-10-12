@@ -22,7 +22,7 @@ The site is fully bilingual (English/French) to support accessibility across Can
 
 - **Framework:** [Next.js](https://nextjs.org/) (full-stack, App Router)
 - **Language:** TypeScript
-- **Styling:** Tailwind CSS
+- **Styling:** Tailwind CSSSSS
 
 ## Project Structure
 
